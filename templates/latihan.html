@@ -87,4 +87,6 @@
         .map((slug, i) => ({ slug, judul: {{ semua_topik | map(attribute='judul') | list | tojson }}[i] }));
 </script>
 <script src="static/latihan.js"></script>
+<!-- hujan di peta level; berhenti saat soal latihan dibuka -->
+<script src="static/hujan.js"></script>
 {% endblock %}

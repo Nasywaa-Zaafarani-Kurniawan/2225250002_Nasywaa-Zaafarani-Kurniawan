@@ -376,6 +376,11 @@ body.arena-terbuka {
     overflow: hidden;
 }
 
+/* hujan apel & clover berhenti selama mengerjakan soal */
+body.arena-terbuka .hujan {
+    display: none;
+}
+
 /* tombol coretan tetap bisa dipakai di atas arena */
 .tombol-coretan {
     z-index: 45;
