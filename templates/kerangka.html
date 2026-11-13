@@ -11,6 +11,7 @@
           rel="stylesheet">
 
     <link rel="stylesheet" href="static/materi.css">
+    {% block kepala %}{% endblock %}
 </head>
 
 <body {% block atribut_body %}{% endblock %}>
@@ -24,7 +25,7 @@
         </a>
 
         <nav class="nav-link">
-            <a href="beranda.html">Beranda</a>
+            <a href="beranda.html" {% if aktif == 'beranda' %}class="aktif"{% endif %}>Beranda</a>
             <a href="materi.html" {% if aktif == 'materi' %}class="aktif"{% endif %}>Materi</a>
             <a href="contoh.html">Contoh Soal</a>
             <a href="latihan.html">Latihan</a>

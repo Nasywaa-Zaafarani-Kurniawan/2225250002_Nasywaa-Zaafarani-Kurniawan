@@ -3,99 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHYNtagoras — Media Pembelajaran SMP</title>
+    <title>Beranda — PHYNtagoras</title>
 
-    <link rel="stylesheet"
-          href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/materi.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/beranda.css">
+
 </head>
 
-<body>
+<body >
 
-<div class="dashboard">
+<!-- Navigasi atas -->
+<header class="navbar">
+    <div class="navbar-isi">
+        <a href="./" class="logo">
+            <span class="logo-ikon">△</span>
+            <span><span class="logo-phyn">PHYN</span>tagoras</span>
+        </a>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-
-        <h2><a href="./" style="color:inherit;text-decoration:none">△ PHYNtagoras</a></h2>
-        <p>Media Pembelajaran SMP</p>
-
-        <hr>
-
-        <nav>
-            <a href="beranda.html">⌂ Beranda</a>
-            <a href="materi.html">▤ Materi</a>
-            <a href="contoh.html">▧ Contoh Soal</a>
-            <a href="latihan.html">✎ Latihan</a>
+        <nav class="nav-link">
+            <a href="beranda.html" class="aktif">Beranda</a>
+            <a href="materi.html" >Materi</a>
+            <a href="contoh.html">Contoh Soal</a>
+            <a href="latihan.html">Latihan</a>
         </nav>
+    </div>
+</header>
 
-    </aside>
+<main>
+    
+<div class="beranda">
 
+    <!-- ===== Bento grid ===== -->
+    <section class="bento">
 
-    <!-- Konten Utama -->
-    <main class="content">
+        <!-- Sapaan -->
+        <article class="kartu kartu-sapa">
+            <span class="stiker stiker-apel" aria-hidden="true">🍎</span>
+            <span class="stiker stiker-clover" aria-hidden="true">🍀</span>
 
-        <section class="welcome">
-
-            <span class="label">MEDIA PEMBELAJARAN MATEMATIKA</span>
-
-            <h1>Selamat Datang di PHYNtagoras!</h1>
-
-            <p>
-                Yuk, belajar Teorema Pythagoras dengan
-                cara yang lebih menarik dan menyenangkan.
-            </p>
-
-        </section>
-
-
-        <!-- Visualisasi -->
-        <section class="visualisasi">
-
-            <h2>Jelajahi Bentuk Geometri</h2>
-
-            <p>
-                Klik salah satu bentuk berikut untuk
-                melihat visualisasi Pythagoras.
-            </p>
-
-            <div class="pilihan">
-                <button type="button" data-bentuk="segitiga"
-                        data-judul="Segitiga Siku-Siku">Segitiga</button>
-                <button type="button" data-bentuk="persegi"
-                        data-judul="Persegi Panjang dengan Diagonal">Persegi Panjang</button>
-                <button type="button" data-bentuk="tangga"
-                        data-judul="Tangga Bersandar pada Dinding">Tangga</button>
+            <div class="baris-sapa">
+                <span class="chip-waktu" id="sapa-waktu">Halo 👋</span>
+                <button type="button" class="chip-nama" id="tombol-nama">✎ Panggil aku…</button>
             </div>
 
+            <form class="form-nama" id="form-nama" hidden>
+                <input type="text" id="isi-nama" maxlength="20" placeholder="Nama panggilanmu" autocomplete="off">
+                <button type="submit">Simpan</button>
+            </form>
 
-            <div class="gambar">
+            <h1 id="judul-sapa">Hari ini mau ngulik apa?</h1>
+            <p>Pythagoras nggak serumit kelihatannya. Satu materi sehari, pelan-pelan auto paham.</p>
 
-                <img id="gambar-bentuk"
-                     src="gambar/segitiga.svg"
-                     alt="Visualisasi Pythagoras">
+            <a href="materi.html" class="tombol-besar" id="lanjut-belajar">
+                <span>
+                    <small id="lanjut-label">Mulai dari awal</small>
+                    <strong id="lanjut-judul">Kuadrat &amp; Akar Kuadrat</strong>
+                </span>
+                <span class="panah">→</span>
+            </a>
+        </article>
 
-                <h3 id="judul-bentuk">Segitiga Siku-Siku</h3>
-
+        <!-- Progres -->
+        <article class="kartu kartu-progres">
+            <h2 class="judul-kartu">Progres kamu</h2>
+            <div class="cincin-wadah">
+                <svg viewBox="0 0 120 120" class="cincin" aria-hidden="true">
+                    <circle cx="60" cy="60" r="50" class="cincin-latar"/>
+                    <circle cx="60" cy="60" r="50" class="cincin-isi" id="cincin-isi"/>
+                </svg>
+                <div class="cincin-teks">
+                    <strong id="jumlah-dibuka">0</strong><span>/ 9</span>
+                </div>
             </div>
+            <p class="level" id="level">🌱 Baru mulai</p>
+            <a href="materi.html" class="link-kecil">Lihat semua materi →</a>
+        </article>
 
-        </section>
+        <!-- Tantangan harian -->
+        <article class="kartu kartu-harian">
+            <div class="kepala-harian">
+                <h2 class="judul-kartu">⚡ Tantangan Harian</h2>
+                <span class="chip-streak" id="chip-streak" title="Hari beruntun">🔥 0 hari</span>
+            </div>
+            <p class="tanggal-harian" id="tanggal-harian"></p>
+            <p class="soal-harian" id="soal-harian">Memuat soal…</p>
 
-    </main>
+            <form class="jawab-harian" id="form-harian">
+                <input type="number" step="any" id="isi-harian" placeholder="Jawabanmu" aria-label="Jawaban tantangan harian">
+                <span class="satuan" id="satuan-harian"></span>
+                <button type="submit">Cek!</button>
+            </form>
+
+            <div class="umpan-harian" id="umpan-harian" aria-live="polite"></div>
+
+            <button type="button" class="tombol-pembahasan" id="tombol-pembahasan" hidden>Lihat pembahasan ↓</button>
+            <div class="pembahasan-harian" id="pembahasan-harian" hidden></div>
+
+            <div class="tips-harian">
+                <span>💡 Bingung? Gambar dulu sketsanya.</span>
+                <button type="button" id="tips-coretan">✎ Buka Coretan</button>
+            </div>
+        </article>
+
+        <!-- Kalkulator kilat -->
+        <article class="kartu kartu-kilat">
+            <h2 class="judul-kartu">Kalkulator Kilat</h2>
+            <div class="mode-kilat" role="tablist">
+                <button type="button" class="aktif" data-mode="miring" role="tab">Cari sisi miring</button>
+                <button type="button" data-mode="siku" role="tab">Cari sisi siku</button>
+            </div>
+            <div class="isian-kilat">
+                <label><span id="label-k1">sisi a</span><input type="number" id="kilat-1" value="6" min="0" step="any"></label>
+                <label><span id="label-k2">sisi b</span><input type="number" id="kilat-2" value="8" min="0" step="any"></label>
+            </div>
+            <div class="hasil-kilat">
+                <span id="label-hasil">sisi miring</span>
+                <strong id="hasil-kilat">10</strong>
+            </div>
+        </article>
+
+        <!-- Stiker rumus -->
+        <article class="kartu kartu-stiker" aria-label="Rumus Pythagoras">
+            <span class="label-stiker">✦ rumus sakti</span>
+            <span class="rumus-stiker">a²+b²=c²</span>
+            <span class="catatan-stiker">c = sisi miring, selalu yang paling panjang</span>
+        </article>
+
+        <!-- Fakta seru -->
+        <article class="kartu kartu-fakta">
+            <h2 class="judul-kartu">Tahukah kamu? 🤓</h2>
+            <p id="teks-fakta"></p>
+            <button type="button" class="tombol-fakta" id="tombol-fakta">Fakta lain ↻</button>
+        </article>
+    </section>
+
+    <!-- ===== Pita berjalan ===== -->
+    <div class="pita" aria-hidden="true">
+        <div class="pita-isi">
+            
+            <span>3² + 4² = 5²</span><span>✦</span>
+            <span>5² + 12² = 13²</span><span>✦</span>
+            <span>8² + 15² = 17²</span><span>✦</span>
+            <span>7² + 24² = 25²</span><span>✦</span>
+            <span>20² + 21² = 29²</span><span>✦</span>
+            <span>9² + 40² = 41²</span><span>✦</span>
+            
+            <span>3² + 4² = 5²</span><span>✦</span>
+            <span>5² + 12² = 13²</span><span>✦</span>
+            <span>8² + 15² = 17²</span><span>✦</span>
+            <span>7² + 24² = 25²</span><span>✦</span>
+            <span>20² + 21² = 29²</span><span>✦</span>
+            <span>9² + 40² = 41²</span><span>✦</span>
+            
+        </div>
+    </div>
+
+    <!-- ===== Menu utama ===== -->
+    <section class="menu-utama">
+        <h2 class="judul-menu">Mau ke mana sekarang?</h2>
+        <div class="grid-menu">
+            <a href="materi.html" class="ubin ubin-materi">
+                <span class="emoji-ubin">📚</span>
+                <strong>Materi</strong>
+                <span>9 topik, dari nol sampai soal cerita</span>
+                <span class="panah-ubin">↗</span>
+            </a>
+            <a href="contoh.html" class="ubin ubin-contoh">
+                <span class="emoji-ubin">🧩</span>
+                <strong>Contoh Soal</strong>
+                <span>Pembahasan langkah demi langkah</span>
+                <span class="panah-ubin">↗</span>
+            </a>
+            <a href="latihan.html" class="ubin ubin-latihan">
+                <span class="emoji-ubin">🎯</span>
+                <strong>Latihan</strong>
+                <span>Uji kemampuanmu sendiri</span>
+                <span class="panah-ubin">↗</span>
+            </a>
+            <button type="button" class="ubin ubin-coretan" id="ubin-coretan">
+                <span class="emoji-ubin">✏️</span>
+                <strong>Coretan</strong>
+                <span>Kertas buram digital buat ngitung</span>
+                <span class="panah-ubin">↗</span>
+            </button>
+        </div>
+    </section>
 
 </div>
 
-<script>
-    // Ganti gambar tanpa memuat ulang halaman
-    const gambarBentuk = document.getElementById("gambar-bentuk");
-    const judulBentuk  = document.getElementById("judul-bentuk");
+</main>
 
-    document.querySelectorAll(".pilihan button").forEach((tombol) => {
-        tombol.addEventListener("click", () => {
-            gambarBentuk.src = "gambar/" + tombol.dataset.bentuk + ".svg";
-            judulBentuk.textContent = tombol.dataset.judul;
-        });
-    });
+<footer class="kaki">
+    <span class="logo-phyn">PHYN</span>tagoras · Media Pembelajaran Teorema Pythagoras SMP
+</footer>
+
+<!-- Kertas coretan: tempat menggambar / menghitung -->
+<button type="button" class="tombol-coretan" id="buka-coretan">
+    ✎ <span>Coretan</span>
+</button>
+
+<div class="coretan" id="coretan" hidden>
+    <div class="coretan-alat">
+        <strong class="coretan-judul">✎ Kertas Coretan</strong>
+
+        <div class="alat-grup">
+            <button type="button" class="warna aktif" data-warna="#2b1d1e" style="--w:#2b1d1e" aria-label="Pena hitam"></button>
+            <button type="button" class="warna" data-warna="#7d2027" style="--w:#7d2027" aria-label="Pena merah"></button>
+            <button type="button" class="warna" data-warna="#2f6db5" style="--w:#2f6db5" aria-label="Pena biru"></button>
+            <button type="button" class="warna" data-warna="#4f7a43" style="--w:#4f7a43" aria-label="Pena hijau"></button>
+            <button type="button" class="alat" id="alat-penghapus">Penghapus</button>
+            <button type="button" class="alat" id="bersihkan-coretan">Bersihkan</button>
+            <button type="button" class="alat alat-tutup" id="tutup-coretan">Tutup ✕</button>
+        </div>
+    </div>
+    <canvas id="kanvas-coretan"></canvas>
+</div>
+
+<script src="static/materi.js"></script>
+
+<script>
+    window.PHYN_TOPIK = ["prasyarat", "segitiga-siku", "menemukan-teorema", "menghitung-sisi", "jenis-segitiga", "tripel", "segitiga-istimewa", "bangun-gabungan", "penerapan"];
+    window.PHYN_JUDUL = ["Kuadrat \u0026 Akar Kuadrat", "Mengenal Segitiga Siku-Siku", "Menemukan Teorema Pythagoras", "Menghitung Panjang Sisi", "Siku-Siku, Lancip, atau Tumpul?", "Tripel Pythagoras", "Segitiga Siku-Siku Istimewa", "Soal dengan Banyak Segitiga", "Soal Cerita Sehari-hari"];
 </script>
+<script src="static/beranda.js"></script>
+
 
 </body>
 </html>

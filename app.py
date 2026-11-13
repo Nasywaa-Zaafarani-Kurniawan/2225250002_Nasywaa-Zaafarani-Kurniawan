@@ -8,7 +8,7 @@ def landing():
 
 @app.route("/beranda.html")
 def beranda():
-    return render_template("index.html")
+    return render_template("index.html", semua_topik=TOPIK, aktif="beranda")
 
 @app.route("/gambar/<bentuk>.svg")
 def gambar(bentuk):
