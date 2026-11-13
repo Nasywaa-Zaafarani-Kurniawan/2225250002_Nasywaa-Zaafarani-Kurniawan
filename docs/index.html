@@ -295,7 +295,7 @@
         for (let i = 0; i < jumlah; i++) {
             const jenis = jenisButir[i % jenisButir.length];
             const ukuran = jenis === "clover" ? acak(10, 14) : acak(13, 19);
-            const durasi = acak(4, 7);   // detik untuk jatuh dari atas ke bawah
+            const durasi = acak(8, 13);  // detik untuk jatuh dari atas ke bawah
 
             const butir = document.createElement("div");
             butir.className = "butir";
