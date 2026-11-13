@@ -1316,3 +1316,16 @@ ol.langkah > li .persamaan {
 .tautan-pasang:hover {
     border-color: var(--merah);
 }
+
+/* tombol akun di navbar */
+.navbar-isi .nav-link {
+    margin-left: auto;
+}
+
+@media (max-width: 680px) {
+    .navbar-isi .nav-link {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+    }
+}

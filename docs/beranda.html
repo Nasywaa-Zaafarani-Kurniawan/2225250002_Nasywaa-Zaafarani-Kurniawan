@@ -41,6 +41,9 @@
             <a href="contoh.html" >Contoh Soal</a>
             <a href="latihan.html" >Latihan</a>
         </nav>
+
+        <!-- tombol akun (diisi oleh akun.js) -->
+        <div class="slot-akun" id="akun-slot"></div>
     </div>
 </header>
 
@@ -91,6 +94,7 @@
                 </div>
             </div>
             <p class="level" id="level">🌱 Baru mulai</p>
+            <button type="button" class="ajak-akun" data-akun-buka data-akun-status>☁️ Masuk supaya progresmu tidak hilang</button>
             <a href="materi.html" class="link-kecil">Lihat semua materi →</a>
         </article>
 
@@ -237,6 +241,9 @@
 <script src="static/materi.js"></script>
 <script src="static/jejak.js"></script>
 <script src="static/pasang.js"></script>
+<script src="static/firebase-config.js"></script>
+<script src="static/akun-gabung.js"></script>
+<script type="module" src="static/akun.js"></script>
 
 <script>
     window.PHYN_TOPIK = ["prasyarat", "segitiga-siku", "menemukan-teorema", "menghitung-sisi", "jenis-segitiga", "tripel", "segitiga-istimewa", "bangun-gabungan", "penerapan"];

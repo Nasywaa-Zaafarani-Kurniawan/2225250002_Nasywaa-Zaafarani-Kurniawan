@@ -857,3 +857,20 @@
         animation: none;
     }
 }
+
+/* ajakan menyimpan progres ke akun */
+.ajak-akun {
+    margin: 0 0 10px;
+    padding: 6px 12px;
+    border: 1.5px dashed var(--teks);
+    border-radius: 12px;
+    background: #ffffff99;
+    color: var(--teks);
+    font: 700 12px "Plus Jakarta Sans", Arial, sans-serif;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.ajak-akun:hover {
+    background: var(--krem-terang);
+}

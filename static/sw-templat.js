@@ -57,8 +57,9 @@ self.addEventListener("fetch", (e) => {
         return;
     }
 
-    // Font Google: pakai cache, sambil memperbarui di belakang layar
-    if (url.hostname.endsWith("googleapis.com") || url.hostname.endsWith("gstatic.com")) {
+    // Font Google & SDK Firebase: pakai cache, sambil memperbarui di belakang layar
+    // (login & penyimpanan Firebase TIDAK boleh di-cache, jadi domainnya dibatasi)
+    if (["fonts.googleapis.com", "fonts.gstatic.com", "www.gstatic.com"].includes(url.hostname)) {
         e.respondWith(
             caches.match(permintaan).then((tersimpan) => {
                 const dariInternet = fetch(permintaan).then((x) => {

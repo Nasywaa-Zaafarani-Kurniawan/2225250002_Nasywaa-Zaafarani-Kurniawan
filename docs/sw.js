@@ -3,7 +3,7 @@
    Menyimpan semua halaman supaya aplikasi bisa dibuka tanpa internet.
    File ini adalah templat: app.py mengisi nomor versi dan daftar berkas.
    ========================================================= */
-const VERSI = "c6c2ce10f2";
+const VERSI = "3224c1d21f";
 const CACHE = "phyn-" + VERSI;
 const BERKAS = [
     "./",
@@ -31,9 +31,12 @@ const BERKAS = [
     "gambar/segitiga.svg",
     "gambar/persegi.svg",
     "gambar/tangga.svg",
+    "static/akun-gabung.js",
+    "static/akun.js",
     "static/beranda.css",
     "static/beranda.js",
     "static/contoh.css",
+    "static/firebase-config.js",
     "static/hujan.js",
     "static/ikon/ikon-180.png",
     "static/ikon/ikon-192.png",
@@ -103,8 +106,9 @@ self.addEventListener("fetch", (e) => {
         return;
     }
 
-    // Font Google: pakai cache, sambil memperbarui di belakang layar
-    if (url.hostname.endsWith("googleapis.com") || url.hostname.endsWith("gstatic.com")) {
+    // Font Google & SDK Firebase: pakai cache, sambil memperbarui di belakang layar
+    // (login & penyimpanan Firebase TIDAK boleh di-cache, jadi domainnya dibatasi)
+    if (["fonts.googleapis.com", "fonts.gstatic.com", "www.gstatic.com"].includes(url.hostname)) {
         e.respondWith(
             caches.match(permintaan).then((tersimpan) => {
                 const dariInternet = fetch(permintaan).then((x) => {

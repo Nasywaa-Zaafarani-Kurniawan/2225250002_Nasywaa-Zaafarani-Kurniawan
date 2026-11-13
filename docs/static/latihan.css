@@ -85,6 +85,20 @@
 .stat-skor { background: var(--pink); }
 .stat-selesai { background: var(--hijau-pop); }
 
+/* ---------- Ajakan simpan progres ---------- */
+.ajak-akun-latihan {
+    display: block;
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px 16px;
+    border: 2px dashed var(--merah);
+    border-radius: 16px;
+    background: var(--krem-terang);
+    color: var(--merah);
+    font: 800 14px "Plus Jakarta Sans", Arial, sans-serif;
+    cursor: pointer;
+}
+
 /* ---------- Cara main ---------- */
 .cara-main {
     margin-top: 18px;
