@@ -758,6 +758,10 @@ ol.langkah > li .persamaan {
     transition: background 0.2s, transform 0.15s;
 }
 
+.tombol[hidden] {
+    display: none;
+}
+
 .tombol:active {
     transform: scale(0.97);
 }

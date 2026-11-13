@@ -3,32 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan Pythagoras</title>
-    <link rel="stylesheet"
-          href="static/style.css">
+    <title>Latihan — PHYNtagoras</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/materi.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/latihan.css">
+
 </head>
-<body>
 
-    <header>
-        <h1>Belajar Teorema Pythagoras</h1>
-        <p>Yuk, Uji Pemahamanmu!</p>
-    </header>
+<body >
 
-    <nav>
-        <a href="beranda.html">Beranda</a>
-        <a href="materi.html">Materi</a>
-        <a href="contoh.html">Contoh Soal</a>
-        <a href="latihan.html">Latihan</a>
-    </nav>
+<!-- Navigasi atas -->
+<header class="navbar">
+    <div class="navbar-isi">
+        <a href="./" class="logo">
+            <span class="logo-ikon">△</span>
+            <span><span class="logo-phyn">PHYN</span>tagoras</span>
+        </a>
 
-    <main>
-        <h2>Latihan Soal</h2>
-        <p>Di halaman ini kamu dapat mengerjakan latihan Pythagoras.</p>
-    </main>
+        <nav class="nav-link">
+            <a href="beranda.html" >Beranda</a>
+            <a href="materi.html" >Materi</a>
+            <a href="contoh.html" >Contoh Soal</a>
+            <a href="latihan.html" class="aktif">Latihan</a>
+        </nav>
+    </div>
+</header>
 
-    <footer>
-        <p>Website Pembelajaran Pythagoras</p>
-    </footer>
+<main>
+    
+<div class="halaman-latihan">
+
+    <!-- Maskot -->
+    <section class="maskot">
+        <div class="wajah-maskot" aria-hidden="true">🍎</div>
+        <div>
+            <strong>Phyn berkata:</strong>
+            <p id="pesan-maskot">Ayo mulai petualanganmu!</p>
+        </div>
+    </section>
+
+    <!-- Statistik -->
+    <section class="statistik">
+        <div class="stat stat-bintang"><span>⭐ Bintang</span><strong id="stat-bintang">0</strong></div>
+        <div class="stat stat-skor"><span>🏆 Skor</span><strong id="stat-skor">0</strong></div>
+        <div class="stat stat-selesai"><span>🎯 Selesai</span><strong id="stat-selesai">0/18</strong></div>
+    </section>
+
+    <!-- Cara main -->
+    <details class="cara-main">
+        <summary>📜 Cara main (baca dulu, ya!)</summary>
+        <ul>
+            <li><b>Jawab semua soal</b> di satu level dengan benar untuk membuka level berikutnya.</li>
+            <li><b>Salah satu soal = mundur ke level sebelumnya.</b> Selesaikan lagi level itu untuk maju.</li>
+            <li>Soal <b>diacak</b> setiap kali main. Level yang materinya lebih sulit punya soal lebih banyak.</li>
+            <li>Makin jauh, makin sedikit bantuan:
+                🍎 Kebun Apel ada gambar + rumus + petunjuk →
+                🍀 Ladang Clover tinggal gambar →
+                🌙 Bukit Tanpa Gambar hanya soal cerita.</li>
+            <li>⭐⭐⭐ kalau lulus di percobaan pertama, ⭐⭐ di percobaan kedua, ⭐ setelahnya.</li>
+            <li>Kalau salah, kamu akan diberi tahu letak kesalahan dan materi yang perlu dipelajari lagi.</li>
+            <li>Setelah Level 18, buka <b>👑 Ujian Akhir</b>: 10 soal tanpa bantuan, nilai lulus 75.</li>
+        </ul>
+    </details>
+
+    <!-- Peta dunia (diisi oleh latihan.js) -->
+    <div id="peta-dunia"></div>
+
+    <!-- Ujian akhir -->
+    <section class="kartu-ujian">
+        <span class="hiasan hiasan-1" aria-hidden="true">👑</span>
+        <span class="hiasan hiasan-2" aria-hidden="true">✨</span>
+        <h2 class="nama-dunia"><span>🏰</span> Ujian Akhir</h2>
+        <div class="info-dunia"><span class="chip-dunia">Istana PHYN • 10 soal • Tanpa bantuan</span></div>
+        <p class="ket-dunia">
+            Soal campuran dari semua materi. Jawabanmu baru dinilai di akhir.
+            Setelah ujian, kamu akan mendapat rekomendasi materi yang perlu dipelajari lagi.
+        </p>
+        <div class="baris-ujian">
+            <button type="button" class="tombol-ujian" id="tombol-ujian" disabled>🔒 Selesaikan Level 18 dulu</button>
+            <span class="nilai-ujian" id="nilai-ujian"></span>
+        </div>
+    </section>
+
+    <button type="button" class="tombol-reset" id="tombol-reset">↺ Hapus progres latihan</button>
+</div>
+
+<!-- Arena soal -->
+<div class="arena" id="arena" hidden>
+    <div class="arena-isi">
+        <header class="arena-kepala">
+            <button type="button" class="arena-keluar" id="arena-keluar" aria-label="Keluar">✕</button>
+            <div class="arena-info">
+                <strong id="arena-judul">Level 1</strong>
+                <div class="bar"><span id="arena-bar"></span></div>
+            </div>
+            <span class="arena-hitung" id="arena-hitung">1/3</span>
+        </header>
+        <div class="arena-badan" id="arena-badan"></div>
+    </div>
+</div>
+
+</main>
+
+<footer class="kaki">
+    <span class="logo-phyn">PHYN</span>tagoras · Media Pembelajaran Teorema Pythagoras SMP
+</footer>
+
+<!-- Kertas coretan: tempat menggambar / menghitung -->
+<button type="button" class="tombol-coretan" id="buka-coretan">
+    ✎ <span>Coretan</span>
+</button>
+
+<div class="coretan" id="coretan" hidden>
+    <div class="coretan-alat">
+        <strong class="coretan-judul">✎ Kertas Coretan</strong>
+
+        <div class="alat-grup">
+            <button type="button" class="warna aktif" data-warna="#2b1d1e" style="--w:#2b1d1e" aria-label="Pena hitam"></button>
+            <button type="button" class="warna" data-warna="#7d2027" style="--w:#7d2027" aria-label="Pena merah"></button>
+            <button type="button" class="warna" data-warna="#2f6db5" style="--w:#2f6db5" aria-label="Pena biru"></button>
+            <button type="button" class="warna" data-warna="#4f7a43" style="--w:#4f7a43" aria-label="Pena hijau"></button>
+            <button type="button" class="alat" id="alat-penghapus">Penghapus</button>
+            <button type="button" class="alat" id="bersihkan-coretan">Bersihkan</button>
+            <button type="button" class="alat alat-tutup" id="tutup-coretan">Tutup ✕</button>
+        </div>
+    </div>
+    <canvas id="kanvas-coretan"></canvas>
+</div>
+
+<script src="static/materi.js"></script>
+
+<script>
+    window.PHYN_TOPIK = ["prasyarat", "segitiga-siku", "menemukan-teorema", "menghitung-sisi", "jenis-segitiga", "tripel", "segitiga-istimewa", "bangun-gabungan", "penerapan"]
+        .map((slug, i) => ({ slug, judul: ["Kuadrat \u0026 Akar Kuadrat", "Mengenal Segitiga Siku-Siku", "Menemukan Teorema Pythagoras", "Menghitung Panjang Sisi", "Siku-Siku, Lancip, atau Tumpul?", "Tripel Pythagoras", "Segitiga Siku-Siku Istimewa", "Soal dengan Banyak Segitiga", "Soal Cerita Sehari-hari"][i] }));
+</script>
+<script src="static/latihan.js"></script>
+
 
 </body>
 </html>

@@ -3,32 +3,919 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contoh Soal Pythagoras</title>
-    <link rel="stylesheet"
-          href="static/style.css">
-</head>
-<body>
+    <title>Contoh Soal — PHYNtagoras</title>
 
-    <header>
-        <h1>Belajar Teorema Pythagoras</h1>
-        <p>Mari Belajar Melalui Contoh Soal!</p>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/materi.css">
+    
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/contoh.css">
+
+</head>
+
+<body >
+
+<!-- Navigasi atas -->
+<header class="navbar">
+    <div class="navbar-isi">
+        <a href="./" class="logo">
+            <span class="logo-ikon">△</span>
+            <span><span class="logo-phyn">PHYN</span>tagoras</span>
+        </a>
+
+        <nav class="nav-link">
+            <a href="beranda.html" >Beranda</a>
+            <a href="materi.html" >Materi</a>
+            <a href="contoh.html" class="aktif">Contoh Soal</a>
+            <a href="latihan.html" >Latihan</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    
+<div class="halaman-contoh">
+
+    <header class="kepala-halaman">
+        <span class="badge">🧩 Contoh Soal</span>
+        <h1>Contoh soal + pembahasan lengkap</h1>
+        <p>
+            Soal-soal di sini diambil dari <strong>Modul 5 Teorema Pythagoras</strong> dan
+            <strong>Buku Matematika Kelas VIII Bab 2</strong>. Setiap soal dibahas dengan pola
+            <em>Diketahui → Ditanya → Jawab → Jadi</em>, dan penyelesaiannya bisa dibuka langkah demi langkah.
+        </p>
     </header>
 
-    <nav>
-        <a href="beranda.html">Beranda</a>
-        <a href="materi.html">Materi</a>
-        <a href="contoh.html">Contoh Soal</a>
-        <a href="latihan.html">Latihan</a>
+    <nav class="filter" aria-label="Saring kategori soal">
+        <button type="button" class="aktif" data-filter="semua">Semua</button>
+        <button type="button" data-filter="dasar">Kuadrat &amp; akar</button>
+        <button type="button" data-filter="sisi">Mencari sisi</button>
+        <button type="button" data-filter="jenis">Jenis &amp; tripel</button>
+        <button type="button" data-filter="istimewa">Segitiga istimewa</button>
+        <button type="button" data-filter="bangun">Bangun datar &amp; ruang</button>
+        <button type="button" data-filter="cerita">Soal cerita</button>
+        <button type="button" data-filter="koordinat">Koordinat</button>
     </nav>
+    <p class="jumlah-soal" id="jumlah-soal"></p>
 
-    <main>
-        <h2>Contoh Soal</h2>
-        <p>Di halaman ini tersedia contoh soal dan pembahasannya.</p>
-    </main>
+    <div class="daftar-contoh">
 
-    <footer>
-        <p>Website Pembelajaran Pythagoras</p>
+    
+    
+<article class="kartu-contoh" data-kategori="dasar" id="contoh-1">
+    <header class="kepala-contoh">
+        <span class="no-contoh">1</span>
+        <div>
+            <span class="kategori-contoh">Kuadrat &amp; akar</span>
+            <h2>Menghitung kuadrat dan akar kuadrat</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">
+            1. Hitunglah: a. 13² &nbsp; b. 24² &nbsp; c. 35² &nbsp; d. (82,5)² &nbsp; e. 119²<br>
+            2. Hitunglah: a. √49 &nbsp; b. √169 &nbsp; c. √256 &nbsp; d. √484 &nbsp; e. √625
+        </p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Ingat:</strong> <var>a</var>² = <var>a</var> × <var>a</var>, dan √<var>k</var> adalah bilangan positif yang jika dikuadratkan hasilnya <var>k</var>.</li>
+            <li><strong>Jawab nomor 1:</strong>
+                <div class="persamaan"><div>13² = 13 × 13 = 169</div><div>24² = 24 × 24 = 576</div><div>35² = 35 × 35 = 1.225</div><div>(82,5)² = 82,5 × 82,5 = 6.806,25</div><div>119² = 119 × 119 = 14.161</div></div></li>
+            <li><strong>Jawab nomor 2:</strong>
+                <div class="persamaan"><div>√49 = 7, karena 7² = 49</div><div>√169 = 13, karena 13² = 169</div><div>√256 = 16, karena 16² = 256</div><div>√484 = 22, karena 22² = 484</div><div>√625 = 25, karena 25² = 625</div></div></li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.1</span>
+        <a href="materi-prasyarat.html">Pelajari materinya →</a>
     </footer>
+</article>
+
+
+    
+    
+<article class="kartu-contoh" data-kategori="sisi" id="contoh-2">
+    <header class="kepala-contoh">
+        <span class="no-contoh">2</span>
+        <div>
+            <span class="kategori-contoh">Mencari sisi miring</span>
+            <h2>Menentukan panjang hipotenusa</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Tentukan panjang hipotenusa segitiga ABC di bawah ini.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 240 230" aria-hidden="true">
+                <path d="M170 20 V200 H95 Z" class="s-isi s-garis"/>
+                <path d="M170 186 h-14 v14" class="s-siku"/>
+                <text x="170" y="14" class="s-teks">A</text><text x="184" y="216" class="s-teks">B</text><text x="84" y="216" class="s-teks">C</text>
+                <text x="205" y="114" class="s-teks s-kecil">12 cm</text><text x="132" y="220" class="s-teks s-kecil">5 cm</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> AB = 12 cm, BC = 5 cm, siku-siku di B.<br><strong>Ditanya:</strong> panjang hipotenusa AC.</li>
+            <li><strong>Jawab:</strong> AC adalah sisi miring (di seberang sudut B), jadi kuadratnya ditambah.
+                <div class="persamaan"><div>AC² = AB² + BC²</div><div>AC² = 12² + 5² = 144 + 25 = 169</div><div>AC = √169 = 13</div></div></li>
+            <li><strong>Jadi,</strong> panjang hipotenusa AC = <strong>13 cm</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.2 no. 1</span>
+        <a href="materi-menghitung-sisi.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="sisi" id="contoh-3">
+    <header class="kepala-contoh">
+        <span class="no-contoh">3</span>
+        <div>
+            <span class="kategori-contoh">Mencari sisi siku-siku</span>
+            <h2>Menentukan panjang sisi siku-siku (bilangan desimal)</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Pada segitiga PQR siku-siku di Q, PR = 2,9 cm dan QR = 2,1 cm. Tentukan panjang <var>a</var> = PQ.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 300 200" aria-hidden="true">
+                <path d="M30 170 L270 170 L130 50 Z" class="s-isi s-garis"/>
+                <path d="M118.4 63.9 L132.3 75.6 L144.1 61.7" class="s-siku"/>
+                <text x="18" y="182" class="s-teks">P</text><text x="282" y="182" class="s-teks">R</text><text x="130" y="38" class="s-teks">Q</text>
+                <text x="150" y="194" class="s-teks s-kecil">2,9 cm</text><text x="226" y="104" class="s-teks s-kecil">2,1 cm</text><text x="66" y="102" class="s-teks s-miring">a</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> PR = 2,9 cm (sisi miring, di seberang Q), QR = 2,1 cm.<br><strong>Ditanya:</strong> panjang <var>a</var> = PQ.</li>
+            <li><strong>Jawab:</strong> PQ adalah sisi siku-siku, jadi kuadratnya dikurang.
+                <div class="persamaan"><div>PR² = PQ² + QR²</div><div>PQ² = PR² − QR²</div><div>PQ² = 2,9² − 2,1² = 8,41 − 4,41 = 4</div><div>PQ = √4 = 2</div></div></li>
+            <li><strong>Jadi,</strong> panjang <var>a</var> = PQ = <strong>2 cm</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.2 no. 2</span>
+        <a href="materi-menghitung-sisi.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="sisi" id="contoh-4">
+    <header class="kepala-contoh">
+        <span class="no-contoh">4</span>
+        <div>
+            <span class="kategori-contoh">Mencari sisi siku-siku</span>
+            <h2>Sisi miring 10 cm dan sisi tegak 8 cm</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Sebuah segitiga siku-siku memiliki sisi tegak 8 cm dan sisi miring 10 cm. Tentukan panjang sisi yang belum diketahui, lalu berikan alasannya.</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> sisi siku-siku 8 cm, sisi miring 10 cm.<br><strong>Ditanya:</strong> panjang sisi siku-siku lainnya, misalnya <var>a</var>.</li>
+            <li><strong>Alasan:</strong> pada segitiga siku-siku, kuadrat sisi miring sama dengan jumlah kuadrat kedua sisi siku-siku. Maka berlaku <var>a</var>² + 8² = 10².</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div><var>a</var>² + 64 = 100</div><div><var>a</var>² = 100 − 64 = 36</div><div><var>a</var> = 6</div></div></li>
+            <li><strong>Jadi,</strong> panjang sisi yang belum diketahui adalah <strong>6 cm</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Modul 5, Kegiatan Belajar 1</span>
+        <a href="materi-menghitung-sisi.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+    
+<article class="kartu-contoh" data-kategori="jenis" id="contoh-5">
+    <header class="kepala-contoh">
+        <span class="no-contoh">5</span>
+        <div>
+            <span class="kategori-contoh">Jenis segitiga</span>
+            <h2>Taman Putri: siku-siku atau bukan?</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Putri ingin membuat taman berbentuk segitiga siku-siku. Ia mengukur sebuah taman yang panjang sisinya 4 m, 5 m, dan 6 m. Apakah taman itu berbentuk segitiga siku-siku?</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> sisi 4 m, 5 m, dan 6 m.<br><strong>Ditanya:</strong> apakah segitiganya siku-siku?</li>
+            <li><strong>Jawab:</strong> misalkan sisi terpanjang <var>c</var> = 6 m, <var>a</var> = 5 m, <var>b</var> = 4 m.
+                <div class="persamaan"><div><var>c</var>² = 6² = 36</div><div><var>a</var>² + <var>b</var>² = 5² + 4² = 25 + 16 = 41</div></div></li>
+            <li>Karena <var>c</var>² ≠ <var>a</var>² + <var>b</var>², segitiga itu <strong>bukan</strong> segitiga siku-siku. Karena <var>c</var>² &lt; <var>a</var>² + <var>b</var>², segitiga itu adalah <strong>segitiga lancip</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.3 no. 1</span>
+        <a href="materi-jenis-segitiga.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="jenis" id="contoh-6">
+    <header class="kepala-contoh">
+        <span class="no-contoh">6</span>
+        <div>
+            <span class="kategori-contoh">Jenis segitiga</span>
+            <h2>Segitiga DEF dengan garis tinggi FG</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Pada gambar, DG = 10 cm, GE = 24 cm, dan FG = 15 cm. a. Hitunglah panjang DF dan EF. b. Tentukan jenis ΔDEF.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 -16 380 206" aria-hidden="true">
+                <!-- 10 px per cm: D(20,160) G(120,160) E(360,160) F(120,10) -->
+                <path d="M20 160 L360 160 L120 10 Z" class="s-isi s-garis"/>
+                <line x1="120" y1="10" x2="120" y2="160" class="s-garis-g" stroke-width="2"/>
+                <path d="M120 146 h14 v14" class="s-siku"/>
+                <text x="10" y="176" class="s-teks">D</text><text x="120" y="182" class="s-teks">G</text><text x="370" y="176" class="s-teks">E</text><text x="120" y="8" class="s-teks" dy="-2">F</text>
+                <text x="70" y="178" class="s-teks s-kecil">10 cm</text><text x="240" y="178" class="s-teks s-kecil">24 cm</text><text x="102" y="96" class="s-teks s-kecil" transform="rotate(-90 102 96)">15 cm</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> DG = 10 cm, GE = 24 cm, FG = 15 cm, FG ⊥ DE.<br><strong>Ditanya:</strong> DF, EF, dan jenis ΔDEF.</li>
+            <li><strong>Jawab a:</strong> ΔDGF dan ΔEGF sama-sama siku-siku di G.
+                <div class="persamaan"><div>DF² = DG² + GF² = 10² + 15² = 100 + 225 = 325 → DF = √325</div><div>EF² = FG² + GE² = 15² + 24² = 225 + 576 = 801 → EF = √801</div></div></li>
+            <li><strong>Jawab b:</strong> sisi terpanjang ΔDEF adalah DE = 10 + 24 = 34 cm.
+                <div class="persamaan"><div>DE² = 34² = 1.156</div><div>DF² + EF² = 325 + 801 = 1.126</div></div></li>
+            <li><strong>Jadi,</strong> karena DE² &gt; DF² + EF², ΔDEF adalah <strong>segitiga tumpul</strong> (tumpul di F).</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.3 no. 2</span>
+        <a href="materi-jenis-segitiga.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="jenis" id="contoh-7">
+    <header class="kepala-contoh">
+        <span class="no-contoh">7</span>
+        <div>
+            <span class="kategori-contoh">Kebalikan teorema</span>
+            <h2>Ukuran tali tukang bangunan</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Tukang bangunan menyiapkan tali untuk membuat sudut siku-siku fondasi rumah. Ukuran yang disiapkan: (i) 30, 40, 50 cm (ii) 12, 5, 14 cm (iii) 60, 80, 100 cm (iv) 90, 120, 140 cm (v) 12, 16, 20 cm. Ukuran mana yang benar-benar membentuk sudut siku-siku?</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> lima kelompok ukuran tali.<br><strong>Ditanya:</strong> kelompok mana yang membentuk segitiga siku-siku?<br><strong>Cara:</strong> bandingkan kuadrat sisi terpanjang dengan jumlah kuadrat dua sisi lainnya.</li>
+            <li><strong>Jawab:</strong>
+                <div class="tabel-wadah"><table>
+                    <tr><th>Ukuran</th><th><var>c</var>²</th><th><var>a</var>² + <var>b</var>²</th><th>Hasil</th></tr>
+                    <tr><td>30, 40, 50</td><td>2.500</td><td>900 + 1.600 = 2.500</td><td>✓ siku-siku</td></tr>
+                    <tr><td>5, 12, 14</td><td>196</td><td>25 + 144 = 169</td><td>✗ tumpul</td></tr>
+                    <tr><td>60, 80, 100</td><td>10.000</td><td>3.600 + 6.400 = 10.000</td><td>✓ siku-siku</td></tr>
+                    <tr><td>90, 120, 140</td><td>19.600</td><td>8.100 + 14.400 = 22.500</td><td>✗ lancip</td></tr>
+                    <tr><td>12, 16, 20</td><td>400</td><td>144 + 256 = 400</td><td>✓ siku-siku</td></tr>
+                </table></div></li>
+            <li><strong>Jadi,</strong> ukuran yang membentuk sudut siku-siku adalah <strong>(i), (iii), dan (v)</strong>. Ketiganya kelipatan tripel 3, 4, 5.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Ayo Bereksplorasi</span>
+        <a href="materi-jenis-segitiga.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="jenis" id="contoh-8">
+    <header class="kepala-contoh">
+        <span class="no-contoh">8</span>
+        <div>
+            <span class="kategori-contoh">Tripel Pythagoras</span>
+            <h2>Membuat tripel dengan p dan q</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Humam membuat tangram segitiga siku-siku. Ukuran sisinya dibuat dengan rumus <var>p</var>² + <var>q</var>², <var>p</var>² − <var>q</var>², dan 2<var>pq</var> (dengan <var>p</var> &gt; <var>q</var>). Tentukan tripel Pythagoras untuk (<var>p</var>, <var>q</var>) = (2, 1), (3, 1), (3, 2), (4, 1), dan (4, 3).</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> pasangan (<var>p</var>, <var>q</var>).<br><strong>Ditanya:</strong> tripel Pythagoras yang terbentuk.</li>
+            <li><strong>Jawab:</strong>
+                <div class="tabel-wadah"><table>
+                    <tr><th><var>p</var>, <var>q</var></th><th><var>p</var>² + <var>q</var>²</th><th><var>p</var>² − <var>q</var>²</th><th>2<var>pq</var></th><th>Cek</th></tr>
+                    <tr><td>2, 1</td><td>5</td><td>3</td><td>4</td><td>5² = 3² + 4²</td></tr>
+                    <tr><td>3, 1</td><td>10</td><td>8</td><td>6</td><td>10² = 8² + 6²</td></tr>
+                    <tr><td>3, 2</td><td>13</td><td>5</td><td>12</td><td>13² = 5² + 12²</td></tr>
+                    <tr><td>4, 1</td><td>17</td><td>15</td><td>8</td><td>17² = 15² + 8²</td></tr>
+                    <tr><td>4, 3</td><td>25</td><td>7</td><td>24</td><td>25² = 7² + 24²</td></tr>
+                </table></div></li>
+            <li><strong>Jadi,</strong> tripel yang terbentuk: (3, 4, 5), (6, 8, 10), (5, 12, 13), (8, 15, 17), dan (7, 24, 25).</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Ayo Menggunakan Teknologi</span>
+        <a href="materi-tripel.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+    
+<article class="kartu-contoh" data-kategori="istimewa" id="contoh-9">
+    <header class="kepala-contoh">
+        <span class="no-contoh">9</span>
+        <div>
+            <span class="kategori-contoh">Segitiga 45°–45°–90°</span>
+            <h2>Segitiga siku-siku sama kaki</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Diketahui segitiga siku-siku sama kaki ABC dengan ∠C = 90° dan AB = 15√2 cm. Hitunglah panjang AC.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 240 210" aria-hidden="true">
+                <path d="M30 180 L190 180 L190 20 Z" class="s-isi s-garis"/>
+                <path d="M176 180 v-14 h14" class="s-siku"/>
+                <text x="18" y="194" class="s-teks">A</text><text x="204" y="194" class="s-teks">C</text><text x="204" y="20" class="s-teks">B</text>
+                <text x="80" y="92" class="s-teks s-kecil">15√2</text><text x="110" y="200" class="s-teks s-miring">a</text><text x="208" y="104" class="s-teks s-miring">a</text>
+                <text x="62" y="172" class="s-teks s-kecil s-teks-e">45°</text><text x="176" y="58" class="s-teks s-kecil s-teks-e">45°</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> ΔABC siku-siku sama kaki, ∠C = 90°, AB = 15√2 cm.<br><strong>Ditanya:</strong> panjang AC.</li>
+            <li><strong>Jawab:</strong> perbandingan sisi segitiga 45°–45°–90° adalah AC : CB : AB = 1 : 1 : √2.
+                <div class="persamaan"><div>AC : AB = 1 : √2</div><div>AC : 15√2 = 1 : √2</div><div>AC × √2 = 15√2</div><div>AC = 15</div></div></li>
+            <li><strong>Jadi,</strong> panjang AC = <strong>15 cm</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.4</span>
+        <a href="materi-segitiga-istimewa.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="istimewa" id="contoh-10">
+    <header class="kepala-contoh">
+        <span class="no-contoh">10</span>
+        <div>
+            <span class="kategori-contoh">Segitiga 30°–60°–90°</span>
+            <h2>Menghitung AC dan AB</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Pada ΔABC, ∠B = 60°, ∠A = 30°, dan ∠C = 90°. Panjang BC = 12 cm. Hitunglah panjang a. AC dan b. AB.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 300 190" aria-hidden="true">
+                <path d="M30 160 L250 160 L250 33 Z" class="s-isi s-garis"/>
+                <path d="M236 160 v-14 h14" class="s-siku"/>
+                <text x="18" y="174" class="s-teks">A</text><text x="264" y="174" class="s-teks">C</text><text x="264" y="32" class="s-teks">B</text>
+                <text x="276" y="102" class="s-teks s-kecil">12 cm</text>
+                <text x="80" y="152" class="s-teks s-kecil s-teks-e">30°</text><text x="232" y="66" class="s-teks s-kecil s-teks-e">60°</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> ∠A = 30°, ∠B = 60°, ∠C = 90°, BC = 12 cm.<br><strong>Ditanya:</strong> AC dan AB.</li>
+            <li><strong>Jawab:</strong> BC berhadapan dengan sudut 30°, jadi BC adalah sisi terpendek. Perbandingannya BC : AC : AB = 1 : √3 : 2.</li>
+            <li><strong>a.</strong>
+                <div class="persamaan"><div>AC = √3 × BC = 12√3 cm</div></div></li>
+            <li><strong>b.</strong>
+                <div class="persamaan"><div>AB = 2 × BC = 2 × 12 = 24 cm</div></div>
+                <strong>Jadi,</strong> AC = <strong>12√3 cm</strong> (≈ 20,78 cm) dan AB = <strong>24 cm</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.5</span>
+        <a href="materi-segitiga-istimewa.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+    
+<article class="kartu-contoh" data-kategori="bangun" id="contoh-11">
+    <header class="kepala-contoh">
+        <span class="no-contoh">11</span>
+        <div>
+            <span class="kategori-contoh">Bangun datar</span>
+            <h2>Panjang kaki trapesium siku-siku</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Trapesium ABCD siku-siku di A dan D. Diketahui AD = 15 cm, CD = 25 cm, dan AB = 33 cm. Tentukan panjang BC.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 380 210" aria-hidden="true">
+                <path d="M30 30 L280 30 L360 180 L30 180 Z" class="s-isi s-garis"/>
+                <line x1="280" y1="30" x2="280" y2="180" class="s-putus"/>
+                <path d="M30 44 h14 v-14 M30 166 h14 v14 M280 166 h-14 v14" class="s-siku"/>
+                <text x="20" y="24" class="s-teks">D</text><text x="290" y="24" class="s-teks">C</text><text x="20" y="198" class="s-teks">A</text><text x="370" y="198" class="s-teks">B</text><text x="280" y="198" class="s-teks s-teks-e">E</text>
+                <text x="155" y="22" class="s-teks s-kecil">25 cm</text><text x="62" y="110" class="s-teks s-kecil">15 cm</text><text x="160" y="200" class="s-teks s-kecil">33 cm</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> AD = 15 cm, CD = 25 cm, AB = 33 cm, siku-siku di A dan D.<br><strong>Ditanya:</strong> panjang BC.</li>
+            <li><strong>Jawab:</strong> tarik garis dari C tegak lurus ke AB, dan beri nama titik potongnya E. Terbentuk ΔBEC siku-siku di E.
+                <div class="persamaan"><div>CE = AD = 15 cm</div><div>BE = AB − DC = 33 − 25 = 8 cm</div></div></li>
+            <li>BC adalah sisi miring ΔBEC:
+                <div class="persamaan"><div>BC² = CE² + BE² = 15² + 8² = 225 + 64 = 289</div><div>BC = √289 = 17</div></div></li>
+            <li><strong>Jadi,</strong> panjang BC = <strong>17 cm</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.2 no. 3</span>
+        <a href="materi-bangun-gabungan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="bangun" id="contoh-12">
+    <header class="kepala-contoh">
+        <span class="no-contoh">12</span>
+        <div>
+            <span class="kategori-contoh">Dua segitiga terhubung</span>
+            <h2>Mencari BC lewat sisi jembatan AC</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Pada gambar, ∠ABC dan ∠ACD siku-siku. AB = 12 cm, AD = 17 cm, dan CD = 8 cm. Tentukan panjang BC.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="20 30 380 300" aria-hidden="true">
+                <path d="M80 64 L80 280 L242 280 L357.2 193.6 Z" class="s-isi s-garis"/>
+                <line x1="80" y1="64" x2="242" y2="280" class="s-garis-g" stroke-width="2"/>
+                <path d="M80 266 h14 v14" class="s-siku"/>
+                <path d="M233.6 268.8 L244.8 260.4 L253.2 271.6" class="s-siku"/>
+                <text x="68" y="58" class="s-teks">A</text><text x="66" y="300" class="s-teks">B</text><text x="248" y="302" class="s-teks">C</text><text x="374" y="194" class="s-teks">D</text>
+                <text x="48" y="176" class="s-teks s-kecil">12 cm</text><text x="226" y="112" class="s-teks s-kecil">17 cm</text><text x="320" y="258" class="s-teks s-kecil">8 cm</text><text x="161" y="304" class="s-teks s-teks-e">?</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> AB = 12 cm, AD = 17 cm, CD = 8 cm, ∠B = ∠ACD = 90°.<br><strong>Ditanya:</strong> panjang BC.</li>
+            <li><strong>Jawab:</strong> BC belum bisa langsung dihitung, karena ΔABC baru diketahui satu sisi. Cari dulu sisi jembatan AC dari ΔACD (siku-siku di C, sisi miring AD):
+                <div class="persamaan"><div>AC² = AD² − CD² = 17² − 8² = 289 − 64 = 225</div><div>AC = 15 cm</div></div></li>
+            <li>Sekarang pakai ΔABC (siku-siku di B, sisi miring AC):
+                <div class="persamaan"><div>BC² = AC² − AB² = 15² − 12² = 225 − 144 = 81</div><div>BC = 9 cm</div></div></li>
+            <li><strong>Jadi,</strong> panjang BC = <strong>9 cm</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Soal pemicu wawancara (S01, soal no. 2)</span>
+        <a href="materi-bangun-gabungan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="bangun" id="contoh-13">
+    <header class="kepala-contoh">
+        <span class="no-contoh">13</span>
+        <div>
+            <span class="kategori-contoh">Bangun ruang</span>
+            <h2>Diagonal ruang balok</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Balok ABCD.EFGH memiliki panjang 4 cm, lebar 3 cm, dan tinggi 12 cm. Tentukan panjang diagonal ruang HB.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 300 260" aria-hidden="true">
+                <path d="M30 230 L190 230 L250 190 L250 30 L90 30 L30 70 Z" class="s-isi-3"/>
+                <path d="M30 230 L190 230 L250 190 M190 230 L190 70 L30 70 L30 230 M190 70 L250 30 L90 30 L30 70 M250 30 L250 190" class="s-kosong s-garis"/>
+                <path d="M30 230 L90 190 L250 190 M90 190 L90 30" class="s-putus"/>
+                <line x1="90" y1="190" x2="190" y2="230" class="s-putus" style="stroke:var(--emas);stroke-width:3"/>
+                <line x1="90" y1="30" x2="190" y2="230" class="s-aksen" style="stroke:var(--merah);stroke-width:3.5"/>
+                <text x="18" y="246" class="s-teks">A</text><text x="196" y="250" class="s-teks">B</text><text x="264" y="200" class="s-teks">C</text><text x="76" y="186" class="s-teks">D</text>
+                <text x="18" y="66" class="s-teks">E</text><text x="200" y="68" class="s-teks">F</text><text x="264" y="30" class="s-teks">G</text><text x="86" y="22" class="s-teks">H</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> panjang AB = 4 cm, lebar AD = 3 cm, tinggi DH = 12 cm.<br><strong>Ditanya:</strong> diagonal ruang HB.</li>
+            <li><strong>Langkah 1:</strong> ABCD berbentuk persegi panjang, jadi ΔABD siku-siku di A. Hitung diagonal alas BD:
+                <div class="persamaan"><div>BD² = AB² + AD² = 4² + 3² = 16 + 9 = 25</div><div>BD = 5 cm</div></div></li>
+            <li><strong>Langkah 2:</strong> DH tegak lurus alas, jadi ΔBDH siku-siku di D:
+                <div class="persamaan"><div>HB² = BD² + DH² = 5² + 12² = 25 + 144 = 169</div><div>HB = 13 cm</div></div></li>
+            <li><strong>Jadi,</strong> diagonal ruang HB = <strong>13 cm</strong>. Secara umum, diagonal ruang balok = √(<var>p</var>² + <var>l</var>² + <var>t</var>²).</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Modul 5, Kegiatan Belajar 2</span>
+        <a href="materi-bangun-gabungan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="bangun" id="contoh-14">
+    <header class="kepala-contoh">
+        <span class="no-contoh">14</span>
+        <div>
+            <span class="kategori-contoh">Bangun ruang</span>
+            <h2>Rusuk tegak limas persegi panjang</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Sebuah limas memiliki alas persegi panjang berukuran 8 cm × 6 cm dan tinggi 12 cm. Tentukan panjang rusuk tegaknya.</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> alas ABCD = 8 cm × 6 cm, tinggi limas TE = 12 cm (E titik tengah alas).<br><strong>Ditanya:</strong> panjang rusuk tegak TB.</li>
+            <li><strong>Langkah 1:</strong> ΔABD siku-siku di A. Hitung diagonal alas BD:
+                <div class="persamaan"><div>BD² = 8² + 6² = 64 + 36 = 100 → BD = 10 cm</div></div></li>
+            <li><strong>Langkah 2:</strong> E adalah titik tengah BD, jadi BE = 10 ÷ 2 = 5 cm.</li>
+            <li><strong>Langkah 3:</strong> TE tegak lurus alas, jadi ΔTBE siku-siku di E:
+                <div class="persamaan"><div>TB² = TE² + BE² = 12² + 5² = 144 + 25 = 169</div><div>TB = 13 cm</div></div>
+                <strong>Jadi,</strong> panjang rusuk tegaknya <strong>13 cm</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Modul 5, Kegiatan Belajar 2</span>
+        <a href="materi-bangun-gabungan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="bangun" id="contoh-15">
+    <header class="kepala-contoh">
+        <span class="no-contoh">15</span>
+        <div>
+            <span class="kategori-contoh">Bangun ruang</span>
+            <h2>Garis pelukis kerucut</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Sebuah kerucut memiliki diameter alas 14 cm dan tinggi 24 cm. Tentukan panjang garis pelukisnya (jarak titik puncak ke tepi alas).</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 240 240" aria-hidden="true">
+                <path d="M120 20 L40 200 L200 200 Z" class="s-isi"/>
+                <ellipse cx="120" cy="200" rx="80" ry="18" class="s-isi-2 s-garis" style="stroke-width:2"/>
+                <path d="M40 200 L120 20 L200 200" class="s-kosong s-garis"/>
+                <line x1="120" y1="20" x2="120" y2="200" class="s-putus"/>
+                <line x1="120" y1="200" x2="200" y2="200" class="s-putus"/>
+                <line x1="120" y1="20" x2="200" y2="200" class="s-aksen" style="stroke:var(--merah);stroke-width:4"/>
+                <path d="M120 186 h14 v14" class="s-siku"/>
+                <text x="120" y="14" class="s-teks">T</text><text x="112" y="216" class="s-teks">A</text><text x="210" y="214" class="s-teks">B</text>
+                <text x="104" y="114" class="s-teks s-kecil">24</text><text x="160" y="194" class="s-teks s-kecil">7</text><text x="178" y="100" class="s-teks s-teks-m">?</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> diameter 14 cm, jadi jari-jari AB = 7 cm. Tinggi TA = 24 cm.<br><strong>Ditanya:</strong> garis pelukis TB.</li>
+            <li><strong>Jawab:</strong> tinggi kerucut tegak lurus alas, jadi ΔTAB siku-siku di A. TB adalah sisi miring.
+                <div class="persamaan"><div>TB² = TA² + AB² = 24² + 7² = 576 + 49 = 625</div><div>TB = √625 = 25</div></div></li>
+            <li><strong>Jadi,</strong> panjang garis pelukisnya <strong>25 cm</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Modul 5, Kegiatan Belajar 2</span>
+        <a href="materi-bangun-gabungan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="bangun" id="contoh-16">
+    <header class="kepala-contoh">
+        <span class="no-contoh">16</span>
+        <div>
+            <span class="kategori-contoh">Bangun datar</span>
+            <h2>Keliling layang-layang pada koordinat</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Diketahui layang-layang KLMN dengan titik K(−5, 0), L(0, 12), M(16, 0), dan N(0, −12). Tentukan keliling layang-layang KLMN.</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> koordinat K, L, M, N. Diagonal KM dan LN berpotongan tegak lurus di O(0, 0).<br><strong>Ditanya:</strong> keliling = KL + LM + MN + NK.</li>
+            <li><strong>ΔKOL</strong> siku-siku di O, dengan OK = 5 dan OL = 12:
+                <div class="persamaan"><div>KL = √(5² + 12²) = √169 = 13</div></div></li>
+            <li><strong>ΔLOM</strong> siku-siku di O, dengan OL = 12 dan OM = 16:
+                <div class="persamaan"><div>LM = √(12² + 16²) = √400 = 20</div></div></li>
+            <li>Pada layang-layang, NK = KL = 13 dan MN = LM = 20.
+                <div class="persamaan"><div>Keliling = 13 + 20 + 20 + 13 = 66</div></div>
+                <strong>Jadi,</strong> kelilingnya <strong>66 satuan</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Modul 5, Tes Formatif 1 no. 10</span>
+        <a href="materi-bangun-gabungan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+    
+<article class="kartu-contoh" data-kategori="cerita" id="contoh-17">
+    <header class="kepala-contoh">
+        <span class="no-contoh">17</span>
+        <div>
+            <span class="kategori-contoh">Soal cerita</span>
+            <h2>Tinggi layang-layang Rina</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Rina sedang bermain layang-layang. Panjang benang saat layang-layang terbang adalah 13 meter. Jarak Rina ke bayangan layang-layang adalah 5 meter. Menurutmu, berapa meter tinggi layang-layang Rina dari tanah?</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> panjang benang = 13 m, jarak Rina ke bayangan = 5 m.<br><strong>Ditanya:</strong> tinggi layang-layang.</li>
+            <li><strong>Sketsa:</strong> layang-layang tepat di atas bayangannya, jadi tinggi layang-layang tegak lurus tanah. Terbentuk segitiga siku-siku dengan benang sebagai <strong>sisi miring</strong>.</li>
+            <li><strong>Jawab:</strong> yang dicari sisi siku-siku, jadi dikurang:
+                <div class="persamaan"><div>t² = 13² − 5² = 169 − 25 = 144</div><div>t = √144 = 12</div></div></li>
+            <li><strong>Jadi,</strong> tinggi layang-layang Rina <strong>12 meter</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Soal pemicu wawancara (S01, soal cerita)</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="cerita" id="contoh-18">
+    <header class="kepala-contoh">
+        <span class="no-contoh">18</span>
+        <div>
+            <span class="kategori-contoh">Soal cerita</span>
+            <h2>Tinggi board desk pada tangga rumah</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Bagian atas sebuah tangga rumah, dari <em>board desk</em> sampai anak tangga paling atas, panjangnya 4,5 m jika diukur miring dan 3,6 m jika diukur mendatar. Berapa tinggi bagian tangga tersebut?</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> panjang miring = 4,5 m, panjang mendatar = 3,6 m.<br><strong>Ditanya:</strong> tinggi bagian atas tangga.</li>
+            <li><strong>Jawab:</strong> panjang miring adalah sisi miring segitiga siku-siku, sedangkan tinggi adalah sisi siku-siku:
+                <div class="persamaan"><div>t² = 4,5² − 3,6² = 20,25 − 12,96 = 7,29</div><div>t = √7,29 = 2,7</div></div></li>
+            <li><strong>Jadi,</strong> tinggi bagian tangga itu <strong>2,7 m</strong>. (Perhatikan: 2,7 ; 3,6 ; 4,5 = 0,9 × (3, 4, 5).)</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Modul 5, Kegiatan Belajar 2</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="cerita" id="contoh-19">
+    <header class="kepala-contoh">
+        <span class="no-contoh">19</span>
+        <div>
+            <span class="kategori-contoh">Soal cerita</span>
+            <h2>Kawat penyangga tower</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Sebuah tower internet setinggi 48 m berdiri di tanah datar dan dikaitkan ke patok dengan kawat baja. a. Jika panjang kawat dari ujung tower ke patok 60 m, berapa jarak patok dari tower? b. Kawat kedua diikatkan pada tower di ketinggian 15 m ke patok yang sama. Berapa panjang kawat kedua?</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 300 230" aria-hidden="true">
+                <line x1="10" y1="210" x2="290" y2="210" class="s-garis-g" stroke-width="2"/>
+                <rect x="58" y="20" width="12" height="190" class="s-isi-3 s-garis" style="stroke-width:2"/>
+                <line x1="64" y1="20" x2="266" y2="210" class="s-garis"/>
+                <line x1="64" y1="150" x2="266" y2="210" class="s-aksen" style="stroke-width:3"/>
+                <path d="M70 196 h14 v14" class="s-siku"/>
+                <circle cx="266" cy="210" r="5" class="s-titik"/>
+                <text x="36" y="118" class="s-teks s-kecil">48 m</text><text x="182" y="104" class="s-teks s-kecil">60 m</text>
+                <text x="40" y="156" class="s-teks s-kecil s-teks-e">15</text><text x="166" y="226" class="s-teks s-teks-m">?</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> tinggi tower 48 m, kawat pertama 60 m, kawat kedua diikat di ketinggian 15 m.<br><strong>Ditanya:</strong> a. jarak patok ke tower, b. panjang kawat kedua.</li>
+            <li><strong>a.</strong> Tower tegak lurus tanah, jadi tower, tanah, dan kawat membentuk segitiga siku-siku. Kawat adalah sisi miring:
+                <div class="persamaan"><div>x² = 60² − 48² = 3.600 − 2.304 = 1.296</div><div>x = √1.296 = 36 m</div></div></li>
+            <li><strong>b.</strong> Kawat kedua: tinggi 15 m, jarak patok tetap 36 m. Kawat kedua adalah sisi miring:
+                <div class="persamaan"><div>k² = 15² + 36² = 225 + 1.296 = 1.521</div><div>k = √1.521 = 39 m</div></div></li>
+            <li><strong>Jadi,</strong> jarak patok ke tower <strong>36 m</strong> dan panjang kawat kedua <strong>39 m</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Modul 5, Kegiatan Belajar 2</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="cerita" id="contoh-20">
+    <header class="kepala-contoh">
+        <span class="no-contoh">20</span>
+        <div>
+            <span class="kategori-contoh">Soal cerita</span>
+            <h2>Perahu wisata dan perahu nelayan</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Aldo, penjaga pantai, melihat perahu nelayan sejauh 15 km. Perahu wisata berada 20 km dari perahu nelayan, dan posisi Aldo, perahu nelayan, serta perahu wisata membentuk segitiga siku-siku di perahu nelayan. Jika kecepatan rata-rata kedua perahu menuju pantai 30 km/jam, tentukan selisih waktu tempuh kedua perahu.</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> jarak Aldo ke perahu nelayan 15 km, jarak kedua perahu 20 km, kecepatan 30 km/jam.<br><strong>Ditanya:</strong> selisih waktu tempuh.</li>
+            <li><strong>Jarak Aldo ke perahu wisata</strong> (sisi miring):
+                <div class="persamaan"><div>d = √(15² + 20²) = √(225 + 400) = √625 = 25 km</div></div></li>
+            <li><strong>Waktu tempuh</strong> (waktu = jarak ÷ kecepatan):
+                <div class="persamaan"><div>perahu wisata = 25 ÷ 30 jam = 50 menit</div><div>perahu nelayan = 15 ÷ 30 jam = 0,5 jam = 30 menit</div></div></li>
+            <li><strong>Jadi,</strong> selisih waktunya 50 − 30 = <strong>20 menit</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.6</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="cerita" id="contoh-21">
+    <header class="kepala-contoh">
+        <span class="no-contoh">21</span>
+        <div>
+            <span class="kategori-contoh">Soal cerita</span>
+            <h2>Jarak dua pesawat dari radar</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Sebuah radar berada 9 km dari kapal induk. Radar mendeteksi dua pesawat yang terbang tepat di atas kapal induk, masing-masing berjarak 10 km dan 12 km dari radar. Tentukan jarak kedua pesawat (selisih ketinggiannya).</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 320 200" aria-hidden="true">
+                <path d="M30 170 L270 170 L270 30 Z" class="s-isi"/>
+                <path d="M30 170 L270 170 L270 30 Z M30 170 L270 86" class="s-kosong s-garis"/>
+                <path d="M256 170 v-14 h14" class="s-siku"/>
+                <text x="20" y="184" class="s-teks">A</text><text x="282" y="184" class="s-teks">B</text><text x="284" y="90" class="s-teks">C</text><text x="284" y="30" class="s-teks">D</text>
+                <text x="150" y="190" class="s-teks s-kecil">9 km</text><text x="168" y="138" class="s-teks s-kecil">10 km</text><text x="130" y="88" class="s-teks s-kecil">12 km</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> radar A, kapal induk B, AB = 9 km, AC = 10 km, AD = 12 km.<br><strong>Ditanya:</strong> CD (jarak kedua pesawat).</li>
+            <li><strong>Ketinggian pesawat pertama</strong> (ΔABC siku-siku di B):
+                <div class="persamaan"><div>BC² = 10² − 9² = 100 − 81 = 19 → BC = √19 ≈ 4,36 km</div></div></li>
+            <li><strong>Ketinggian pesawat kedua</strong> (ΔABD siku-siku di B):
+                <div class="persamaan"><div>BD² = 12² − 9² = 144 − 81 = 63 → BD = √63 ≈ 7,94 km</div></div></li>
+            <li><strong>Jadi,</strong> jarak kedua pesawat CD = BD − BC ≈ 7,94 − 4,36 = <strong>3,58 km</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.7</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="cerita" id="contoh-22">
+    <header class="kepala-contoh">
+        <span class="no-contoh">22</span>
+        <div>
+            <span class="kategori-contoh">Soal cerita</span>
+            <h2>Berjalan ke utara, timur, lalu selatan</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Seorang anak berdiri di tanah lapang. Ia bergerak ke utara sejauh 7 meter, ke timur sejauh 8 meter, lalu ke selatan sejauh 13 meter. Berapa jarak anak itu dari posisi semula?</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> utara 7 m, timur 8 m, selatan 13 m.<br><strong>Ditanya:</strong> jarak lurus dari posisi semula.</li>
+            <li><strong>Sketsa:</strong> gerak utara dan selatan berlawanan arah, jadi posisi akhir berada 13 − 7 = 6 m di selatan titik awal, dan 8 m di timurnya.</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div>d² = 6² + 8² = 36 + 64 = 100</div><div>d = √100 = 10</div></div></li>
+            <li><strong>Jadi,</strong> jarak anak dari posisi semula <strong>10 meter</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Modul 5, Tes Formatif 2 no. 1</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+    
+<article class="kartu-contoh" data-kategori="koordinat" id="contoh-23">
+    <header class="kepala-contoh">
+        <span class="no-contoh">23</span>
+        <div>
+            <span class="kategori-contoh">Jarak dua titik</span>
+            <h2>Jarak titik A(−5, 3) dan B(3, −4)</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Tentukan jarak antara titik A(−5, 3) dan B(3, −4) pada bidang koordinat Kartesius.</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> A(−5, 3) dan B(3, −4).<br><strong>Ditanya:</strong> panjang AB.</li>
+            <li><strong>Jawab:</strong> tarik garis sejajar sumbu-<var>x</var> dan sumbu-<var>y</var>, sehingga terbentuk segitiga siku-siku dengan sisi tegak:
+                <div class="persamaan"><div>selisih <var>x</var> = 3 − (−5) = 8 satuan</div><div>selisih <var>y</var> = 3 − (−4) = 7 satuan</div></div></li>
+            <li>AB adalah sisi miringnya:
+                <div class="persamaan"><div>AB = √(8² + 7²) = √(64 + 49) = √113 ≈ 10,63</div></div>
+                <strong>Jadi,</strong> jarak A dan B adalah <strong>√113 satuan</strong>.</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Jarak antara Dua Titik</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    
+<article class="kartu-contoh" data-kategori="koordinat" id="contoh-24">
+    <header class="kepala-contoh">
+        <span class="no-contoh">24</span>
+        <div>
+            <span class="kategori-contoh">Jarak dua titik</span>
+            <h2>Permainan bentengan</h2>
+        </div>
+    </header>
+    
+        <p class="soal-contoh">Saat bermain bentengan, kamu berada 4 m di utara dan 3 m di timur benteng timmu. Benteng lawan berada 6 m di utara dan 8 m di timur benteng timmu. Berapa jarakmu ke benteng lawan?</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> jadikan benteng timmu titik (0, 0). Posisimu (3, 4) dan benteng lawan (8, 6).<br><strong>Ditanya:</strong> jarakmu ke benteng lawan.</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div>selisih timur = 8 − 3 = 5 m</div><div>selisih utara = 6 − 4 = 2 m</div><div>d = √(5² + 2²) = √(25 + 4) = √29 ≈ 5,39</div></div></li>
+            <li><strong>Jadi,</strong> jarakmu ke benteng lawan sekitar <strong>5,39 m</strong> (tepatnya √29 m).</li>
+        </ol>
+    
+    <footer class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Penerapan Teorema Pythagoras</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </footer>
+</article>
+
+
+    </div>
+
+    <aside class="ajak-latihan">
+        <div>
+            <strong>Sudah paham contohnya?</strong>
+            <span>Saatnya coba sendiri di Latihan. Ada 18 level dan ujian akhir!</span>
+        </div>
+        <a href="latihan.html">Gas ke Latihan 🎯</a>
+    </aside>
+
+</div>
+
+</main>
+
+<footer class="kaki">
+    <span class="logo-phyn">PHYN</span>tagoras · Media Pembelajaran Teorema Pythagoras SMP
+</footer>
+
+<!-- Kertas coretan: tempat menggambar / menghitung -->
+<button type="button" class="tombol-coretan" id="buka-coretan">
+    ✎ <span>Coretan</span>
+</button>
+
+<div class="coretan" id="coretan" hidden>
+    <div class="coretan-alat">
+        <strong class="coretan-judul">✎ Kertas Coretan</strong>
+
+        <div class="alat-grup">
+            <button type="button" class="warna aktif" data-warna="#2b1d1e" style="--w:#2b1d1e" aria-label="Pena hitam"></button>
+            <button type="button" class="warna" data-warna="#7d2027" style="--w:#7d2027" aria-label="Pena merah"></button>
+            <button type="button" class="warna" data-warna="#2f6db5" style="--w:#2f6db5" aria-label="Pena biru"></button>
+            <button type="button" class="warna" data-warna="#4f7a43" style="--w:#4f7a43" aria-label="Pena hijau"></button>
+            <button type="button" class="alat" id="alat-penghapus">Penghapus</button>
+            <button type="button" class="alat" id="bersihkan-coretan">Bersihkan</button>
+            <button type="button" class="alat alat-tutup" id="tutup-coretan">Tutup ✕</button>
+        </div>
+    </div>
+    <canvas id="kanvas-coretan"></canvas>
+</div>
+
+<script src="static/materi.js"></script>
+
+<script>
+    // Saring kartu berdasarkan kategori
+    const tombolFilter = document.querySelectorAll(".filter button");
+    const kartu = document.querySelectorAll(".kartu-contoh");
+    const infoJumlah = document.getElementById("jumlah-soal");
+
+    function saring(kategori) {
+        let tampil = 0;
+        kartu.forEach((k) => {
+            const cocok = kategori === "semua" || k.dataset.kategori === kategori;
+            k.hidden = !cocok;
+            if (cocok) tampil++;
+        });
+        tombolFilter.forEach((t) => t.classList.toggle("aktif", t.dataset.filter === kategori));
+        infoJumlah.textContent = `Menampilkan ${tampil} soal`;
+    }
+    tombolFilter.forEach((t) => t.addEventListener("click", () => saring(t.dataset.filter)));
+    saring("semua");
+
+    // Tombol "Coretan" kecil di setiap soal
+    document.querySelectorAll(".buka-coretan-kecil").forEach((t) =>
+        t.addEventListener("click", () => document.getElementById("buka-coretan").click()));
+</script>
+
 
 </body>
 </html>

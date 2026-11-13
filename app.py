@@ -186,11 +186,11 @@ def materi_topik(slug):
 
 @app.route("/contoh.html")
 def contoh():
-    return render_template("contoh.html")
+    return render_template("contoh.html", semua_topik=TOPIK, aktif="contoh")
 
 @app.route("/latihan.html")
 def latihan():
-    return render_template("latihan.html")
+    return render_template("latihan.html", semua_topik=TOPIK, aktif="latihan")
 
 
 if __name__ == "__main__":
