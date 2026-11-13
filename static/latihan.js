@@ -725,7 +725,13 @@ function simpanData() {
     try { localStorage.setItem(KUNCI, JSON.stringify(data)); } catch (e) { /* abaikan */ }
 }
 
-const TOPIK = window.PHYN_TOPIK || [];
+// daftar materi dari elemen #data-topik (diisi Flask/Jinja)
+const TOPIK = (() => {
+    const el = document.getElementById("data-topik");
+    if (!el) return [];
+    const judul = JSON.parse(el.dataset.judul);
+    return JSON.parse(el.dataset.slug).map((slug, i) => ({ slug, judul: judul[i] }));
+})();
 function infoTopik(slug) {
     const i = TOPIK.findIndex((t) => t.slug === slug);
     return i === -1 ? null : { nomor: i + 1, ...TOPIK[i] };

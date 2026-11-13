@@ -71,8 +71,9 @@ const KEMARIN = kunciTanggal(new Date(Date.now() - 864e5));
 
 /* ---------- 2. Progres & lanjut belajar ---------- */
 (function () {
-    const slug = window.PHYN_TOPIK || [];
-    const judul = window.PHYN_JUDUL || [];
+    const dataTopik = document.getElementById("data-topik");
+    const slug = dataTopik ? JSON.parse(dataTopik.dataset.slug) : [];
+    const judul = dataTopik ? JSON.parse(dataTopik.dataset.judul) : [];
     const dibuka = simpan.ambil("phyn-materi-dibuka", []).filter((s) => slug.includes(s));
     const jumlah = dibuka.length;
     const total = slug.length || 1;

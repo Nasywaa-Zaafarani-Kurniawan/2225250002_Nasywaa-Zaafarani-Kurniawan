@@ -163,10 +163,10 @@
 {% endblock %}
 
 {% block skrip %}
-<script>
-    window.PHYN_TOPIK = {{ semua_topik | map(attribute='slug') | list | tojson }};
-    window.PHYN_JUDUL = {{ semua_topik | map(attribute='judul') | list | tojson }};
-</script>
+<!-- daftar materi untuk JavaScript (diisi oleh Flask/Jinja saat build) -->
+<div id="data-topik" hidden
+     data-slug='{{ semua_topik | map(attribute="slug") | list | tojson }}'
+     data-judul='{{ semua_topik | map(attribute="judul") | list | tojson }}'></div>
 <script src="static/beranda.js"></script>
 <!-- hujan apel & clover sebagai latar, di belakang semua kartu -->
 <script src="static/hujan.js"></script>

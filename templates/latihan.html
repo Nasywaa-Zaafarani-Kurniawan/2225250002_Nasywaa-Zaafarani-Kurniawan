@@ -84,10 +84,10 @@
 {% endblock %}
 
 {% block skrip %}
-<script>
-    window.PHYN_TOPIK = {{ semua_topik | map(attribute='slug') | list | tojson }}
-        .map((slug, i) => ({ slug, judul: {{ semua_topik | map(attribute='judul') | list | tojson }}[i] }));
-</script>
+<!-- daftar materi untuk JavaScript (diisi oleh Flask/Jinja saat build) -->
+<div id="data-topik" hidden
+     data-slug='{{ semua_topik | map(attribute="slug") | list | tojson }}'
+     data-judul='{{ semua_topik | map(attribute="judul") | list | tojson }}'></div>
 <script src="static/latihan.js"></script>
 <!-- hujan di peta level; berhenti saat soal latihan dibuka -->
 <script src="static/hujan.js"></script>
