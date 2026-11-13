@@ -6,7 +6,7 @@
     <title>PHYNtagoras — Media Pembelajaran SMP</title>
 
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='style.css') }}">
+          href="static/style.css">
 </head>
 
 <body>
@@ -16,16 +16,16 @@
     <!-- Sidebar -->
     <aside class="sidebar">
 
-        <h2><a href="/" style="color:inherit;text-decoration:none">△ PHYNtagoras</a></h2>
+        <h2><a href="./" style="color:inherit;text-decoration:none">△ PHYNtagoras</a></h2>
         <p>Media Pembelajaran SMP</p>
 
         <hr>
 
         <nav>
-            <a href="/beranda">⌂ Beranda</a>
-            <a href="/materi">▤ Materi</a>
-            <a href="/contoh">▧ Contoh Soal</a>
-            <a href="/latihan">✎ Latihan</a>
+            <a href="beranda.html">⌂ Beranda</a>
+            <a href="materi.html">▤ Materi</a>
+            <a href="contoh.html">▧ Contoh Soal</a>
+            <a href="latihan.html">✎ Latihan</a>
         </nav>
 
     </aside>
@@ -59,43 +59,22 @@
             </p>
 
             <div class="pilihan">
-
-                <form action="/beranda" method="get">
-                    <button name="bentuk" value="segitiga">
-                        Segitiga
-                    </button>
-                </form>
-
-                <form action="/beranda" method="get">
-                    <button name="bentuk" value="persegi">
-                        Persegi Panjang
-                    </button>
-                </form>
-
-                <form action="/beranda" method="get">
-                    <button name="bentuk" value="tangga">
-                        Tangga
-                    </button>
-                </form>
-
+                <button type="button" data-bentuk="segitiga"
+                        data-judul="Segitiga Siku-Siku">Segitiga</button>
+                <button type="button" data-bentuk="persegi"
+                        data-judul="Persegi Panjang dengan Diagonal">Persegi Panjang</button>
+                <button type="button" data-bentuk="tangga"
+                        data-judul="Tangga Bersandar pada Dinding">Tangga</button>
             </div>
 
 
             <div class="gambar">
 
-                <img
-                    src="{{ url_for('gambar', bentuk=bentuk) }}"
-                    alt="Visualisasi Pythagoras">
+                <img id="gambar-bentuk"
+                     src="gambar/segitiga.svg"
+                     alt="Visualisasi Pythagoras">
 
-                <h3>
-                    {% if bentuk == "segitiga" %}
-                        Segitiga Siku-Siku
-                    {% elif bentuk == "persegi" %}
-                        Persegi Panjang dengan Diagonal
-                    {% elif bentuk == "tangga" %}
-                        Tangga Bersandar pada Dinding
-                    {% endif %}
-                </h3>
+                <h3 id="judul-bentuk">Segitiga Siku-Siku</h3>
 
             </div>
 
@@ -104,6 +83,19 @@
     </main>
 
 </div>
+
+<script>
+    // Ganti gambar tanpa memuat ulang halaman
+    const gambarBentuk = document.getElementById("gambar-bentuk");
+    const judulBentuk  = document.getElementById("judul-bentuk");
+
+    document.querySelectorAll(".pilihan button").forEach((tombol) => {
+        tombol.addEventListener("click", () => {
+            gambarBentuk.src = "gambar/" + tombol.dataset.bentuk + ".svg";
+            judulBentuk.textContent = tombol.dataset.judul;
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -1,0 +1,18 @@
+
+        <svg viewBox="0 0 500 330"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <rect x="80" y="60" width="340" height="220"
+                  fill="#F3E6CC"
+                  stroke="#B07D3A"
+                  stroke-width="5"/>
+
+            <path d="M80 280 L420 60"
+                  stroke="#7D2027"
+                  stroke-width="5"/>
+
+            <text x="225" y="305" font-size="24">Panjang</text>
+            <text x="30" y="175" font-size="24">Lebar</text>
+            <text x="245" y="155" font-size="24">d</text>
+        </svg>
+        

@@ -11,7 +11,7 @@
           rel="stylesheet">
 
     <link rel="stylesheet"
-          href="{{ url_for('static', filename='landing.css') }}">
+          href="static/landing.css">
 </head>
 
 <body>
@@ -24,18 +24,18 @@
 
 <!-- Navigasi atas -->
 <header class="navbar">
-    <a href="{{ url_for('landing') }}" class="logo">
+    <a href="./" class="logo">
         <span class="logo-ikon">△</span>
         <span><span class="logo-phyn">PHYN</span>tagoras</span>
     </a>
 
     <nav class="nav-link">
-        <a href="{{ url_for('materi') }}">Materi</a>
-        <a href="{{ url_for('contoh') }}">Contoh Soal</a>
-        <a href="{{ url_for('latihan') }}">Latihan</a>
+        <a href="materi.html">Materi</a>
+        <a href="contoh.html">Contoh Soal</a>
+        <a href="latihan.html">Latihan</a>
     </nav>
 
-    <a href="{{ url_for('beranda') }}" class="tombol tombol-kecil">Masuk</a>
+    <a href="beranda.html" class="tombol tombol-kecil">Masuk</a>
 </header>
 
 <!-- Hero -->
@@ -56,10 +56,10 @@
         </p>
 
         <div class="aksi">
-            <a href="{{ url_for('beranda') }}" class="tombol tombol-utama">
+            <a href="beranda.html" class="tombol tombol-utama">
                 Mulai Belajar <span class="panah">→</span>
             </a>
-            <a href="{{ url_for('materi') }}" class="tombol tombol-garis">
+            <a href="materi.html" class="tombol tombol-garis">
                 Lihat Materi
             </a>
         </div>

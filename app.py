@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response
+from flask import Flask, render_template, Response
 
 app = Flask(__name__)
 
@@ -6,16 +6,9 @@ app = Flask(__name__)
 def landing():
     return render_template("landing.html")
 
-@app.route("/beranda")
+@app.route("/beranda.html")
 def beranda():
-    bentuk = request.args.get("bentuk", "segitiga")
-
-    pilihan = ["segitiga", "persegi", "tangga"]
-
-    if bentuk not in pilihan:
-        bentuk = "segitiga"
-
-    return render_template("index.html", bentuk=bentuk)
+    return render_template("index.html")
 
 @app.route("/gambar/<bentuk>.svg")
 def gambar(bentuk):
@@ -91,15 +84,15 @@ def gambar(bentuk):
 
     return Response(svg, mimetype="image/svg+xml")
 
-@app.route("/materi")
+@app.route("/materi.html")
 def materi():
     return render_template("materi.html")
 
-@app.route("/contoh")
+@app.route("/contoh.html")
 def contoh():
     return render_template("contoh.html")
 
-@app.route("/latihan")
+@app.route("/latihan.html")
 def latihan():
     return render_template("latihan.html")
 
