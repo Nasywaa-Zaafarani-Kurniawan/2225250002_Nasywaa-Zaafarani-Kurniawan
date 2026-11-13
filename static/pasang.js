@@ -5,14 +5,46 @@
       - Chrome/Edge/Android: munculkan dialog pasang bawaan browser
       - iPhone/iPad & browser lain: tampilkan panduan langkah demi langkah
    3. Sembunyikan tombol kalau aplikasi sudah terpasang
+   4. "Web sedang diupdate": saat versi baru di-push, tampilkan
+      pemberitahuan lalu muat versi terbaru secara otomatis
    ========================================================= */
 (function () {
-    // 1. Service worker
+    // 1. Service worker + pemeriksa versi baru
     if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker.register("sw.js").catch(() => { /* abaikan */ });
+        // apakah halaman ini sudah dikendalikan versi lama? (bukan kunjungan pertama)
+        const adaVersiLama = Boolean(navigator.serviceWorker.controller);
+
+        window.addEventListener("load", async () => {
+            let reg;
+            try { reg = await navigator.serviceWorker.register("sw.js"); } catch (e) { return; }
+
+            // periksa versi baru setiap 60 detik dan setiap tab dibuka lagi
+            const periksa = () => reg.update().catch(() => { /* offline: abaikan */ });
+            setInterval(periksa, 60 * 1000);
+            document.addEventListener("visibilitychange", () => {
+                if (document.visibilityState === "visible") periksa();
+            });
+            window.PhynCekUpdate = periksa;
+        });
+
+        // versi baru sudah aktif → tampilkan pemberitahuan lalu muat ulang
+        let sudahDitangani = false;
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+            if (!adaVersiLama || sudahDitangani) return;
+            sudahDitangani = true;
+            pemberitahuanUpdate();
         });
     }
+
+    // setelah dimuat ulang karena update, beri tahu bahwa web sudah terbaru
+    window.addEventListener("load", () => {
+        try {
+            if (sessionStorage.getItem("phyn-baru-diupdate")) {
+                sessionStorage.removeItem("phyn-baru-diupdate");
+                notif("✅ Web sudah diperbarui ke versi terbaru!");
+            }
+        } catch (e) { /* abaikan */ }
+    });
 
     const html = document.documentElement;
     const sudahTerpasang = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
@@ -65,6 +97,19 @@
             background: #b9dcae; color: #2b1d1e; font: 700 15px "Plus Jakarta Sans", Arial, sans-serif;
             box-shadow: 3px 3px 0 #2b1d1e; animation: pasang-muncul .3s ease;
         }
+        .pita-update {
+            position: fixed; left: 50%; top: 14px; z-index: 96; transform: translateX(-50%);
+            display: flex; align-items: center; gap: 10px; max-width: calc(100% - 24px);
+            padding: 11px 18px; border: 2px solid #2b1d1e; border-radius: 999px;
+            background: #f4d58d; color: #2b1d1e; box-shadow: 3px 3px 0 #2b1d1e;
+            font: 800 15px "Plus Jakarta Sans", Arial, sans-serif;
+        }
+        .pita-update button {
+            padding: 5px 12px; border: 2px solid #2b1d1e; border-radius: 999px;
+            background: #7d2027; color: #fcf9f3; font: 800 13px "Plus Jakarta Sans", Arial, sans-serif; cursor: pointer;
+        }
+        .pita-update .putar { display: inline-block; animation: pita-putar 1s linear infinite; }
+        @keyframes pita-putar { to { transform: rotate(360deg); } }
         @keyframes pasang-muncul { from { opacity: 0; transform: translateY(8px); } }
         .pasang-notif { animation-name: none; }`;
     document.head.appendChild(gaya);
@@ -81,6 +126,33 @@
         dialogPasang = null;
         notif("🎉 PHYNthagoras berhasil dipasang! Cek ikonnya di layar utama.");
     });
+
+    // Pemberitahuan "Web sedang diupdate"
+    function sedangSibuk() {
+        // jangan muat ulang paksa saat siswa sedang mengerjakan soal atau mencoret
+        const coretan = document.getElementById("coretan");
+        return document.body.classList.contains("arena-terbuka") || (coretan && !coretan.hidden);
+    }
+
+    function muatUlang() {
+        try { sessionStorage.setItem("phyn-baru-diupdate", "1"); } catch (e) { /* abaikan */ }
+        location.reload();
+    }
+
+    function pemberitahuanUpdate() {
+        const pita = document.createElement("div");
+        pita.className = "pita-update";
+        pita.setAttribute("role", "status");
+        if (sedangSibuk()) {
+            pita.innerHTML = `<span class="putar">🔄</span> Web sedang diupdate. Selesaikan dulu, lalu
+                <button type="button">Muat ulang</button>`;
+            pita.querySelector("button").addEventListener("click", muatUlang);
+        } else {
+            pita.innerHTML = `<span class="putar">🔄</span> Web sedang diupdate… sebentar, ya`;
+            setTimeout(muatUlang, 1800);
+        }
+        document.body.appendChild(pita);
+    }
 
     function notif(teks) {
         const n = document.createElement("div");
