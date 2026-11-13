@@ -538,3 +538,34 @@ body {
         display: none;
     }
 }
+
+/* Tombol Download App di samping Masuk */
+.aksi-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tombol-unduh {
+    padding: 9px 18px;
+    border: 2px solid var(--merah);
+    background: var(--krem-terang);
+    color: var(--merah);
+    font: 700 14px "Plus Jakarta Sans", Arial, sans-serif;
+    cursor: pointer;
+}
+
+.tombol-unduh:hover {
+    background: var(--merah-muda);
+}
+
+@media (max-width: 500px) {
+    .teks-panjang {
+        display: none;
+    }
+
+    .tombol-unduh,
+    .aksi-nav .tombol-kecil {
+        padding: 8px 14px;
+    }
+}

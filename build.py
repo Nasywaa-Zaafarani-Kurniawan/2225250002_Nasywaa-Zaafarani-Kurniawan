@@ -25,6 +25,10 @@ HALAMAN = {
     "/gambar/tangga.svg": "gambar/tangga.svg",
 }
 
+# File aplikasi (PWA)
+HALAMAN["/manifest.webmanifest"] = "manifest.webmanifest"
+HALAMAN["/sw.js"] = "sw.js"
+
 # Satu halaman untuk setiap topik materi
 for _t in TOPIK:
     HALAMAN[f"/materi-{_t['slug']}.html"] = f"materi-{_t['slug']}.html"

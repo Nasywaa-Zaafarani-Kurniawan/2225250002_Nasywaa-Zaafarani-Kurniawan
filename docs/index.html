@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHYNthagoras — Belajar Teorema Pythagoras</title>
 
+    <!-- Aplikasi (PWA) -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#7d2027">
+    <link rel="icon" type="image/png" href="static/ikon/ikon-192.png">
+    <link rel="apple-touch-icon" href="static/ikon/ikon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="PHYNthagoras">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
@@ -91,7 +99,12 @@
         <a href="latihan.html">Latihan</a>
     </nav>
 
-    <a href="beranda.html" class="tombol tombol-kecil">Masuk</a>
+    <div class="aksi-nav">
+        <button type="button" class="tombol tombol-unduh" data-pasang>
+            ⬇ <span><span class="teks-panjang">Download </span>App</span>
+        </button>
+        <a href="beranda.html" class="tombol tombol-kecil">Masuk</a>
+    </div>
 </header>
 
 <!-- Hero -->
@@ -314,6 +327,7 @@
 </script>
 
 <script src="static/jejak.js"></script>
+<script src="static/pasang.js"></script>
 
 </body>
 </html>

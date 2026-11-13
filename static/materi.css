@@ -1300,3 +1300,19 @@ ol.langkah > li .persamaan {
         transition: none !important;
     }
 }
+
+/* Tautan pasang aplikasi di footer */
+.tautan-pasang {
+    margin-top: 10px;
+    padding: 6px 14px;
+    border: 1px solid var(--krem-garis);
+    border-radius: 999px;
+    background: var(--krem-terang);
+    color: var(--merah);
+    font: 700 13px "Plus Jakarta Sans", Arial, sans-serif;
+    cursor: pointer;
+}
+
+.tautan-pasang:hover {
+    border-color: var(--merah);
+}

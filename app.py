@@ -1,4 +1,8 @@
-from flask import Flask, render_template, Response
+import hashlib
+import json
+from pathlib import Path
+
+from flask import Flask, render_template, Response, send_from_directory
 
 app = Flask(__name__)
 
@@ -191,6 +195,42 @@ def contoh():
 @app.route("/latihan.html")
 def latihan():
     return render_template("latihan.html", semua_topik=TOPIK, aktif="latihan")
+
+
+# ---------------------------------------------------------------
+# Aplikasi (PWA): manifest + service worker supaya web bisa dipasang
+# seperti aplikasi dan dibuka tanpa internet.
+# ---------------------------------------------------------------
+FOLDER = Path(__file__).parent
+
+
+@app.route("/manifest.webmanifest")
+def manifest():
+    return send_from_directory(FOLDER / "static", "manifest.webmanifest",
+                               mimetype="application/manifest+json")
+
+
+@app.route("/sw.js")
+def service_worker():
+    # semua halaman dan file yang disimpan untuk dipakai offline
+    berkas = ["./", "beranda.html", "materi.html", "contoh.html", "latihan.html",
+              "manifest.webmanifest"]
+    berkas += [f"materi-{t['slug']}.html" for t in TOPIK]
+    berkas += [f"gambar/{b}.svg" for b in ["segitiga", "persegi", "tangga"]]
+    berkas += sorted(f"static/{p.relative_to(FOLDER / 'static').as_posix()}"
+                     for p in (FOLDER / "static").rglob("*") if p.is_file())
+
+    # versi berubah otomatis setiap ada file yang berubah,
+    # sehingga aplikasi yang sudah terpasang ikut ter-update
+    sidik = hashlib.md5()
+    for p in sorted(list((FOLDER / "static").rglob("*")) + list((FOLDER / "templates").rglob("*"))
+                    + [FOLDER / "app.py"]):
+        if p.is_file():
+            sidik.update(p.read_bytes())
+
+    js = (FOLDER / "static" / "sw-templat.js").read_text(encoding="utf-8")
+    js = js.replace("__VERSI__", sidik.hexdigest()[:10]).replace("__BERKAS__", json.dumps(berkas, indent=4))
+    return Response(js, mimetype="application/javascript")
 
 
 if __name__ == "__main__":
