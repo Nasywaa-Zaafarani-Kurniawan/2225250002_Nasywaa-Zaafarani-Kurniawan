@@ -1,5 +1,5 @@
 /* =========================================================
-   PHYNtagoras — skrip bersama untuk halaman materi
+   PHYNthagoras — skrip bersama untuk halaman materi
    1. Fungsi bantu angka (dipakai kalkulator di tiap topik)
    2. Contoh soal: buka langkah satu per satu
    3. Langkah visual: gambar berubah mengikuti langkah

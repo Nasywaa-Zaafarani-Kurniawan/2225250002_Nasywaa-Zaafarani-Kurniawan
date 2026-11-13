@@ -1,5 +1,5 @@
 /* =========================================================
-   PHYNtagoras — Latihan bertingkat
+   PHYNthagoras — Latihan bertingkat
    1. Alat bantu (acak, format angka, gambar SVG)
    2. Bank soal: setiap jenis soal dibuat acak oleh sebuah fungsi
    3. Daftar dunia & level

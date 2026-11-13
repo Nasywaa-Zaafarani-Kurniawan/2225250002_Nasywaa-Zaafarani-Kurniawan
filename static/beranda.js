@@ -1,5 +1,5 @@
 /* =========================================================
-   PHYNtagoras — Beranda
+   PHYNthagoras — Beranda
    1. Sapaan + nama panggilan
    2. Progres & tombol "lanjut belajar"
    3. Tantangan harian + streak
