@@ -502,43 +502,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* ---------- Hujan apel & clover ---------- */
-.hujan {
-    position: fixed;
-    inset: 0;
-    z-index: -1;            /* di atas latar, di belakang konten */
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.butir {
-    position: absolute;
-    top: -30px;
-    width: var(--ukuran);
-    height: var(--ukuran);
-    opacity: 0.85;
-    will-change: transform;
-    animation: jatuh var(--durasi) linear var(--tunda) infinite;
-}
-
-.butir svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-/* jatuh lurus ke bawah, sedikit miring ke kanan seperti tertiup angin */
-@keyframes jatuh {
-    from { transform: translate(0, 0) rotate(0deg); }
-    to   { transform: translate(14vh, calc(100vh + 60px)) rotate(var(--putar)); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hujan {
-        display: none;
-    }
-}
-
 /* Tombol Download App di samping Masuk */
 .aksi-nav {
     display: flex;
