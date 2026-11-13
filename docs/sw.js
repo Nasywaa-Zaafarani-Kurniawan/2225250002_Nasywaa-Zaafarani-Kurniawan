@@ -3,7 +3,7 @@
    Menyimpan semua halaman supaya aplikasi bisa dibuka tanpa internet.
    File ini adalah templat: app.py mengisi nomor versi dan daftar berkas.
    ========================================================= */
-const VERSI = "a27ee68c7d";
+const VERSI = "9d97bb4e32";
 const CACHE = "phyn-" + VERSI;
 const BERKAS = [
     "./",
