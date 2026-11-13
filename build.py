@@ -27,10 +27,13 @@ HALAMAN = {
 
 
 def main():
-    # Mulai dari folder kosong supaya tidak ada file lama yang tertinggal
+    # Hapus file lama supaya tidak ada yang tertinggal.
+    # Foldernya sendiri tidak dihapus, karena OneDrive sering menguncinya.
     if FOLDER_HASIL.exists():
-        shutil.rmtree(FOLDER_HASIL)
-    FOLDER_HASIL.mkdir()
+        for file_lama in FOLDER_HASIL.rglob("*"):
+            if file_lama.is_file():
+                file_lama.unlink()
+    FOLDER_HASIL.mkdir(exist_ok=True)
 
     klien = app.test_client()
 
@@ -45,7 +48,7 @@ def main():
         print("✓", nama_file)
 
     # Salin CSS dan file statis lain
-    shutil.copytree("static", FOLDER_HASIL / "static")
+    shutil.copytree("static", FOLDER_HASIL / "static", dirs_exist_ok=True)
     print("✓ static/")
 
     # Supaya GitHub Pages tidak memproses ulang file dengan Jekyll

@@ -22,6 +22,62 @@
     <div class="grid"></div>
 </div>
 
+<!-- Hujan apel & clover (dekorasi) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+        <!-- bentuk badan apel -->
+        <path id="badan-apel"
+              d="M16 9c-2-1.5-5-2-7.5-.5C5 10.5 4 15 5.5 19.5 7 24 10 28 13 28c1.2 0 2-.6 3-.6s1.8.6 3 .6c3 0 6-4 7.5-8.5C28 15 27 10.5 23.5 8.5 21 7 18 7.5 16 9z"/>
+
+        <!-- lubang gigitan: daging buah sedikit lebih kecil dari kulit -->
+        <mask id="gigit-kulit">
+            <rect width="32" height="32" fill="white"/>
+            <circle cx="29" cy="14" r="4.2" fill="black"/>
+            <circle cx="28.6" cy="20.6" r="4" fill="black"/>
+        </mask>
+        <mask id="gigit-daging">
+            <rect width="32" height="32" fill="white"/>
+            <circle cx="29" cy="14" r="3.4" fill="black"/>
+            <circle cx="28.6" cy="20.6" r="3.2" fill="black"/>
+        </mask>
+
+        <symbol id="apel" viewBox="0 0 32 32">
+            <use href="#badan-apel" fill="#7d2027"/>
+            <ellipse cx="10.5" cy="14" rx="1.5" ry="3" fill="#fff" opacity=".28"
+                     transform="rotate(20 10.5 14)"/>
+            <path d="M16 9c0-2 .5-4 2-5.5" stroke="#5b3a29" stroke-width="1.6"
+                  fill="none" stroke-linecap="round"/>
+            <path d="M17.5 6c2-2.5 5-3 7-2-1 2.5-4 3.5-7 2z" fill="#5f8f4e"/>
+        </symbol>
+
+        <symbol id="apel-gigit" viewBox="0 0 32 32">
+            <use href="#badan-apel" fill="#f3e3c3" mask="url(#gigit-daging)"/>
+            <use href="#badan-apel" fill="#7d2027" mask="url(#gigit-kulit)"/>
+            <ellipse cx="10.5" cy="14" rx="1.5" ry="3" fill="#fff" opacity=".28"
+                     transform="rotate(20 10.5 14)"/>
+            <path d="M16 9c0-2 .5-4 2-5.5" stroke="#5b3a29" stroke-width="1.6"
+                  fill="none" stroke-linecap="round"/>
+            <path d="M17.5 6c2-2.5 5-3 7-2-1 2.5-4 3.5-7 2z" fill="#5f8f4e"/>
+        </symbol>
+
+        <!-- clover daun empat: satu daun hati diputar 4 kali -->
+        <path id="daun-clover"
+              d="M12 12C9 9.5 6.5 7 8.3 4.6 9.6 3 11.4 3.6 12 5.2 12.6 3.6 14.4 3 15.7 4.6 17.5 7 15 9.5 12 12z"/>
+        <symbol id="clover" viewBox="0 0 24 24">
+            <g fill="#5f8f4e" stroke="#f7f2e8" stroke-width="1.1" stroke-linejoin="round">
+                <use href="#daun-clover"/>
+                <use href="#daun-clover" transform="rotate(90 12 12)"/>
+                <use href="#daun-clover" transform="rotate(180 12 12)"/>
+                <use href="#daun-clover" transform="rotate(270 12 12)"/>
+            </g>
+            <path d="M12 12q1.5 5 5 9" stroke="#4f7a43" stroke-width="1.4"
+                  fill="none" stroke-linecap="round"/>
+        </symbol>
+    </defs>
+</svg>
+
+<div class="hujan" id="hujan" aria-hidden="true"></div>
+
 <!-- Navigasi atas -->
 <header class="navbar">
     <a href="./" class="logo">
@@ -224,6 +280,38 @@
     });
 
     tampilkan(0);
+
+    // ---------- Hujan apel & clover ----------
+    const hujan = document.getElementById("hujan");
+    const geraknyaDikurangi =
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!geraknyaDikurangi) {
+        const jenisButir = ["apel", "apel", "apel-gigit", "clover", "clover"];
+        const jumlah = window.innerWidth < 600 ? 7 : 12;
+        const acak = (min, max) => min + Math.random() * (max - min);
+
+        for (let i = 0; i < jumlah; i++) {
+            const jenis = jenisButir[Math.floor(Math.random() * jenisButir.length)];
+            const ukuran = jenis === "clover" ? acak(12, 17) : acak(15, 22);
+            const durasi = acak(11, 18);
+
+            const butir = document.createElement("div");
+            butir.className = "butir";
+            butir.style.left = acak(0, 100) + "vw";
+            butir.style.setProperty("--ukuran", ukuran + "px");
+            butir.style.setProperty("--durasi", durasi + "s");
+            // tunda negatif: butir sudah tersebar di layar sejak awal
+            butir.style.setProperty("--tunda", -acak(0, durasi) + "s");
+            butir.style.setProperty("--geser", acak(-40, 40) + "px");
+            butir.style.setProperty("--putar", acak(-200, 200) + "deg");
+            butir.style.setProperty("--ayun", acak(2.5, 4.5) + "s");
+
+            butir.innerHTML =
+                `<svg viewBox="0 0 32 32"><use href="#${jenis}"/></svg>`;
+            hujan.appendChild(butir);
+        }
+    }
 </script>
 
 </body>

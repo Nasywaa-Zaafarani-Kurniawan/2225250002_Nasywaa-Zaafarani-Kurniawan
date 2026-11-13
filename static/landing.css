@@ -501,3 +501,45 @@ body {
     color: var(--merah);
     letter-spacing: 0.5px;
 }
+
+/* ---------- Hujan apel & clover ---------- */
+.hujan {
+    position: fixed;
+    inset: 0;
+    z-index: -1;            /* di atas latar, di belakang konten */
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.butir {
+    position: absolute;
+    top: 0;
+    width: var(--ukuran);
+    height: var(--ukuran);
+    opacity: 0.75;
+    animation: jatuh var(--durasi) linear var(--tunda) infinite;
+}
+
+/* ayunan kecil ke kiri-kanan seperti tertiup angin */
+.butir svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    animation: ayun var(--ayun) ease-in-out infinite alternate;
+}
+
+@keyframes jatuh {
+    from { transform: translate(0, -40px) rotate(0deg); }
+    to   { transform: translate(var(--geser), 105vh) rotate(var(--putar)); }
+}
+
+@keyframes ayun {
+    from { transform: translateX(-8px); }
+    to   { transform: translateX(8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hujan {
+        display: none;
+    }
+}
