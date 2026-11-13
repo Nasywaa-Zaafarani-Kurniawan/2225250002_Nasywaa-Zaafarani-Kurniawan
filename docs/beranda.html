@@ -112,21 +112,20 @@
             </div>
         </article>
 
-        <!-- Kalkulator kilat -->
+        <!-- Tebak kilat -->
         <article class="kartu kartu-kilat">
-            <h2 class="judul-kartu">Kalkulator Kilat</h2>
-            <div class="mode-kilat" role="tablist">
-                <button type="button" class="aktif" data-mode="miring" role="tab">Cari sisi miring</button>
-                <button type="button" data-mode="siku" role="tab">Cari sisi siku</button>
+            <div class="kepala-tebak">
+                <h2 class="judul-kartu">🧠 Tebak Kilat</h2>
+                <span class="chip-beruntun" id="tebak-beruntun">🔥 0</span>
             </div>
-            <div class="isian-kilat">
-                <label><span id="label-k1">sisi a</span><input type="number" id="kilat-1" value="6" min="0" step="any"></label>
-                <label><span id="label-k2">sisi b</span><input type="number" id="kilat-2" value="8" min="0" step="any"></label>
+            <p class="tanya-tebak">Siku-siku atau bukan?</p>
+            <div class="angka-tebak" id="tebak-angka">3 · 4 · 5</div>
+            <div class="tombol-tebak">
+                <button type="button" data-jawab="ya">✓ Siku-siku</button>
+                <button type="button" data-jawab="tidak">✗ Bukan</button>
             </div>
-            <div class="hasil-kilat">
-                <span id="label-hasil">sisi miring</span>
-                <strong id="hasil-kilat">10</strong>
-            </div>
+            <p class="hasil-tebak" id="tebak-hasil" aria-live="polite">Hitung di kepala, jangan pakai kalkulator 😉</p>
+            <p class="rekor-tebak">Rekor beruntun: <b id="tebak-rekor">0</b></p>
         </article>
 
         <!-- Stiker rumus -->

@@ -494,92 +494,104 @@
     margin: 0 0 6px;
 }
 
-/* ---------- Kalkulator kilat ---------- */
+/* ---------- Tebak kilat ---------- */
 .kartu-kilat {
     grid-area: kilat;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     background: var(--teks);
     color: var(--krem-terang);
 }
 
-.mode-kilat {
+.kepala-tebak {
     display: flex;
-    padding: 4px;
-    border-radius: 12px;
-    background: #ffffff14;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 }
 
-.mode-kilat button {
-    flex: 1;
-    padding: 8px 6px;
-    border: none;
-    border-radius: 9px;
-    background: transparent;
-    color: var(--krem-terang);
-    font: 700 13px "Plus Jakarta Sans", Arial, sans-serif;
-    cursor: pointer;
-}
-
-.mode-kilat button.aktif {
+.chip-beruntun {
+    padding: 3px 10px;
+    border-radius: 999px;
     background: var(--kuning);
     color: var(--teks);
+    font-weight: 800;
+    font-size: 14px;
 }
 
-.isian-kilat {
+.tanya-tebak {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+.angka-tebak {
+    padding: 16px 10px;
+    border-radius: 16px;
+    background: #ffffff14;
+    font-family: var(--font-judul);
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 1px;
+    color: var(--kuning);
+}
+
+.tombol-tebak {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 8px;
 }
 
-.isian-kilat label {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 12px;
-    font-weight: 700;
-    opacity: 0.85;
-}
-
-.isian-kilat input {
-    width: 100%;
-    padding: 10px 12px;
-    border: 2px solid #fcf9f366;
+.tombol-tebak button {
+    padding: 11px 6px;
+    border: 2px solid var(--krem-terang);
     border-radius: 12px;
-    background: #ffffff10;
+    background: transparent;
     color: var(--krem-terang);
-    font: 700 18px "Plus Jakarta Sans", Arial, sans-serif;
+    font: 800 14px "Plus Jakarta Sans", Arial, sans-serif;
+    cursor: pointer;
+    transition: transform 0.12s, background 0.15s;
 }
 
-.isian-kilat input:focus {
-    outline: 2px solid var(--kuning);
-    border-color: transparent;
+.tombol-tebak button:hover:not(:disabled) {
+    background: #ffffff1f;
+    transform: translateY(-2px);
 }
 
-.hasil-kilat {
-    margin-top: auto;
-    padding: 14px 16px;
-    border-radius: 16px;
-    background: var(--kuning);
+.tombol-tebak button:disabled {
+    cursor: default;
+    opacity: 0.6;
+}
+
+.tombol-tebak button.benar {
+    background: var(--hijau-pop);
+    border-color: var(--hijau-pop);
     color: var(--teks);
+    opacity: 1;
 }
 
-.hasil-kilat span {
-    display: block;
-    font-size: 12px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    opacity: 0.7;
+.tombol-tebak button.salah {
+    background: var(--pink);
+    border-color: var(--pink);
+    color: var(--teks);
+    opacity: 1;
 }
 
-.hasil-kilat strong {
-    display: block;
-    font-family: var(--font-judul);
-    font-size: clamp(28px, 3.4vw, 40px);
-    line-height: 1.1;
-    word-break: break-word;
+.hasil-tebak {
+    min-height: 42px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums;
+}
+
+.rekor-tebak {
+    margin: auto 0 0;
+    font-size: 13px;
+    opacity: 0.75;
 }
 
 /* ---------- Stiker rumus ---------- */

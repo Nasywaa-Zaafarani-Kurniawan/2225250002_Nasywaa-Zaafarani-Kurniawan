@@ -252,43 +252,65 @@ const KEMARIN = kunciTanggal(new Date(Date.now() - 864e5));
     }
 })();
 
-/* ---------- 4. Kalkulator kilat ---------- */
+/* ---------- 4. Tebak kilat: siku-siku atau bukan? ---------- */
 (function () {
-    let mode = "miring";
-    const isi1 = document.getElementById("kilat-1");
-    const isi2 = document.getElementById("kilat-2");
-    const hasil = document.getElementById("hasil-kilat");
+    const TRIPEL = [[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [20, 21, 29]];
+    const elAngka = document.getElementById("tebak-angka");
+    const elHasil = document.getElementById("tebak-hasil");
+    const elBeruntun = document.getElementById("tebak-beruntun");
+    const elRekor = document.getElementById("tebak-rekor");
+    const tombol = document.querySelectorAll(".tombol-tebak button");
 
-    function hitung() {
-        const x = Phyn.baca(isi1), y = Phyn.baca(isi2);
-        if (!(x > 0) || !(y > 0)) { hasil.textContent = "–"; return; }
-        if (mode === "miring") {
-            hasil.textContent = Phyn.akar(Math.round((x * x + y * y) * 1e6) / 1e6);
-        } else if (x <= y) {
-            hasil.textContent = "sisi miring harus lebih panjang";
-            hasil.style.fontSize = "16px";
-            return;
-        } else {
-            hasil.textContent = Phyn.akar(Math.round((x * x - y * y) * 1e6) / 1e6);
+    let beruntun = 0;
+    let rekor = simpan.ambil("phyn-tebak-rekor", 0);
+    let sekarang = null;
+    elRekor.textContent = rekor;
+
+    function soalBaru() {
+        // pilih tripel (boleh kelipatan) dengan sisi terbesar maksimal 30
+        const calon = [];
+        TRIPEL.forEach(([a, b, c]) => { for (let k = 1; c * k <= 30; k++) calon.push([a * k, b * k, c * k]); });
+        let [a, b, c] = calon[Math.floor(Math.random() * calon.length)];
+        const siku = Math.random() < 0.5;
+        if (!siku) {
+            // ubah sedikit supaya "hampir" tripel (jebakan)
+            if (Math.random() < 0.6) c += Math.random() < 0.5 ? 1 : -1;
+            else a += 1;
         }
-        hasil.style.fontSize = "";
+        const urut = [a, b, c].sort((x, y) => x - y);
+        sekarang = { sisi: urut, siku: urut[0] ** 2 + urut[1] ** 2 === urut[2] ** 2 };
+        elAngka.textContent = urut.join(" · ");
+        tombol.forEach((t) => { t.disabled = false; t.className = ""; });
     }
 
-    document.querySelectorAll(".mode-kilat button").forEach((t) => {
-        t.addEventListener("click", () => {
-            mode = t.dataset.mode;
-            document.querySelectorAll(".mode-kilat button").forEach((x) => x.classList.toggle("aktif", x === t));
-            const miring = mode === "miring";
-            document.getElementById("label-k1").textContent = miring ? "sisi a" : "sisi miring";
-            document.getElementById("label-k2").textContent = miring ? "sisi b" : "sisi siku diketahui";
-            document.getElementById("label-hasil").textContent = miring ? "sisi miring" : "sisi siku lainnya";
-            if (miring) { isi1.value = 6; isi2.value = 8; } else { isi1.value = 13; isi2.value = 5; }
-            hitung();
-        });
-    });
-    isi1.addEventListener("input", hitung);
-    isi2.addEventListener("input", hitung);
-    hitung();
+    tombol.forEach((t) => t.addEventListener("click", () => {
+        const [a, b, c] = sekarang.sisi;
+        const kiri = a * a + b * b, kanan = c * c;
+        const benar = (t.dataset.jawab === "ya") === sekarang.siku;
+        const alasan = sekarang.siku
+            ? `${a}² + ${b}² = ${kiri} = ${c}²`
+            : `${a}² + ${b}² = ${kiri}, tapi ${c}² = ${kanan}`;
+
+        tombol.forEach((x) => (x.disabled = true));
+        t.className = benar ? "benar" : "salah";
+
+        if (benar) {
+            beruntun++;
+            if (beruntun > rekor) {
+                rekor = beruntun;
+                simpan.taruh("phyn-tebak-rekor", rekor);
+                elRekor.textContent = rekor;
+            }
+            elHasil.innerHTML = `<b>✓ Betul!</b> ${alasan}`;
+        } else {
+            beruntun = 0;
+            elHasil.innerHTML = `<b>✗ Ups!</b> ${alasan} → ${sekarang.siku ? "siku-siku" : "bukan siku-siku"}`;
+        }
+        elBeruntun.textContent = `🔥 ${beruntun}`;
+        setTimeout(soalBaru, benar ? 1400 : 2600);
+    }));
+
+    soalBaru();
 })();
 
 /* ---------- 5. Fakta seru ---------- */
