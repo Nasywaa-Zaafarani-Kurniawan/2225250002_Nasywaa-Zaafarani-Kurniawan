@@ -287,9 +287,9 @@
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (!geraknyaDikurangi) {
-        // apel lebih sering muncul daripada clover
-        const jenisButir = ["apel", "apel", "apel-gigit", "apel-gigit", "clover", "clover"];
-        const jumlah = window.innerWidth < 600 ? 14 : 28;
+        // jumlah clover = jumlah total apel (apel utuh + apel digigit)
+        const jenisButir = ["apel", "clover", "apel-gigit", "clover"];
+        const jumlah = window.innerWidth < 600 ? 8 : 16;
         const acak = (min, max) => min + Math.random() * (max - min);
 
         for (let i = 0; i < jumlah; i++) {
