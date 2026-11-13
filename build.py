@@ -9,7 +9,7 @@ Lalu commit & push folder docs/ ke GitHub.
 import shutil
 from pathlib import Path
 
-from app import app
+from app import app, TOPIK
 
 FOLDER_HASIL = Path("docs")
 
@@ -24,6 +24,10 @@ HALAMAN = {
     "/gambar/persegi.svg": "gambar/persegi.svg",
     "/gambar/tangga.svg": "gambar/tangga.svg",
 }
+
+# Satu halaman untuk setiap topik materi
+for _t in TOPIK:
+    HALAMAN[f"/materi-{_t['slug']}.html"] = f"materi-{_t['slug']}.html"
 
 
 def main():

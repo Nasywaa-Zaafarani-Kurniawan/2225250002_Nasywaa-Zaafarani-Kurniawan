@@ -1,0 +1,195 @@
+{% extends "materi_topik.html" %}
+
+{% block isi %}
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">1</span>Kuadrat suatu bilangan</h2>
+    <p>
+        <strong>Mengkuadratkan</strong> artinya mengalikan sebuah bilangan dengan dirinya sendiri.
+        Ditulis dengan angka kecil <strong>2</strong> di kanan atas.
+    </p>
+
+    <div class="kotak-rumus">
+        <div class="rumus"><var>a</var>² = <var>a</var> × <var>a</var></div>
+        <small>contoh: 4² = 4 × 4 = 16</small>
+    </div>
+
+    <p>
+        Kenapa disebut "kuadrat"? Karena hasilnya sama dengan <strong>luas persegi</strong>.
+        Persegi dengan sisi 4 kotak berisi 4 × 4 = 16 kotak kecil.
+        Ingat hubungan ini, karena nanti teorema Pythagoras juga dibuktikan dengan luas persegi.
+    </p>
+
+    <div class="interaktif">
+        <span class="label-coba">Coba sendiri</span>
+        <p>Geser untuk mengubah panjang sisi persegi.</p>
+        <div class="baris-isian">
+            <label class="isian"><span>Panjang sisi: <strong id="nilai-n">4</strong></span>
+                <input type="range" id="geser-n" min="1" max="15" value="4">
+            </label>
+        </div>
+        <div class="wadah-svg-interaktif" id="gambar-persegi"></div>
+        <div class="hasil" id="hasil-kuadrat"></div>
+    </div>
+
+    <h3>Bilangan kuadrat yang sering dipakai</h3>
+    <p>Hafal sebagian dari tabel ini akan sangat mempercepat hitunganmu.</p>
+    <div class="tabel-wadah">
+        <table>
+            <tr><th><var>a</var></th>{% for i in range(1, 11) %}<td>{{ i }}</td>{% endfor %}</tr>
+            <tr><th><var>a</var>²</th>{% for i in range(1, 11) %}<td>{{ i * i }}</td>{% endfor %}</tr>
+            <tr><th><var>a</var></th>{% for i in range(11, 21) %}<td>{{ i }}</td>{% endfor %}</tr>
+            <tr><th><var>a</var>²</th>{% for i in range(11, 21) %}<td>{{ i * i }}</td>{% endfor %}</tr>
+            <tr><th><var>a</var></th>{% for i in [24, 25, 30, 40, 50, 60, 70, 80, 90, 100] %}<td>{{ i }}</td>{% endfor %}</tr>
+            <tr><th><var>a</var>²</th>{% for i in [24, 25, 30, 40, 50, 60, 70, 80, 90, 100] %}<td>{{ i * i }}</td>{% endfor %}</tr>
+        </table>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">2</span>Akar kuadrat</h2>
+    <p>
+        <strong>Akar kuadrat</strong> adalah kebalikan dari kuadrat. Pertanyaannya:
+        <em>"bilangan berapa yang kalau dikuadratkan hasilnya ini?"</em>
+    </p>
+
+    <div class="kotak-rumus">
+        <div class="rumus">Jika <var>a</var>² = <var>k</var>, maka <span class="akar">√<span><var>k</var></span></span> = <var>a</var></div>
+        <small>contoh: 3² = 9, maka √9 = 3</small>
+    </div>
+
+    <div class="catatan">
+        <strong>Kenapa hanya yang positif?</strong>
+        Sebenarnya (−8)² juga 64. Tapi di Pythagoras kita menghitung <em>panjang sisi</em>,
+        dan panjang tidak mungkin negatif. Jadi kita hanya memakai akar yang positif.
+    </div>
+
+    <h3>Kalau bukan bilangan kuadrat?</h3>
+    <p>
+        Tidak semua bilangan punya akar bulat. Misalnya √50. Kita bisa menyederhanakannya
+        dengan memecah 50 menjadi perkalian bilangan kuadrat:
+    </p>
+    <div class="persamaan">
+        <div>√50 = √(25 × 2)</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= √25 × √2</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 5√2 ≈ 7,07</div>
+    </div>
+
+    <h3>Sifat-sifat akar yang berguna</h3>
+    <div class="tabel-wadah">
+        <table>
+            <tr><th>Sifat</th><th>Contoh</th></tr>
+            <tr><td>√(<var>A</var> × <var>B</var>) = √<var>A</var> × √<var>B</var></td><td>√(4 × 9) = 2 × 3 = 6</td></tr>
+            <tr><td>√(<var>A</var> ÷ <var>B</var>) = √<var>A</var> ÷ √<var>B</var></td><td>√(36 ÷ 4) = 6 ÷ 2 = 3</td></tr>
+            <tr><td>√<var>A</var> × √<var>A</var> = <var>A</var></td><td>√7 × √7 = 7</td></tr>
+        </table>
+    </div>
+
+    <div class="interaktif">
+        <span class="label-coba">Kalkulator akar</span>
+        <p>Ketik sebuah bilangan untuk melihat akar kuadratnya.</p>
+        <div class="baris-isian">
+            <label class="isian">Bilangan
+                <input type="number" id="isi-akar" value="169" min="0">
+            </label>
+        </div>
+        <div class="hasil" id="hasil-akar"></div>
+    </div>
+</section>
+
+<section class="cek-pemahaman">
+    <h2>Cek Pemahaman</h2>
+    <p>Pilih jawabanmu. Kalau salah, akan muncul catatan kenapa salah.</p>
+
+    <div class="kuis">
+        <p class="soal-kuis">1. Berapakah nilai 12²?</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" 12² bukan 12 × 2. Angka kecil 2 artinya 12 dikalikan dengan dirinya sendiri: 12 × 12.">24</button>
+            <button type="button" data-benar>144</button>
+            <button type="button" data-catatan=" Hampir! Coba hitung ulang 12 × 12 = (10 × 12) + (2 × 12) = 120 + 24.">124</button>
+            <button type="button" data-catatan=" 14 itu 12 + 2. Kuadrat artinya dikalikan, bukan ditambah.">14</button>
+        </div>
+        <div class="penjelasan" hidden>12² = 12 × 12 = 144.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">2. Berapakah √225?</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" Akar bukan dibagi 2. Cari bilangan yang jika dikalikan dengan dirinya sendiri hasilnya 225.">112,5</button>
+            <button type="button" data-catatan=" Coba cek: 25 × 25 = 625, terlalu besar.">25</button>
+            <button type="button" data-benar>15</button>
+            <button type="button" data-catatan=" Coba cek: 14 × 14 = 196, masih kurang dari 225.">14</button>
+        </div>
+        <div class="penjelasan" hidden>Karena 15 × 15 = 225, maka √225 = 15. Petunjuk: bilangan berakhiran 5, akarnya juga berakhiran 5.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">3. Bentuk sederhana dari √72 adalah …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" 36 bukan √72. 36 adalah 72 ÷ 2.">36</button>
+            <button type="button" data-catatan=" Hampir! 72 = 4 × 18, tapi 18 masih bisa dipecah (18 = 9 × 2). Cari bilangan kuadrat TERBESAR yang membagi 72.">2√18</button>
+            <button type="button" data-benar>6√2</button>
+            <button type="button" data-catatan=" Cek: (8√2)² = 64 × 2 = 128, bukan 72.">8√2</button>
+        </div>
+        <div class="penjelasan" hidden>√72 = √(36 × 2) = √36 × √2 = 6√2.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block skrip %}
+<script>
+    // Persegi petak n × n
+    const geserN = document.getElementById("geser-n");
+    const nilaiN = document.getElementById("nilai-n");
+    const wadahPersegi = document.getElementById("gambar-persegi");
+    const hasilKuadrat = document.getElementById("hasil-kuadrat");
+
+    function gambarPersegi() {
+        const n = Number(geserN.value);
+        const ukuran = 260, kotak = ukuran / n;
+        let garis = "";
+        for (let i = 1; i < n; i++) {
+            garis += `<line x1="${i * kotak}" y1="0" x2="${i * kotak}" y2="${ukuran}" class="s-petak"/>`;
+            garis += `<line x1="0" y1="${i * kotak}" x2="${ukuran}" y2="${i * kotak}" class="s-petak"/>`;
+        }
+        wadahPersegi.innerHTML = `
+            <svg viewBox="-30 -30 ${ukuran + 60} ${ukuran + 60}" role="img" aria-label="Persegi ${n} kali ${n}">
+                <rect width="${ukuran}" height="${ukuran}" class="s-isi"/>
+                ${garis}
+                <rect width="${ukuran}" height="${ukuran}" class="s-kosong s-garis"/>
+                <text x="${ukuran / 2}" y="-10" class="s-teks">${n}</text>
+                <text x="-14" y="${ukuran / 2 + 6}" class="s-teks">${n}</text>
+            </svg>`;
+        nilaiN.textContent = n;
+        hasilKuadrat.innerHTML = `
+            <div class="persamaan"><div>${n}² = ${n} × ${n} = ${n * n}</div></div>
+            <p class="kesimpulan">Luas persegi = ${n * n} kotak, jadi √${n * n} = ${n}</p>`;
+    }
+    geserN.addEventListener("input", gambarPersegi);
+    gambarPersegi();
+
+    // Kalkulator akar
+    const isiAkar = document.getElementById("isi-akar");
+    const hasilAkar = document.getElementById("hasil-akar");
+    function hitungAkar() {
+        const k = Phyn.baca(isiAkar);
+        if (isNaN(k) || k < 0) {
+            hasilAkar.innerHTML = `<p class="galat">Masukkan bilangan 0 atau lebih.</p>`;
+            return;
+        }
+        const a = Math.sqrt(k);
+        const kuadratSempurna = Number.isInteger(a);
+        hasilAkar.innerHTML = `
+            <div class="persamaan"><div>√${Phyn.angka(k, 4)} = ${Phyn.akar(k)}</div></div>
+            <p class="kesimpulan">${kuadratSempurna
+                ? `${Phyn.angka(k, 4)} adalah bilangan kuadrat, karena ${a} × ${a} = ${Phyn.angka(k, 4)}.`
+                : `${Phyn.angka(k, 4)} bukan bilangan kuadrat, jadi akarnya bukan bilangan bulat.`}</p>`;
+    }
+    isiAkar.addEventListener("input", hitungAkar);
+    hitungAkar();
+</script>
+{% endblock %}

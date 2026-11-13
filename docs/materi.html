@@ -3,32 +3,332 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi Pythagoras</title>
-    <link rel="stylesheet"
-          href="static/style.css">
+    <title>Materi Teorema Pythagoras — PHYNtagoras</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/materi.css">
 </head>
-<body>
 
-    <header>
-        <h1>Belajar Teorema Pythagoras</h1>
-        <p>Mari Memahami Konsep Pythagoras!</p>
-    </header>
+<body >
 
-    <nav>
-        <a href="beranda.html">Beranda</a>
-        <a href="materi.html">Materi</a>
-        <a href="contoh.html">Contoh Soal</a>
-        <a href="latihan.html">Latihan</a>
-    </nav>
+<!-- Navigasi atas -->
+<header class="navbar">
+    <div class="navbar-isi">
+        <a href="./" class="logo">
+            <span class="logo-ikon">△</span>
+            <span><span class="logo-phyn">PHYN</span>tagoras</span>
+        </a>
 
-    <main>
-        <h2>Materi Teorema Pythagoras</h2>
-        <p>Di halaman ini kita akan mempelajari konsep Pythagoras.</p>
-    </main>
+        <nav class="nav-link">
+            <a href="beranda.html">Beranda</a>
+            <a href="materi.html" class="aktif">Materi</a>
+            <a href="contoh.html">Contoh Soal</a>
+            <a href="latihan.html">Latihan</a>
+        </nav>
+    </div>
+</header>
 
-    <footer>
-        <p>Website Pembelajaran Pythagoras</p>
-    </footer>
+<main>
+    
+<div class="wadah">
+
+    <section class="kepala-hub">
+        <span class="badge">▤ Materi</span>
+        <h1>Mau belajar materi yang mana?</h1>
+        <p>
+            Baru mulai? Ikuti urutan <strong>1 → 9</strong>.
+            Sudah paham dasarnya? Langsung pilih materi yang kamu butuhkan.
+        </p>
+    </section>
+
+    <!-- Pilihan cepat berdasarkan kesulitan yang sering dialami siswa -->
+    <section class="kesulitan">
+        <h2>Aku sering kesulitan di…</h2>
+        <div class="chip-kesulitan">
+            <a href="materi-menemukan-teorema.html">
+                <strong>Menghafal rumus</strong>
+                <span>Pahami asal rumusnya, jadi tidak perlu hafalan</span>
+            </a>
+            <a href="materi-menghitung-sisi.html">
+                <strong>Bingung ditambah atau dikurang</strong>
+                <span>Satu aturan sederhana untuk semua soal</span>
+            </a>
+            <a href="materi-bangun-gabungan.html">
+                <strong>Soal yang punya banyak segitiga</strong>
+                <span>Dipecah jadi segitiga kecil, langkah demi langkah</span>
+            </a>
+            <a href="materi-penerapan.html">
+                <strong>Soal cerita tanpa gambar</strong>
+                <span>Cara mengubah cerita menjadi sketsa</span>
+            </a>
+        </div>
+    </section>
+
+    
+    <section class="kelompok-topik">
+        <div class="kepala-kelompok">
+            <h2>Dasar</h2>
+            <p>Kenali bentuknya dan pahami asal rumusnya.</p>
+        </div>
+
+        <div class="grid-topik">
+            
+            <a href="materi-prasyarat.html" class="kartu-topik" data-slug="prasyarat">
+                <div class="kartu-atas">
+                    <span class="ikon-topik">
+<svg viewBox="0 0 48 48" aria-hidden="true">
+
+    <rect x="8" y="8" width="32" height="32" rx="3" class="ik-isi"/>
+    <path d="M18.7 8v32M29.3 8v32M8 18.7h32M8 29.3h32" class="ik-garis-tipis"/>
+    <rect x="8" y="8" width="32" height="32" rx="3" class="ik-garis"/>
+
+</svg>
+</span>
+                    <span class="nomor-topik">1</span>
+                </div>
+                <h3>Kuadrat &amp; Akar Kuadrat</h3>
+                <p>Bekal hitungan sebelum masuk ke Pythagoras.</p>
+                <span class="kartu-bawah">
+                    <span class="status-dibaca">✓ Sudah dibuka</span>
+                    <span class="mulai">Pelajari →</span>
+                </span>
+            </a>
+            
+            <a href="materi-segitiga-siku.html" class="kartu-topik" data-slug="segitiga-siku">
+                <div class="kartu-atas">
+                    <span class="ikon-topik">
+<svg viewBox="0 0 48 48" aria-hidden="true">
+
+    <path d="M10 8v32h30z" class="ik-isi ik-garis"/>
+    <path d="M10 33h7v7" class="ik-garis"/>
+    <path d="M10 8l30 32" class="ik-aksen"/>
+
+</svg>
+</span>
+                    <span class="nomor-topik">2</span>
+                </div>
+                <h3>Mengenal Segitiga Siku-Siku</h3>
+                <p>Jenis segitiga, sisi siku-siku, dan sisi miring.</p>
+                <span class="kartu-bawah">
+                    <span class="status-dibaca">✓ Sudah dibuka</span>
+                    <span class="mulai">Pelajari →</span>
+                </span>
+            </a>
+            
+            <a href="materi-menemukan-teorema.html" class="kartu-topik" data-slug="menemukan-teorema">
+                <div class="kartu-atas">
+                    <span class="ikon-topik">
+<svg viewBox="0 0 48 48" aria-hidden="true">
+
+    <rect x="4" y="22" width="12" height="12" class="ik-isi ik-garis"/>
+    <rect x="16" y="34" width="16" height="10" class="ik-isi ik-garis"/>
+    <path d="M16 22l16 12 12-16-16-12z" class="ik-emas ik-garis"/>
+    <path d="M16 22v12h16z" class="ik-putih ik-garis"/>
+
+</svg>
+</span>
+                    <span class="nomor-topik">3</span>
+                </div>
+                <h3>Menemukan Teorema Pythagoras</h3>
+                <p>Dari luas persegi ke rumus a² + b² = c².</p>
+                <span class="kartu-bawah">
+                    <span class="status-dibaca">✓ Sudah dibuka</span>
+                    <span class="mulai">Pelajari →</span>
+                </span>
+            </a>
+            
+        </div>
+    </section>
+    
+    <section class="kelompok-topik">
+        <div class="kepala-kelompok">
+            <h2>Menghitung</h2>
+            <p>Pakai rumusnya untuk mencari panjang sisi.</p>
+        </div>
+
+        <div class="grid-topik">
+            
+            <a href="materi-menghitung-sisi.html" class="kartu-topik" data-slug="menghitung-sisi">
+                <div class="kartu-atas">
+                    <span class="ikon-topik">
+<svg viewBox="0 0 48 48" aria-hidden="true">
+
+    <path d="M10 8v32h30z" class="ik-isi ik-garis"/>
+    <path d="M10 33h7v7" class="ik-garis"/>
+    <text x="30" y="22" class="ik-teks">?</text>
+
+</svg>
+</span>
+                    <span class="nomor-topik">4</span>
+                </div>
+                <h3>Menghitung Panjang Sisi</h3>
+                <p>Kapan ditambah, kapan dikurang?</p>
+                <span class="kartu-bawah">
+                    <span class="status-dibaca">✓ Sudah dibuka</span>
+                    <span class="mulai">Pelajari →</span>
+                </span>
+            </a>
+            
+            <a href="materi-jenis-segitiga.html" class="kartu-topik" data-slug="jenis-segitiga">
+                <div class="kartu-atas">
+                    <span class="ikon-topik">
+<svg viewBox="0 0 48 48" aria-hidden="true">
+
+    <path d="M4 40l8-22 8 22z" class="ik-isi ik-garis"/>
+    <path d="M18 40V20l12 20z" class="ik-emas ik-garis"/>
+    <path d="M28 40l18 0-24-12z" class="ik-isi ik-garis"/>
+
+</svg>
+</span>
+                    <span class="nomor-topik">5</span>
+                </div>
+                <h3>Siku-Siku, Lancip, atau Tumpul?</h3>
+                <p>Kebalikan teorema Pythagoras untuk mengecek jenis segitiga.</p>
+                <span class="kartu-bawah">
+                    <span class="status-dibaca">✓ Sudah dibuka</span>
+                    <span class="mulai">Pelajari →</span>
+                </span>
+            </a>
+            
+            <a href="materi-tripel.html" class="kartu-topik" data-slug="tripel">
+                <div class="kartu-atas">
+                    <span class="ikon-topik">
+<svg viewBox="0 0 48 48" aria-hidden="true">
+
+    <text x="24" y="31" class="ik-teks ik-teks-kecil">3·4·5</text>
+    <rect x="4" y="12" width="40" height="26" rx="8" class="ik-garis"/>
+
+</svg>
+</span>
+                    <span class="nomor-topik">6</span>
+                </div>
+                <h3>Tripel Pythagoras</h3>
+                <p>Pasangan bilangan &#39;ajaib&#39; yang membuat hitungan cepat.</p>
+                <span class="kartu-bawah">
+                    <span class="status-dibaca">✓ Sudah dibuka</span>
+                    <span class="mulai">Pelajari →</span>
+                </span>
+            </a>
+            
+            <a href="materi-segitiga-istimewa.html" class="kartu-topik" data-slug="segitiga-istimewa">
+                <div class="kartu-atas">
+                    <span class="ikon-topik">
+<svg viewBox="0 0 48 48" aria-hidden="true">
+
+    <path d="M8 40V10l30 30z" class="ik-isi ik-garis"/>
+    <path d="M30 40a8 8 0 0 0-2.4-5.6" class="ik-aksen"/>
+    <text x="34" y="30" class="ik-teks ik-teks-mini">45°</text>
+
+</svg>
+</span>
+                    <span class="nomor-topik">7</span>
+                </div>
+                <h3>Segitiga Siku-Siku Istimewa</h3>
+                <p>Perbandingan sisi pada sudut 45° dan 30°–60°.</p>
+                <span class="kartu-bawah">
+                    <span class="status-dibaca">✓ Sudah dibuka</span>
+                    <span class="mulai">Pelajari →</span>
+                </span>
+            </a>
+            
+        </div>
+    </section>
+    
+    <section class="kelompok-topik">
+        <div class="kepala-kelompok">
+            <h2>Penerapan</h2>
+            <p>Selesaikan soal yang lebih rumit dan soal cerita.</p>
+        </div>
+
+        <div class="grid-topik">
+            
+            <a href="materi-bangun-gabungan.html" class="kartu-topik" data-slug="bangun-gabungan">
+                <div class="kartu-atas">
+                    <span class="ikon-topik">
+<svg viewBox="0 0 48 48" aria-hidden="true">
+
+    <path d="M8 8v30h16z" class="ik-isi ik-garis"/>
+    <path d="M8 8l16 30 18-14z" class="ik-emas ik-garis"/>
+
+</svg>
+</span>
+                    <span class="nomor-topik">8</span>
+                </div>
+                <h3>Soal dengan Banyak Segitiga</h3>
+                <p>Memecah bangun rumit menjadi segitiga siku-siku.</p>
+                <span class="kartu-bawah">
+                    <span class="status-dibaca">✓ Sudah dibuka</span>
+                    <span class="mulai">Pelajari →</span>
+                </span>
+            </a>
+            
+            <a href="materi-penerapan.html" class="kartu-topik" data-slug="penerapan">
+                <div class="kartu-atas">
+                    <span class="ikon-topik">
+<svg viewBox="0 0 48 48" aria-hidden="true">
+
+    <path d="M8 6v36h34" class="ik-garis"/>
+    <path d="M10 10l26 32" class="ik-aksen ik-tebal"/>
+    <path d="M14 18l5-3M19 24l5-3M24 30l5-3" class="ik-garis-tipis"/>
+
+</svg>
+</span>
+                    <span class="nomor-topik">9</span>
+                </div>
+                <h3>Soal Cerita Sehari-hari</h3>
+                <p>Dari cerita ke gambar, dari gambar ke jawaban.</p>
+                <span class="kartu-bawah">
+                    <span class="status-dibaca">✓ Sudah dibuka</span>
+                    <span class="mulai">Pelajari →</span>
+                </span>
+            </a>
+            
+        </div>
+    </section>
+    
+
+    <aside class="tips-coretan">
+        <strong>✎ Butuh tempat mencoret?</strong>
+        Di setiap halaman materi ada tombol <em>Coretan</em> di pojok kanan bawah.
+        Pakai untuk menggambar sketsa soal atau menghitung, seperti di kertas buram.
+    </aside>
+
+</div>
+
+</main>
+
+<footer class="kaki">
+    <span class="logo-phyn">PHYN</span>tagoras · Media Pembelajaran Teorema Pythagoras SMP
+</footer>
+
+<!-- Kertas coretan: tempat menggambar / menghitung -->
+<button type="button" class="tombol-coretan" id="buka-coretan">
+    ✎ <span>Coretan</span>
+</button>
+
+<div class="coretan" id="coretan" hidden>
+    <div class="coretan-alat">
+        <strong class="coretan-judul">✎ Kertas Coretan</strong>
+
+        <div class="alat-grup">
+            <button type="button" class="warna aktif" data-warna="#2b1d1e" style="--w:#2b1d1e" aria-label="Pena hitam"></button>
+            <button type="button" class="warna" data-warna="#7d2027" style="--w:#7d2027" aria-label="Pena merah"></button>
+            <button type="button" class="warna" data-warna="#2f6db5" style="--w:#2f6db5" aria-label="Pena biru"></button>
+            <button type="button" class="warna" data-warna="#4f7a43" style="--w:#4f7a43" aria-label="Pena hijau"></button>
+            <button type="button" class="alat" id="alat-penghapus">Penghapus</button>
+            <button type="button" class="alat" id="bersihkan-coretan">Bersihkan</button>
+            <button type="button" class="alat alat-tutup" id="tutup-coretan">Tutup ✕</button>
+        </div>
+    </div>
+    <canvas id="kanvas-coretan"></canvas>
+</div>
+
+<script src="static/materi.js"></script>
+
 
 </body>
 </html>

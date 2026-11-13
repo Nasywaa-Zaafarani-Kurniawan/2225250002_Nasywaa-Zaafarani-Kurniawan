@@ -1,0 +1,191 @@
+{% extends "materi_topik.html" %}
+
+{% block isi %}
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">1</span>Dari cerita ke gambar</h2>
+    <p>
+        Soal cerita terasa sulit karena <strong>tidak ada gambarnya</strong>.
+        Jadi tugas pertamamu adalah membuat gambar sendiri.
+        Setelah gambarnya ada, soal cerita sama saja dengan soal biasa.
+    </p>
+
+    <div class="tabel-wadah">
+        <table>
+            <tr><th>Langkah</th><th>Yang dilakukan</th></tr>
+            <tr><td>1. Baca</td><td style="text-align:left">Garis bawahi semua angka dan satuannya. Tandai apa yang ditanyakan.</td></tr>
+            <tr><td>2. Sketsa</td><td style="text-align:left">Gambar situasinya dengan sederhana: tembok jadi garis tegak, tanah jadi garis datar. Pakai <em>Coretan</em>!</td></tr>
+            <tr><td>3. Cari siku-siku</td><td style="text-align:left">Benda tegak (tembok, tiang, pohon) dan tanah datar membentuk sudut 90°.</td></tr>
+            <tr><td>4. Tulis angka</td><td style="text-align:left">Taruh setiap angka di sisi yang tepat. Beri tanda "?" pada yang dicari.</td></tr>
+            <tr><td>5. Hitung</td><td style="text-align:left">Cari sisi miring → tambah. Cari sisi siku-siku → kurang. Lalu akarkan.</td></tr>
+            <tr><td>6. Periksa</td><td style="text-align:left">Apakah jawabannya masuk akal? Sisi miring harus paling panjang, dan satuannya harus benar.</td></tr>
+        </table>
+    </div>
+
+    <h3>Kata kunci yang sering muncul</h3>
+    <div class="tabel-wadah">
+        <table>
+            <tr><th>Di soal tertulis</th><th>Biasanya menjadi</th></tr>
+            <tr><td>panjang tangga, tali, kawat, benang, jarak terbang lurus</td><td><strong>sisi miring</strong></td></tr>
+            <tr><td>tinggi tembok, tiang, pohon, gedung</td><td>sisi siku-siku (tegak)</td></tr>
+            <tr><td>jarak di tanah, jarak kaki tangga ke tembok</td><td>sisi siku-siku (datar)</td></tr>
+            <tr><td>"ke utara lalu ke timur", "ke depan lalu ke kanan"</td><td>dua sisi siku-siku</td></tr>
+        </table>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">2</span>Contoh soal cerita</h2>
+
+    <div class="contoh">
+        <span class="label-contoh">Contoh 1 · layang-layang</span>
+        <p class="soal-contoh">
+            Rina sedang bermain layang-layang. Panjang benang saat layang-layang terbang adalah 13 meter.
+            Jarak Rina ke bayangan layang-layang di tanah adalah 5 meter. Berapa meter tinggi layang-layang dari tanah?
+        </p>
+        <figure class="gambar">
+            <svg viewBox="40 -30 260 260" style="max-width:280px" aria-hidden="true">
+                <!-- 16 px per meter: datar 5 m = 80 px, tinggi 12 m = 192 px -->
+                <line x1="50" y1="200" x2="290" y2="200" class="s-garis-g" stroke-width="2"/>
+                <path d="M150 200 L230 200 L230 8 Z" class="s-isi"/>
+                <line x1="150" y1="200" x2="230" y2="8" class="s-aksen" style="stroke-width:2.5"/>
+                <line x1="230" y1="8" x2="230" y2="200" class="s-putus"/>
+                <path d="M230 186 h-14 v14" class="s-siku"/>
+                <!-- layang-layang -->
+                <path d="M230 -16 L244 4 L230 28 L216 4 Z" style="fill:var(--merah)"/>
+                <!-- Rina -->
+                <circle cx="142" cy="160" r="8" class="s-titik"/>
+                <path d="M142 168 V188 M142 188 L134 200 M142 188 L150 200 M132 176 H152" stroke="var(--teks)" stroke-width="3" fill="none"/>
+                <ellipse cx="230" cy="202" rx="14" ry="4" style="fill:#2b1d1e40"/>
+                <text x="150" y="96" class="s-teks s-kecil s-teks-e">benang</text>
+                <text x="150" y="112" class="s-teks s-kecil s-teks-e">13 m</text>
+                <text x="190" y="222" class="s-teks s-kecil">5 m</text>
+                <text x="254" y="110" class="s-teks s-teks-m">?</text>
+            </svg>
+            <figcaption>Sketsa: benang = sisi miring, jarak di tanah = sisi datar, tinggi = sisi tegak.</figcaption>
+        </figure>
+        <ol class="langkah" data-langkah>
+            <li><strong>Sketsa.</strong> Layang-layang tepat di atas bayangannya, jadi garis tinggi tegak lurus dengan tanah (90°).
+                Benang menghubungkan Rina dengan layang-layang, jadi benang adalah <strong>sisi miring</strong> = 13 m.</li>
+            <li><strong>Yang dicari tinggi</strong> = sisi siku-siku → <strong>kurang</strong>:
+                <div class="persamaan"><div>t² = 13² − 5²</div><div>t² = 169 − 25 = 144</div><div>t = √144 = 12</div></div></li>
+            <li><strong>Periksa.</strong> 12 m lebih pendek dari benang 13 m ✓. Jadi tinggi layang-layang adalah <strong>12 meter</strong>.</li>
+        </ol>
+    </div>
+
+    <div class="contoh">
+        <span class="label-contoh">Contoh 2 · tangga</span>
+        <p class="soal-contoh">Sebuah tangga sepanjang 6 meter bersandar pada tembok. Ujung atas tangga berada 4,8 meter dari lantai. Berapa jarak kaki tangga ke tembok?</p>
+        <figure class="gambar">
+            <svg viewBox="0 0 260 220" style="max-width:260px" aria-hidden="true">
+                <rect x="190" y="10" width="30" height="190" class="s-isi-3"/>
+                <line x1="10" y1="200" x2="250" y2="200" class="s-garis-g" stroke-width="2"/>
+                <line x1="190" y1="10" x2="190" y2="200" class="s-garis-g" stroke-width="2"/>
+                <line x1="70" y1="200" x2="190" y2="40" class="s-aksen" style="stroke:var(--merah);stroke-width:6"/>
+                <path d="M190 186 h-14 v14" class="s-siku"/>
+                <text x="104" y="110" class="s-teks s-kecil s-teks-m">6 m</text>
+                <text x="222" y="126" class="s-teks s-kecil" transform="rotate(-90 222 126)">4,8 m</text>
+                <text x="130" y="220" class="s-teks s-teks-e">?</text>
+            </svg>
+        </figure>
+        <ol class="langkah" data-langkah>
+            <li>Tembok tegak dan lantai datar membentuk 90°. Tangga adalah <strong>sisi miring</strong> = 6 m.</li>
+            <li>Yang dicari jarak di lantai = sisi siku-siku → <strong>kurang</strong>:
+                <div class="persamaan"><div>x² = 6² − 4,8²</div><div>x² = 36 − 23,04 = 12,96</div><div>x = √12,96 = 3,6</div></div></li>
+            <li>Jarak kaki tangga ke tembok adalah <strong>3,6 meter</strong>.
+                <br><small>Tips: 3,6 ; 4,8 ; 6 adalah 1,2 × (3, 4, 5). Tripel Pythagoras juga berlaku untuk bilangan desimal.</small></li>
+        </ol>
+    </div>
+
+    <div class="contoh">
+        <span class="label-contoh">Contoh 3 · perahu</span>
+        <p class="soal-contoh">
+            Aldo, seorang penjaga pantai, melihat perahu nelayan 15 km lurus ke arah laut.
+            Perahu wisata berada 20 km dari perahu nelayan, tegak lurus terhadap arah pandangan Aldo.
+            Kedua perahu bergerak menuju Aldo dengan kecepatan 30 km/jam. Berapa selisih waktu kedatangan keduanya?
+        </p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Sketsa:</strong> Aldo, perahu nelayan, dan perahu wisata membentuk segitiga siku-siku di perahu nelayan.
+                Jarak Aldo ke perahu wisata adalah <strong>sisi miring</strong>.</li>
+            <li>Hitung jaraknya:
+                <div class="persamaan"><div>d² = 15² + 20² = 225 + 400 = 625</div><div>d = √625 = 25 km</div></div></li>
+            <li>Waktu tempuh (waktu = jarak ÷ kecepatan):
+                <div class="persamaan"><div>perahu wisata: 25 ÷ 30 jam = 50 menit</div><div>perahu nelayan: 15 ÷ 30 jam = 30 menit</div></div></li>
+            <li>Selisih waktunya 50 − 30 = <strong>20 menit</strong>.</li>
+        </ol>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">3</span>Pengayaan: jarak dua titik</h2>
+    <p>
+        Di bidang koordinat, garis miring yang menghubungkan dua titik selalu bisa dijadikan sisi miring
+        sebuah segitiga siku-siku. Sisi datarnya adalah selisih <var>x</var>, dan sisi tegaknya adalah selisih <var>y</var>.
+    </p>
+
+    <figure class="gambar">
+        <svg viewBox="0 0 300 260" style="max-width:300px" role="img" aria-label="Titik A(-5,3) dan B(3,-4) pada bidang koordinat">
+            <g class="s-petak" style="opacity:.25">
+                {% for i in range(0, 13) %}
+                <line x1="{{ 30 + i * 20 }}" y1="10" x2="{{ 30 + i * 20 }}" y2="250"/>
+                <line x1="30" y1="{{ 10 + i * 20 }}" x2="270" y2="{{ 10 + i * 20 }}"/>
+                {% endfor %}
+            </g>
+            <!-- sumbu: titik (0,0) di (150,110), 20 px per satuan -->
+            <line x1="30" y1="110" x2="270" y2="110" class="s-garis-g" stroke-width="1.5"/>
+            <line x1="150" y1="10" x2="150" y2="250" class="s-garis-g" stroke-width="1.5"/>
+            <path d="M50 50 L50 190 L210 190 Z" class="s-isi" style="opacity:.6"/>
+            <line x1="50" y1="50" x2="210" y2="190" class="s-garis"/>
+            <line x1="50" y1="50" x2="50" y2="190" class="s-putus"/>
+            <line x1="50" y1="190" x2="210" y2="190" class="s-putus"/>
+            <circle cx="50" cy="50" r="5" style="fill:var(--merah)"/>
+            <circle cx="210" cy="190" r="5" style="fill:var(--merah)"/>
+            <text x="58" y="40" class="s-teks s-kecil">A(−5, 3)</text>
+            <text x="236" y="216" class="s-teks s-kecil">B(3, −4)</text>
+            <text x="130" y="210" class="s-teks s-kecil s-teks-e">8 satuan</text>
+            <text x="22" y="124" class="s-teks s-kecil s-teks-e">7</text>
+        </svg>
+    </figure>
+
+    <div class="persamaan">
+        <div>selisih x = 3 − (−5) = 8</div>
+        <div>selisih y = 3 − (−4) = 7</div>
+        <div>AB = √(8² + 7²) = √(64 + 49) = √113 ≈ 10,63 satuan</div>
+    </div>
+
+    <div class="kotak-rumus">
+        <div class="rumus">AB = √[(<var>x</var>₂ − <var>x</var>₁)² + (<var>y</var>₂ − <var>y</var>₁)²]</div>
+        <small>rumus jarak dua titik, yang sebenarnya adalah teorema Pythagoras</small>
+    </div>
+</section>
+
+<section class="cek-pemahaman">
+    <h2>Cek Pemahaman</h2>
+    <p>Pilih jawabanmu. Kalau salah, akan muncul catatan kenapa salah.</p>
+
+    <div class="kuis">
+        <p class="soal-kuis">1. Andi, Budi, Cahya, dan Dedi berdiri di keempat pojok lapangan berbentuk persegi panjang berukuran 80 m × 60 m. Berapa jarak terjauh di antara mereka?</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" 80 m adalah sisi terpanjang lapangan. Tapi jarak terjauh adalah antara dua pojok yang BERSEBERANGAN (diagonal).">80 m</button>
+            <button type="button" data-catatan=" Kamu menjumlahkan panjang dan lebarnya langsung. Itu jarak kalau berjalan menyusuri tepi lapangan, bukan jarak lurus.">140 m</button>
+            <button type="button" data-benar>100 m</button>
+            <button type="button" data-catatan=" Kamu mengurangkan kuadratnya. Diagonal adalah sisi MIRING segitiga, jadi ditambah: 80² + 60².">√2800 m</button>
+        </div>
+        <div class="penjelasan" hidden>Jarak terjauh adalah diagonal: √(80² + 60²) = √(6400 + 3600) = √10000 = 100 m.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">2. Seorang anak berjalan 7 m ke utara, lalu 8 m ke timur, lalu 13 m ke selatan. Berapa jaraknya dari posisi semula?</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" 28 m adalah panjang seluruh jalan yang ditempuh. Yang ditanya jarak LURUS dari titik awal ke titik akhir.">28 m</button>
+            <button type="button" data-catatan=" Sisi tegaknya bukan 13. Anak itu sempat naik 7 m, lalu turun 13 m. Jadi posisi akhirnya 13 − 7 = 6 m di selatan titik awal.">√233 m</button>
+            <button type="button" data-benar>10 m</button>
+            <button type="button" data-catatan=" Hampir! Sisi tegaknya 6 m dan sisi datarnya 8 m. Coba hitung √(6² + 8²) sekali lagi.">12 m</button>
+        </div>
+        <div class="penjelasan" hidden>Utara 7 lalu selatan 13 berarti akhirnya 6 m ke selatan. Ke timur 8 m. Jarak = √(6² + 8²) = √100 = 10 m. Gambar sketsanya di Coretan supaya terlihat jelas!</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+</section>
+
+{% endblock %}

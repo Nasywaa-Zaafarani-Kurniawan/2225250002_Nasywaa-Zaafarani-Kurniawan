@@ -1,0 +1,215 @@
+{% extends "materi_topik.html" %}
+
+{% block isi %}
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">1</span>Jenis segitiga berdasarkan sudutnya</h2>
+    <p>
+        Bayangkan kamu membuat segitiga dari potongan lidi. Ukuran lidi menentukan
+        sudut terbesar segitiga, dan sudut terbesar itulah yang menentukan jenisnya.
+    </p>
+
+    <div class="gambar-berjajar">
+        <figure>
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+                <path d="M20 105 L140 105 L95 18 Z" class="s-isi s-garis"/>
+            </svg>
+            <figcaption><strong>Segitiga lancip</strong><br>Semua sudutnya kurang dari 90°.<br><small>Lidi 4, 5, 6 cm</small></figcaption>
+        </figure>
+        <figure>
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+                <path d="M30 105 L130 105 L30 30 Z" class="s-isi-2 s-garis"/>
+                <path d="M30 91 h14 v14" class="s-siku"/>
+            </svg>
+            <figcaption><strong>Segitiga siku-siku</strong><br>Ada satu sudut tepat 90°.<br><small>Lidi 3, 4, 5 cm</small></figcaption>
+        </figure>
+        <figure>
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+                <path d="M10 105 L150 105 L50 62 Z" class="s-isi s-garis"/>
+            </svg>
+            <figcaption><strong>Segitiga tumpul</strong><br>Ada satu sudut lebih dari 90°.<br><small>Lidi 3, 4, 6 cm</small></figcaption>
+        </figure>
+    </div>
+
+    <div class="catatan">
+        <strong>Fokus kita</strong>
+        Teorema Pythagoras <em>hanya</em> berlaku untuk <strong>segitiga siku-siku</strong>.
+        Jadi langkah pertama saat mengerjakan soal adalah memastikan ada sudut siku-siku (tanda ⦜).
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">2</span>Bagian-bagian segitiga siku-siku</h2>
+
+    <figure class="gambar">
+        <svg viewBox="0 0 360 270" role="img" aria-label="Segitiga ABC siku-siku di B">
+            <path d="M80 30 L80 230 L300 230 Z" class="s-isi"/>
+            <line x1="80" y1="30" x2="80" y2="230" class="s-garis" stroke-width="5"/>
+            <line x1="80" y1="230" x2="300" y2="230" class="s-garis" stroke-width="5"/>
+            <line x1="80" y1="30" x2="300" y2="230" class="s-aksen" stroke-width="6"/>
+            <path d="M80 210 h20 v20" class="s-siku"/>
+            <text x="68" y="28" class="s-teks">A</text>
+            <text x="66" y="252" class="s-teks">B</text>
+            <text x="314" y="252" class="s-teks">C</text>
+            <text x="44" y="136" class="s-teks s-kecil s-teks-m">sisi</text>
+            <text x="44" y="152" class="s-teks s-kecil s-teks-m">siku-siku</text>
+            <text x="190" y="256" class="s-teks s-kecil s-teks-m">sisi siku-siku</text>
+            <text x="232" y="118" class="s-teks s-kecil s-teks-e">sisi miring</text>
+            <text x="232" y="134" class="s-teks s-kecil s-teks-e">(hipotenusa)</text>
+        </svg>
+        <figcaption>Segitiga ABC siku-siku di B</figcaption>
+    </figure>
+
+    <ul>
+        <li><strong>Sisi siku-siku</strong>: dua sisi yang <em>membentuk</em> sudut siku-siku (AB dan BC).</li>
+        <li><strong>Sisi miring / hipotenusa</strong>: sisi yang <em>berhadapan</em> dengan sudut siku-siku (AC).
+            Sisi ini selalu yang <strong>paling panjang</strong>.</li>
+    </ul>
+
+    <h3>Cara cepat menemukan sisi miring</h3>
+    <p>
+        Letakkan jarimu di tanda sudut siku-siku, lalu lihat ke seberangnya.
+        Sisi yang ada di seberang sudut siku-siku adalah sisi miring.
+        Cara ini tetap berlaku walaupun segitiganya diputar.
+    </p>
+
+    <h3>Penamaan sisi dengan huruf kecil</h3>
+    <p>
+        Sisi sering diberi nama huruf kecil sesuai sudut di <em>depannya</em>:
+        sisi di depan sudut A disebut <var>a</var>, di depan B disebut <var>b</var>, dan seterusnya.
+        Pada gambar di atas: <var>a</var> = BC, <var>b</var> = AC, <var>c</var> = AB.
+    </p>
+    <div class="catatan penting">
+        <strong>Hati-hati: sisi miring tidak selalu <var>c</var>!</strong>
+        Pada gambar di atas, sisi miringnya adalah <var>b</var> (karena siku-siku di B).
+        Jangan menghafal huruf. Selalu cari dulu letak sudut siku-sikunya.
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">3</span>Latihan: klik sisi miringnya</h2>
+    <div class="interaktif">
+        <span class="label-coba">Coba sendiri</span>
+        <p>Klik sisi yang merupakan <strong>sisi miring</strong>. Segitiganya akan diputar-putar.</p>
+        <div class="wadah-svg-interaktif" id="wadah-tebak"></div>
+        <div class="hasil" id="hasil-tebak">Klik salah satu sisi segitiga.</div>
+        <div class="kontrol-langkah">
+            <button type="button" class="tombol tombol-utama" id="ganti-segitiga">Ganti segitiga ↻</button>
+        </div>
+    </div>
+</section>
+
+<section class="cek-pemahaman">
+    <h2>Cek Pemahaman</h2>
+    <p>Pilih jawabanmu. Kalau salah, akan muncul catatan kenapa salah.</p>
+
+    <div class="kuis">
+        <p class="soal-kuis">1. Segitiga PQR siku-siku di Q. Sisi miringnya adalah …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" PQ mengapit sudut Q (menyentuh titik Q), jadi PQ adalah sisi siku-siku.">PQ</button>
+            <button type="button" data-catatan=" QR menyentuh titik Q, jadi QR ikut membentuk sudut siku-siku. Itu sisi siku-siku.">QR</button>
+            <button type="button" data-benar>PR</button>
+        </div>
+        <div class="penjelasan" hidden>Sisi miring adalah sisi yang <em>tidak</em> menyentuh titik sudut siku-siku. Siku-siku di Q, jadi sisi miringnya PR.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">2. Sebuah segitiga punya sudut 30°, 60°, dan 90°. Termasuk segitiga apa?</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" Segitiga lancip artinya SEMUA sudutnya kurang dari 90°. Di sini ada sudut yang tepat 90°.">Lancip</button>
+            <button type="button" data-benar>Siku-siku</button>
+            <button type="button" data-catatan=" Segitiga tumpul punya sudut LEBIH dari 90°. Di sini sudut terbesarnya tepat 90°.">Tumpul</button>
+        </div>
+        <div class="penjelasan" hidden>Ada satu sudut tepat 90°, jadi segitiga ini siku-siku.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">3. Pada segitiga siku-siku, sisi yang paling panjang adalah …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" Sisi tegak tidak selalu terpanjang. Sisi yang berhadapan dengan sudut terbesar (90°) selalu yang terpanjang.">Sisi tegak</button>
+            <button type="button" data-catatan=" Sisi alas tidak selalu terpanjang. Apalagi kalau segitiganya diputar, mana yang disebut alas bisa berubah.">Sisi alas</button>
+            <button type="button" data-benar>Sisi miring</button>
+        </div>
+        <div class="penjelasan" hidden>Sisi miring berhadapan dengan sudut terbesar (90°), sehingga selalu menjadi sisi terpanjang.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block skrip %}
+<script>
+    // Tiap segitiga: P = titik sudut siku-siku, Q & R = titik lainnya (QR = sisi miring)
+    const daftarSegitiga = [
+        { P: [70, 230],  Q: [70, 60],   R: [300, 230], nama: ["B", "A", "C"] },
+        { P: [300, 60],  Q: [70, 60],   R: [300, 230], nama: ["L", "K", "M"] },
+        { P: [150, 230], Q: [60, 140],  R: [280, 100], nama: ["Q", "P", "R"] },
+        { P: [180, 40],  Q: [60, 200],  R: [340, 160], nama: ["E", "D", "F"] },
+    ];
+    let urutan = 0;
+
+    const wadahTebak = document.getElementById("wadah-tebak");
+    const hasilTebak = document.getElementById("hasil-tebak");
+
+    function tandaSiku(P, Q, R) {
+        const satuan = (A) => {
+            const dx = A[0] - P[0], dy = A[1] - P[1], p = Math.hypot(dx, dy);
+            return [dx / p * 18, dy / p * 18];
+        };
+        const u = satuan(Q), v = satuan(R);
+        return `M${P[0] + u[0]} ${P[1] + u[1]} L${P[0] + u[0] + v[0]} ${P[1] + u[1] + v[1]} L${P[0] + v[0]} ${P[1] + v[1]}`;
+    }
+
+    function labelTitik(T, pusat, huruf) {
+        const dx = T[0] - pusat[0], dy = T[1] - pusat[1], p = Math.hypot(dx, dy);
+        return `<text x="${T[0] + dx / p * 20}" y="${T[1] + dy / p * 20 + 6}" class="s-teks">${huruf}</text>`;
+    }
+
+    function gambarTebak() {
+        const s = daftarSegitiga[urutan];
+        const [nP, nQ, nR] = s.nama;
+        const pusat = [(s.P[0] + s.Q[0] + s.R[0]) / 3, (s.P[1] + s.Q[1] + s.R[1]) / 3];
+        const sisi = [
+            { id: "PQ", A: s.P, B: s.Q, nama: nP + nQ, miring: false },
+            { id: "PR", A: s.P, B: s.R, nama: nP + nR, miring: false },
+            { id: "QR", A: s.Q, B: s.R, nama: nQ + nR, miring: true },
+        ];
+
+        wadahTebak.innerHTML = `
+            <svg viewBox="0 0 370 270" role="img" aria-label="Segitiga siku-siku, klik sisi miringnya">
+                <polygon points="${s.P} ${s.Q} ${s.R}" class="s-isi"/>
+                ${sisi.map((x) => `
+                    <g class="sisi-klik" data-id="${x.id}" style="cursor:pointer">
+                        <line x1="${x.A[0]}" y1="${x.A[1]}" x2="${x.B[0]}" y2="${x.B[1]}" stroke="transparent" stroke-width="28"/>
+                        <line x1="${x.A[0]}" y1="${x.A[1]}" x2="${x.B[0]}" y2="${x.B[1]}" class="garis-tampak s-garis-g" stroke-width="5"/>
+                    </g>`).join("")}
+                <path d="${tandaSiku(s.P, s.Q, s.R)}" class="s-siku"/>
+                ${labelTitik(s.P, pusat, nP)}${labelTitik(s.Q, pusat, nQ)}${labelTitik(s.R, pusat, nR)}
+            </svg>`;
+        hasilTebak.textContent = "Klik salah satu sisi segitiga.";
+
+        wadahTebak.querySelectorAll(".sisi-klik").forEach((g) => {
+            g.addEventListener("click", () => {
+                const x = sisi.find((y) => y.id === g.dataset.id);
+                const garis = g.querySelector(".garis-tampak");
+                if (x.miring) {
+                    garis.style.stroke = "#3f7a4a";
+                    garis.style.strokeWidth = 7;
+                    hasilTebak.innerHTML = `<p class="kesimpulan" style="color:#3f7a4a;margin:0">✓ Benar! ${x.nama} adalah sisi miring, karena berada di seberang sudut siku-siku di ${nP}.</p>`;
+                } else {
+                    garis.style.stroke = "#c0392b";
+                    hasilTebak.innerHTML = `<p class="galat">✗ ${x.nama} menyentuh titik ${nP} (tempat sudut siku-siku), jadi ${x.nama} adalah sisi siku-siku. Cari sisi di seberang titik ${nP}.</p>`;
+                }
+            });
+        });
+    }
+
+    document.getElementById("ganti-segitiga").addEventListener("click", () => {
+        urutan = (urutan + 1) % daftarSegitiga.length;
+        gambarTebak();
+    });
+    gambarTebak();
+</script>
+{% endblock %}

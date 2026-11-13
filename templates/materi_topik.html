@@ -1,0 +1,66 @@
+{% extends "kerangka.html" %}
+
+{% block judul %}{{ topik.judul }}{% endblock %}
+{% block atribut_body %}data-topik="{{ topik.slug }}"{% endblock %}
+
+{% block isi_halaman %}
+<div class="tata-topik">
+
+    <!-- Daftar semua topik (layar lebar) -->
+    <aside class="daftar-topik">
+        <a href="materi.html" class="kembali">← Semua materi</a>
+        <ol>
+            {% for t in semua_topik %}
+            <li>
+                <a href="materi-{{ t.slug }}.html"
+                   data-slug="{{ t.slug }}"
+                   {% if t.slug == topik.slug %}class="aktif" aria-current="page"{% endif %}>
+                    <span class="no">{{ loop.index }}</span>
+                    <span>{{ t.judul }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ol>
+    </aside>
+
+    <article class="isi-topik">
+        <a href="materi.html" class="kembali kembali-hp">← Semua materi</a>
+
+        <header class="kepala-topik">
+            <span class="label-topik">Materi {{ nomor }} · {{ topik.kelompok }}</span>
+            <h1>{{ topik.judul }}</h1>
+            <p>{{ topik.ringkasan }}</p>
+
+            <div class="tujuan">
+                <strong>Setelah mempelajari ini, kamu bisa:</strong>
+                <ul>
+                    {% for t in topik.tujuan %}<li>{{ t }}</li>{% endfor %}
+                </ul>
+            </div>
+        </header>
+
+        {% block isi %}{% endblock %}
+
+        <nav class="navigasi-topik">
+            {% if sebelum %}
+            <a href="materi-{{ sebelum.slug }}.html" class="nav-sebelum">
+                <small>← Sebelumnya</small>{{ sebelum.judul }}
+            </a>
+            {% else %}
+            <span></span>
+            {% endif %}
+
+            {% if sesudah %}
+            <a href="materi-{{ sesudah.slug }}.html" class="nav-sesudah">
+                <small>Berikutnya →</small>{{ sesudah.judul }}
+            </a>
+            {% else %}
+            <a href="latihan.html" class="nav-sesudah">
+                <small>Materi selesai! Lanjut →</small>Latihan Soal
+            </a>
+            {% endif %}
+        </nav>
+    </article>
+
+</div>
+{% endblock %}

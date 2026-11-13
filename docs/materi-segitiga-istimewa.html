@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segitiga Siku-Siku Istimewa — PHYNtagoras</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/materi.css">
+</head>
+
+<body data-topik="segitiga-istimewa">
+
+<!-- Navigasi atas -->
+<header class="navbar">
+    <div class="navbar-isi">
+        <a href="./" class="logo">
+            <span class="logo-ikon">△</span>
+            <span><span class="logo-phyn">PHYN</span>tagoras</span>
+        </a>
+
+        <nav class="nav-link">
+            <a href="beranda.html">Beranda</a>
+            <a href="materi.html" class="aktif">Materi</a>
+            <a href="contoh.html">Contoh Soal</a>
+            <a href="latihan.html">Latihan</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    
+<div class="tata-topik">
+
+    <!-- Daftar semua topik (layar lebar) -->
+    <aside class="daftar-topik">
+        <a href="materi.html" class="kembali">← Semua materi</a>
+        <ol>
+            
+            <li>
+                <a href="materi-prasyarat.html"
+                   data-slug="prasyarat"
+                   >
+                    <span class="no">1</span>
+                    <span>Kuadrat &amp; Akar Kuadrat</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-segitiga-siku.html"
+                   data-slug="segitiga-siku"
+                   >
+                    <span class="no">2</span>
+                    <span>Mengenal Segitiga Siku-Siku</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-menemukan-teorema.html"
+                   data-slug="menemukan-teorema"
+                   >
+                    <span class="no">3</span>
+                    <span>Menemukan Teorema Pythagoras</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-menghitung-sisi.html"
+                   data-slug="menghitung-sisi"
+                   >
+                    <span class="no">4</span>
+                    <span>Menghitung Panjang Sisi</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-jenis-segitiga.html"
+                   data-slug="jenis-segitiga"
+                   >
+                    <span class="no">5</span>
+                    <span>Siku-Siku, Lancip, atau Tumpul?</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-tripel.html"
+                   data-slug="tripel"
+                   >
+                    <span class="no">6</span>
+                    <span>Tripel Pythagoras</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-segitiga-istimewa.html"
+                   data-slug="segitiga-istimewa"
+                   class="aktif" aria-current="page">
+                    <span class="no">7</span>
+                    <span>Segitiga Siku-Siku Istimewa</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-bangun-gabungan.html"
+                   data-slug="bangun-gabungan"
+                   >
+                    <span class="no">8</span>
+                    <span>Soal dengan Banyak Segitiga</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-penerapan.html"
+                   data-slug="penerapan"
+                   >
+                    <span class="no">9</span>
+                    <span>Soal Cerita Sehari-hari</span>
+                </a>
+            </li>
+            
+        </ol>
+    </aside>
+
+    <article class="isi-topik">
+        <a href="materi.html" class="kembali kembali-hp">← Semua materi</a>
+
+        <header class="kepala-topik">
+            <span class="label-topik">Materi 7 · Menghitung</span>
+            <h1>Segitiga Siku-Siku Istimewa</h1>
+            <p>Perbandingan sisi pada sudut 45° dan 30°–60°.</p>
+
+            <div class="tujuan">
+                <strong>Setelah mempelajari ini, kamu bisa:</strong>
+                <ul>
+                    <li>Memakai perbandingan 1 : 1 : √2</li><li>Memakai perbandingan 1 : √3 : 2</li>
+                </ul>
+            </div>
+        </header>
+
+        
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">1</span>Segitiga 45° – 45° – 90°</h2>
+    <p>
+        Potong sebuah persegi pada diagonalnya. Hasilnya dua segitiga siku-siku <strong>sama kaki</strong>,
+        dengan sudut 45°, 45°, dan 90°. Kedua sisi siku-sikunya sama panjang, misalnya <var>a</var>.
+    </p>
+
+    <div class="gambar-berjajar">
+        <figure>
+            <svg viewBox="0 0 220 190" style="height:180px" aria-hidden="true">
+                <rect x="40" y="20" width="140" height="140" class="s-kosong s-putus"/>
+                <path d="M40 160 L180 160 L180 20 Z" class="s-isi s-garis"/>
+                <path d="M166 160 v-14 h14" class="s-siku"/>
+                <path d="M68 160 A28 28 0 0 0 60 140" class="s-aksen" style="stroke-width:2.5"/>
+                <path d="M180 48 A28 28 0 0 1 160 40" class="s-aksen" style="stroke-width:2.5"/>
+                <text x="82" y="150" class="s-teks s-kecil s-teks-e">45°</text>
+                <text x="152" y="68" class="s-teks s-kecil s-teks-e">45°</text>
+                <text x="110" y="182" class="s-teks s-miring">a</text>
+                <text x="198" y="96" class="s-teks s-miring">a</text>
+                <text x="92" y="82" class="s-teks s-teks-m">a√2</text>
+            </svg>
+            <figcaption>Setengah persegi</figcaption>
+        </figure>
+    </div>
+
+    <p>Hitung sisi miringnya dengan Pythagoras:</p>
+    <div class="persamaan">
+        <div><var>c</var>² = <var>a</var>² + <var>a</var>² = 2<var>a</var>²</div>
+        <div><var>c</var> = √(2<var>a</var>²) = <var>a</var>√2</div>
+    </div>
+
+    <div class="kotak-rumus">
+        <div class="rumus">sisi siku-siku : sisi siku-siku : sisi miring = 1 : 1 : √2</div>
+        <small>sisi miring = sisi siku-siku × √2</small>
+    </div>
+
+    <div class="tabel-wadah">
+        <table>
+            <tr><th>Sisi siku-siku</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>10</td><td><var>p</var></td></tr>
+            <tr><th>Sisi miring</th><td>√2</td><td>2√2</td><td>3√2</td><td>4√2</td><td>5√2</td><td>10√2</td><td><var>p</var>√2</td></tr>
+        </table>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">2</span>Segitiga 30° – 60° – 90°</h2>
+    <p>
+        Ambil segitiga <strong>sama sisi</strong> dengan sisi 2<var>a</var>, lalu bagi dua dengan garis tinggi.
+        Setiap potongannya adalah segitiga siku-siku dengan sudut 30°, 60°, dan 90°.
+    </p>
+
+    <figure class="gambar">
+        <svg viewBox="0 0 300 260" style="max-width:300px" role="img" aria-label="Segitiga sama sisi dibagi dua oleh garis tinggi">
+            <!-- segitiga sama sisi bersisi 240 px: tinggi = 120√3 ≈ 207,8 px -->
+            <path d="M150 225 L270 225 L150 17.2 Z" class="s-kosong s-putus"/>
+            <path d="M30 225 L150 225 L150 17.2 Z" class="s-isi s-garis"/>
+            <path d="M150 211 h-14 v14" class="s-siku"/>
+            <text x="76" y="116" class="s-teks s-teks-m">2a</text>
+            <text x="224" y="116" class="s-teks" style="opacity:.5">2a</text>
+            <text x="90" y="248" class="s-teks s-miring">a</text>
+            <text x="210" y="248" class="s-teks s-miring" style="opacity:.5">a</text>
+            <text x="164" y="132" class="s-teks s-miring">t</text>
+        </svg>
+        <figcaption>Garis tinggi <var>t</var> membagi alas 2<var>a</var> menjadi dua bagian, masing-masing <var>a</var>.</figcaption>
+    </figure>
+
+    <figure class="gambar">
+        <svg viewBox="0 0 320 220" style="max-width:340px" role="img" aria-label="Segitiga 30-60-90 dengan sisi a, a√3, dan 2a">
+            <path d="M40 180 L250 180 L250 59 Z" class="s-isi s-garis"/>
+            <path d="M236 180 v-14 h14" class="s-siku"/>
+            <path d="M80 180 A40 40 0 0 0 74.6 160" class="s-aksen" style="stroke-width:2.5"/>
+            <path d="M250 89 A30 30 0 0 1 224 74" class="s-aksen" style="stroke-width:2.5"/>
+            <text x="98" y="172" class="s-teks s-kecil s-teks-e">30°</text>
+            <text x="226" y="102" class="s-teks s-kecil s-teks-e">60°</text>
+            <text x="145" y="204" class="s-teks">a√3</text>
+            <text x="270" y="126" class="s-teks s-miring">a</text>
+            <text x="132" y="108" class="s-teks s-teks-m">2a</text>
+        </svg>
+        <figcaption>Sisi terpendek (<var>a</var>) berada di depan sudut 30°.</figcaption>
+    </figure>
+
+    <p>Sisi miringnya 2<var>a</var> (sisi segitiga sama sisi) dan sisi pendeknya <var>a</var> (setengah alas). Sisi yang lain:</p>
+    <div class="persamaan">
+        <div><var>t</var>² = (2<var>a</var>)² − <var>a</var>² = 4<var>a</var>² − <var>a</var>² = 3<var>a</var>²</div>
+        <div><var>t</var> = <var>a</var>√3</div>
+    </div>
+
+    <div class="kotak-rumus">
+        <div class="rumus">depan 30° : depan 60° : sisi miring = 1 : √3 : 2</div>
+        <small>sisi miring = 2 × sisi terpendek</small>
+    </div>
+
+    <div class="catatan">
+        <strong>Cara mengingat</strong>
+        Sudut kecil berhadapan dengan sisi kecil. Sudut 30° (terkecil) berhadapan dengan sisi 1 (terpendek),
+        sudut 60° berhadapan dengan √3 ≈ 1,73, dan sudut 90° berhadapan dengan 2 (terpanjang).
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">3</span>Contoh soal</h2>
+
+    <div class="contoh">
+        <span class="label-contoh">Contoh 1 · 45°</span>
+        <p class="soal-contoh">Segitiga ABC siku-siku sama kaki dengan ∠C = 90° dan AB = 15√2 cm. Hitung panjang AC.</p>
+        <ol class="langkah" data-langkah>
+            <li>Siku-siku di C, jadi AB adalah sisi miring. Sama kaki artinya AC = BC.</li>
+            <li>Pakai perbandingan AC : AB = 1 : √2:
+                <div class="persamaan"><div>AC = AB ÷ √2 = 15√2 ÷ √2 = 15</div></div>
+                Jadi AC = <strong>15 cm</strong>.</li>
+        </ol>
+    </div>
+
+    <div class="contoh">
+        <span class="label-contoh">Contoh 2 · 30°–60°</span>
+        <p class="soal-contoh">Pada segitiga ABC, ∠A = 30°, ∠B = 60°, ∠C = 90°, dan BC = 12 cm. Hitung AC dan AB.</p>
+        <ol class="langkah" data-langkah>
+            <li>BC berhadapan dengan ∠A = 30°, jadi BC adalah <strong>sisi terpendek</strong> = 12 cm.</li>
+            <li>AC berhadapan dengan ∠B = 60°:
+                <div class="persamaan"><div>AC = 12 × √3 = 12√3 cm ≈ 20,78 cm</div></div></li>
+            <li>AB adalah sisi miring:
+                <div class="persamaan"><div>AB = 2 × 12 = 24 cm</div></div></li>
+        </ol>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">4</span>Kalkulator segitiga istimewa</h2>
+    <div class="interaktif">
+        <span class="label-coba">Coba sendiri</span>
+        <p>Pilih jenis segitiga dan sisi yang diketahui.</p>
+        <div class="baris-isian">
+            <label class="isian">Jenis
+                <select id="pilih-jenis">
+                    <option value="45">45° – 45° – 90°</option>
+                    <option value="30">30° – 60° – 90°</option>
+                </select>
+            </label>
+            <label class="isian">Yang diketahui
+                <select id="pilih-diketahui"></select>
+            </label>
+            <label class="isian">Panjang
+                <input type="number" id="isi-panjang" value="5" min="0" step="any">
+            </label>
+        </div>
+        <div class="hasil" id="hasil-istimewa"></div>
+    </div>
+</section>
+
+<section class="cek-pemahaman">
+    <h2>Cek Pemahaman</h2>
+    <p>Pilih jawabanmu. Kalau salah, akan muncul catatan kenapa salah.</p>
+
+    <div class="kuis">
+        <p class="soal-kuis">1. Pengrajin membuat hiasan dinding berbentuk segitiga siku-siku dengan salah satu sudut 30°. Sisi di depan sudut 30° panjangnya 60 cm. Panjang sisi miringnya …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-benar>120 cm</button>
+            <button type="button" data-catatan=" 60√3 adalah panjang sisi di depan sudut 60°, bukan sisi miring.">60√3 cm</button>
+            <button type="button" data-catatan=" Sisi miring itu DUA KALI sisi terpendek, bukan setengahnya.">30 cm</button>
+            <button type="button" data-catatan=" Perbandingannya 1 : √3 : 2. Sisi miring = 2 × 60.">80 cm</button>
+        </div>
+        <div class="penjelasan" hidden>Sisi di depan 30° adalah sisi terpendek, jadi sisi miring = 2 × 60 = 120 cm.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">2. Segitiga sama sisi ABC panjang sisinya 8 cm. Tingginya adalah …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" 4√2 dipakai pada segitiga 45°. Garis tinggi segitiga sama sisi membentuk segitiga 30°–60°–90°.">4√2 cm</button>
+            <button type="button" data-benar>4√3 cm</button>
+            <button type="button" data-catatan=" 8√3 adalah 2 kali terlalu besar. Sisi terpendeknya setengah alas (4 cm), bukan 8 cm.">8√3 cm</button>
+            <button type="button" data-catatan=" Tinggi tidak sama dengan sisi. Hitung: t² = 8² − 4² = 48.">8 cm</button>
+        </div>
+        <div class="penjelasan" hidden>Garis tinggi membagi alas menjadi 4 cm. Sisi pendek 4, sisi miring 8, jadi tinggi = 4√3 cm (≈ 6,93 cm).</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+</section>
+
+
+
+        <nav class="navigasi-topik">
+            
+            <a href="materi-tripel.html" class="nav-sebelum">
+                <small>← Sebelumnya</small>Tripel Pythagoras
+            </a>
+            
+
+            
+            <a href="materi-bangun-gabungan.html" class="nav-sesudah">
+                <small>Berikutnya →</small>Soal dengan Banyak Segitiga
+            </a>
+            
+        </nav>
+    </article>
+
+</div>
+
+</main>
+
+<footer class="kaki">
+    <span class="logo-phyn">PHYN</span>tagoras · Media Pembelajaran Teorema Pythagoras SMP
+</footer>
+
+<!-- Kertas coretan: tempat menggambar / menghitung -->
+<button type="button" class="tombol-coretan" id="buka-coretan">
+    ✎ <span>Coretan</span>
+</button>
+
+<div class="coretan" id="coretan" hidden>
+    <div class="coretan-alat">
+        <strong class="coretan-judul">✎ Kertas Coretan</strong>
+
+        <div class="alat-grup">
+            <button type="button" class="warna aktif" data-warna="#2b1d1e" style="--w:#2b1d1e" aria-label="Pena hitam"></button>
+            <button type="button" class="warna" data-warna="#7d2027" style="--w:#7d2027" aria-label="Pena merah"></button>
+            <button type="button" class="warna" data-warna="#2f6db5" style="--w:#2f6db5" aria-label="Pena biru"></button>
+            <button type="button" class="warna" data-warna="#4f7a43" style="--w:#4f7a43" aria-label="Pena hijau"></button>
+            <button type="button" class="alat" id="alat-penghapus">Penghapus</button>
+            <button type="button" class="alat" id="bersihkan-coretan">Bersihkan</button>
+            <button type="button" class="alat alat-tutup" id="tutup-coretan">Tutup ✕</button>
+        </div>
+    </div>
+    <canvas id="kanvas-coretan"></canvas>
+</div>
+
+<script src="static/materi.js"></script>
+
+<script>
+    const pilihJenis = document.getElementById("pilih-jenis");
+    const pilihDiketahui = document.getElementById("pilih-diketahui");
+    const isiPanjang = document.getElementById("isi-panjang");
+    const hasilIstimewa = document.getElementById("hasil-istimewa");
+
+    const opsi = {
+        "45": [["siku", "Sisi siku-siku"], ["miring", "Sisi miring"]],
+        "30": [["pendek", "Sisi depan 30° (terpendek)"], ["panjang", "Sisi depan 60°"], ["miring", "Sisi miring"]],
+    };
+
+    function isiOpsi() {
+        pilihDiketahui.innerHTML = opsi[pilihJenis.value]
+            .map(([v, t]) => `<option value="${v}">${t}</option>`).join("");
+        hitungIstimewa();
+    }
+
+    function hitungIstimewa() {
+        const x = Phyn.baca(isiPanjang);
+        if (!(x > 0)) {
+            hasilIstimewa.innerHTML = `<p class="galat">Isi panjang sisi dengan bilangan lebih dari 0.</p>`;
+            return;
+        }
+        const A = Phyn.angka, akar2 = Math.SQRT2, akar3 = Math.sqrt(3);
+        const diketahui = pilihDiketahui.value;
+        let baris = [];
+
+        if (pilihJenis.value === "45") {
+            if (diketahui === "siku") {
+                baris = [`Sisi siku-siku = ${A(x)} (keduanya sama)`,
+                         `Sisi miring = ${A(x)} × √2 = ${A(x)}√2 ≈ ${A(x * akar2)}`];
+            } else {
+                const a = x / akar2;
+                baris = [`Sisi miring = ${A(x)}`,
+                         `Sisi siku-siku = ${A(x)} ÷ √2 ≈ ${A(a)} (keduanya sama)`];
+            }
+        } else {
+            let a;
+            if (diketahui === "pendek") a = x;
+            else if (diketahui === "panjang") a = x / akar3;
+            else a = x / 2;
+
+            const langkahA = diketahui === "pendek" ? `Sisi terpendek a = ${A(a)}`
+                : diketahui === "panjang" ? `Sisi terpendek a = ${A(x)} ÷ √3 ≈ ${A(a)}`
+                : `Sisi terpendek a = ${A(x)} ÷ 2 = ${A(a)}`;
+
+            baris = [langkahA,
+                     `Sisi depan 60° = a√3 = ${A(a)} × √3 ≈ ${A(a * akar3)}`,
+                     `Sisi miring = 2a = 2 × ${A(a)} = ${A(2 * a)}`];
+        }
+
+        hasilIstimewa.innerHTML = `<div class="persamaan">${baris.map((b) => `<div>${b}</div>`).join("")}</div>`;
+    }
+
+    pilihJenis.addEventListener("change", isiOpsi);
+    pilihDiketahui.addEventListener("change", hitungIstimewa);
+    isiPanjang.addEventListener("input", hitungIstimewa);
+    isiOpsi();
+</script>
+
+
+</body>
+</html>

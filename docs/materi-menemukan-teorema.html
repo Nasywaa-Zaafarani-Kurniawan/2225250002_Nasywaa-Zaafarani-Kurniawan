@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menemukan Teorema Pythagoras — PHYNtagoras</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/materi.css">
+</head>
+
+<body data-topik="menemukan-teorema">
+
+<!-- Navigasi atas -->
+<header class="navbar">
+    <div class="navbar-isi">
+        <a href="./" class="logo">
+            <span class="logo-ikon">△</span>
+            <span><span class="logo-phyn">PHYN</span>tagoras</span>
+        </a>
+
+        <nav class="nav-link">
+            <a href="beranda.html">Beranda</a>
+            <a href="materi.html" class="aktif">Materi</a>
+            <a href="contoh.html">Contoh Soal</a>
+            <a href="latihan.html">Latihan</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    
+<div class="tata-topik">
+
+    <!-- Daftar semua topik (layar lebar) -->
+    <aside class="daftar-topik">
+        <a href="materi.html" class="kembali">← Semua materi</a>
+        <ol>
+            
+            <li>
+                <a href="materi-prasyarat.html"
+                   data-slug="prasyarat"
+                   >
+                    <span class="no">1</span>
+                    <span>Kuadrat &amp; Akar Kuadrat</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-segitiga-siku.html"
+                   data-slug="segitiga-siku"
+                   >
+                    <span class="no">2</span>
+                    <span>Mengenal Segitiga Siku-Siku</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-menemukan-teorema.html"
+                   data-slug="menemukan-teorema"
+                   class="aktif" aria-current="page">
+                    <span class="no">3</span>
+                    <span>Menemukan Teorema Pythagoras</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-menghitung-sisi.html"
+                   data-slug="menghitung-sisi"
+                   >
+                    <span class="no">4</span>
+                    <span>Menghitung Panjang Sisi</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-jenis-segitiga.html"
+                   data-slug="jenis-segitiga"
+                   >
+                    <span class="no">5</span>
+                    <span>Siku-Siku, Lancip, atau Tumpul?</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-tripel.html"
+                   data-slug="tripel"
+                   >
+                    <span class="no">6</span>
+                    <span>Tripel Pythagoras</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-segitiga-istimewa.html"
+                   data-slug="segitiga-istimewa"
+                   >
+                    <span class="no">7</span>
+                    <span>Segitiga Siku-Siku Istimewa</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-bangun-gabungan.html"
+                   data-slug="bangun-gabungan"
+                   >
+                    <span class="no">8</span>
+                    <span>Soal dengan Banyak Segitiga</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-penerapan.html"
+                   data-slug="penerapan"
+                   >
+                    <span class="no">9</span>
+                    <span>Soal Cerita Sehari-hari</span>
+                </a>
+            </li>
+            
+        </ol>
+    </aside>
+
+    <article class="isi-topik">
+        <a href="materi.html" class="kembali kembali-hp">← Semua materi</a>
+
+        <header class="kepala-topik">
+            <span class="label-topik">Materi 3 · Dasar</span>
+            <h1>Menemukan Teorema Pythagoras</h1>
+            <p>Dari luas persegi ke rumus a² + b² = c².</p>
+
+            <div class="tujuan">
+                <strong>Setelah mempelajari ini, kamu bisa:</strong>
+                <ul>
+                    <li>Menjelaskan asal rumus Pythagoras lewat luas persegi</li><li>Menuliskan rumus Pythagoras tanpa harus menghafal</li>
+                </ul>
+            </div>
+        </header>
+
+        
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">1</span>Percobaan: persegi di setiap sisi</h2>
+    <p>
+        Ambil segitiga siku-siku dengan sisi <strong>3</strong>, <strong>4</strong>, dan <strong>5</strong> satuan.
+        Pada setiap sisinya, gambar sebuah persegi. Lalu hitung kotak kecil di dalam tiap persegi.
+    </p>
+
+    <figure class="gambar">
+        <svg viewBox="-10 -10 380 380" role="img" aria-label="Segitiga 3-4-5 dengan persegi di tiap sisi">
+            <!-- skala 30 px per satuan; titik siku-siku di (100,220) -->
+            <g transform="translate(100 220)">
+                <!-- persegi c² (5×5), diputar -->
+                <polygon points="0,-90 120,0 210,-120 90,-210" class="s-isi-2"/>
+                <g class="s-petak">
+                    <line x1="24" y1="-72" x2="114" y2="-192"/><line x1="48" y1="-54" x2="138" y2="-174"/>
+                    <line x1="72" y1="-36" x2="162" y2="-156"/><line x1="96" y1="-18" x2="186" y2="-138"/>
+                    <line x1="18" y1="-114" x2="138" y2="-24"/><line x1="36" y1="-138" x2="156" y2="-48"/>
+                    <line x1="54" y1="-162" x2="174" y2="-72"/><line x1="72" y1="-186" x2="192" y2="-96"/>
+                </g>
+                <polygon points="0,-90 120,0 210,-120 90,-210" class="s-kosong s-garis" style="stroke:var(--emas)"/>
+
+                <!-- persegi a² (3×3) di kiri -->
+                <rect x="-90" y="-90" width="90" height="90" class="s-isi"/>
+                <g class="s-petak">
+                    <line x1="-60" y1="-90" x2="-60" y2="0"/><line x1="-30" y1="-90" x2="-30" y2="0"/>
+                    <line x1="-90" y1="-60" x2="0" y2="-60"/><line x1="-90" y1="-30" x2="0" y2="-30"/>
+                </g>
+                <rect x="-90" y="-90" width="90" height="90" class="s-kosong s-garis"/>
+
+                <!-- persegi b² (4×4) di bawah -->
+                <rect x="0" y="0" width="120" height="120" class="s-isi-3"/>
+                <g class="s-petak">
+                    <line x1="30" y1="0" x2="30" y2="120"/><line x1="60" y1="0" x2="60" y2="120"/><line x1="90" y1="0" x2="90" y2="120"/>
+                    <line x1="0" y1="30" x2="120" y2="30"/><line x1="0" y1="60" x2="120" y2="60"/><line x1="0" y1="90" x2="120" y2="90"/>
+                </g>
+                <rect x="0" y="0" width="120" height="120" class="s-kosong s-garis"/>
+
+                <!-- segitiga -->
+                <polygon points="0,-90 0,0 120,0" class="s-putih s-garis-g"/>
+                <path d="M0 -14 h14 v14" class="s-siku"/>
+
+                <text x="-45" y="-38" class="s-teks">9</text>
+                <text x="60" y="68" class="s-teks">16</text>
+                <text x="105" y="-98" class="s-teks">25</text>
+            </g>
+        </svg>
+        <figcaption>Persegi kecil berisi 9 kotak, persegi sedang 16 kotak, persegi besar 25 kotak.</figcaption>
+    </figure>
+
+    <p>Perhatikan hasilnya:</p>
+    <div class="persamaan">
+        <div>9 + 16 = 25</div>
+        <div>3² + 4² = 5²</div>
+    </div>
+    <p>
+        <strong>Luas dua persegi kecil jika dijumlahkan sama dengan luas persegi besar.</strong>
+        Persegi besar menempel pada sisi miring. Apakah ini kebetulan? Coba dengan ukuran lain di bawah.
+    </p>
+
+    <div class="interaktif">
+        <span class="label-coba">Coba sendiri</span>
+        <p>Ubah panjang kedua sisi siku-siku. Perhatikan luas ketiga persegi.</p>
+        <div class="baris-isian">
+            <label class="isian"><span>Sisi <var>a</var> = <strong id="nilai-a">3</strong></span>
+                <input type="range" id="geser-a" min="1" max="8" value="3">
+            </label>
+            <label class="isian"><span>Sisi <var>b</var> = <strong id="nilai-b">4</strong></span>
+                <input type="range" id="geser-b" min="1" max="8" value="4">
+            </label>
+        </div>
+        <div class="wadah-svg-interaktif" id="gambar-tiga-persegi"></div>
+        <div class="hasil" id="hasil-tiga-persegi"></div>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">2</span>Kenapa selalu berlaku? (Pembuktian)</h2>
+    <p>
+        Ambil empat segitiga siku-siku yang sama, dengan sisi siku-siku <var>a</var> dan <var>b</var> serta sisi miring <var>c</var>.
+        Susun di dalam persegi besar bersisi (<var>a</var> + <var>b</var>) dengan dua cara berbeda:
+    </p>
+
+    <div class="gambar-berjajar">
+        <figure>
+            <svg viewBox="-12 -12 200 200" style="height:190px" aria-hidden="true">
+                <rect width="175" height="175" class="s-isi-2"/>
+                <polygon points="0,0 100,0 0,75" class="s-isi s-garis"/>
+                <polygon points="100,0 175,0 175,100" class="s-isi s-garis"/>
+                <polygon points="175,100 175,175 75,175" class="s-isi s-garis"/>
+                <polygon points="75,175 0,175 0,75" class="s-isi s-garis"/>
+                <rect width="175" height="175" class="s-kosong s-garis"/>
+                <text x="88" y="96" class="s-teks">c²</text>
+            </svg>
+            <figcaption><strong>Susunan 1</strong><br>4 segitiga + persegi <var>c</var>²</figcaption>
+        </figure>
+        <figure>
+            <svg viewBox="-12 -12 200 200" style="height:190px" aria-hidden="true">
+                <rect width="75" height="75" class="s-isi-2 s-garis"/>
+                <rect x="75" y="75" width="100" height="100" class="s-isi-3 s-garis"/>
+                <polygon points="75,0 175,0 75,75" class="s-isi s-garis"/>
+                <polygon points="175,0 175,75 75,75" class="s-isi s-garis"/>
+                <polygon points="0,75 75,75 0,175" class="s-isi s-garis"/>
+                <polygon points="75,75 75,175 0,175" class="s-isi s-garis"/>
+                <rect width="175" height="175" class="s-kosong s-garis"/>
+                <text x="38" y="44" class="s-teks">a²</text>
+                <text x="125" y="132" class="s-teks">b²</text>
+            </svg>
+            <figcaption><strong>Susunan 2</strong><br>4 segitiga + persegi <var>a</var>² + persegi <var>b</var>²</figcaption>
+        </figure>
+    </div>
+
+    <p>
+        Kedua persegi besar ukurannya sama, dan keduanya sama-sama berisi <strong>4 segitiga yang sama</strong>.
+        Kalau keempat segitiga itu diambil dari keduanya, sisanya pasti sama luasnya:
+    </p>
+    <div class="persamaan">
+        <div>sisa di susunan 1 = sisa di susunan 2</div>
+        <div><var>c</var>² = <var>a</var>² + <var>b</var>²</div>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">3</span>Teorema Pythagoras</h2>
+
+    <div class="kotak-rumus">
+        <div class="rumus">(sisi miring)² = (sisi siku-siku 1)² + (sisi siku-siku 2)²</div>
+        <small>atau ditulis singkat: <var>c</var>² = <var>a</var>² + <var>b</var>², dengan <var>c</var> = sisi miring</small>
+    </div>
+
+    <div class="catatan">
+        <strong>Tidak perlu menghafal tiga rumus</strong>
+        Cukup ingat satu kalimat: <em>"persegi di sisi miring = jumlah dua persegi lainnya"</em>.
+        Dari situ semua bentuk rumus bisa kamu turunkan sendiri:
+    </div>
+
+    <div class="tabel-wadah">
+        <table>
+            <tr><th>Yang dicari</th><th>Rumus</th><th>Cara ingatnya</th></tr>
+            <tr><td>Sisi miring <var>c</var></td><td><var>c</var>² = <var>a</var>² + <var>b</var>²</td><td>Persegi besar = kecil + kecil → <strong>tambah</strong></td></tr>
+            <tr><td>Sisi siku-siku <var>a</var></td><td><var>a</var>² = <var>c</var>² − <var>b</var>²</td><td>Persegi kecil = besar − kecil lain → <strong>kurang</strong></td></tr>
+            <tr><td>Sisi siku-siku <var>b</var></td><td><var>b</var>² = <var>c</var>² − <var>a</var>²</td><td>Persegi kecil = besar − kecil lain → <strong>kurang</strong></td></tr>
+        </table>
+    </div>
+</section>
+
+<section class="cek-pemahaman">
+    <h2>Cek Pemahaman</h2>
+    <p>Pilih jawabanmu. Kalau salah, akan muncul catatan kenapa salah.</p>
+
+    <div class="kuis">
+        <p class="soal-kuis">1. Luas persegi pada kedua sisi siku-siku adalah 36 cm² dan 64 cm². Berapa luas persegi pada sisi miringnya?</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" 28 adalah 64 − 36. Persegi di sisi miring adalah yang TERBESAR, jadi luasnya hasil penjumlahan, bukan pengurangan.">28 cm²</button>
+            <button type="button" data-benar>100 cm²</button>
+            <button type="button" data-catatan=" 10 adalah panjang sisi miringnya (√100), bukan luas perseginya. Yang ditanya luas persegi.">10 cm²</button>
+            <button type="button" data-catatan=" Luas persegi tidak dikalikan. Persegi besar = jumlah dua persegi kecil.">2304 cm²</button>
+        </div>
+        <div class="penjelasan" hidden>Luas persegi sisi miring = 36 + 64 = 100 cm². (Panjang sisi miringnya √100 = 10 cm.)</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">2. Segitiga KLM siku-siku di L. Rumus Pythagoras yang benar adalah …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" KL² = KM² + LM² menganggap KL sebagai sisi miring. Padahal KL menyentuh titik L (sudut siku-siku), jadi KL sisi siku-siku.">KL² = KM² + LM²</button>
+            <button type="button" data-benar>KM² = KL² + LM²</button>
+            <button type="button" data-catatan=" LM menyentuh titik L, jadi LM sisi siku-siku, bukan sisi miring.">LM² = KL² + KM²</button>
+        </div>
+        <div class="penjelasan" hidden>Siku-siku di L, jadi sisi miringnya KM (sisi yang tidak menyentuh L). Maka KM² = KL² + LM².</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+</section>
+
+
+
+        <nav class="navigasi-topik">
+            
+            <a href="materi-segitiga-siku.html" class="nav-sebelum">
+                <small>← Sebelumnya</small>Mengenal Segitiga Siku-Siku
+            </a>
+            
+
+            
+            <a href="materi-menghitung-sisi.html" class="nav-sesudah">
+                <small>Berikutnya →</small>Menghitung Panjang Sisi
+            </a>
+            
+        </nav>
+    </article>
+
+</div>
+
+</main>
+
+<footer class="kaki">
+    <span class="logo-phyn">PHYN</span>tagoras · Media Pembelajaran Teorema Pythagoras SMP
+</footer>
+
+<!-- Kertas coretan: tempat menggambar / menghitung -->
+<button type="button" class="tombol-coretan" id="buka-coretan">
+    ✎ <span>Coretan</span>
+</button>
+
+<div class="coretan" id="coretan" hidden>
+    <div class="coretan-alat">
+        <strong class="coretan-judul">✎ Kertas Coretan</strong>
+
+        <div class="alat-grup">
+            <button type="button" class="warna aktif" data-warna="#2b1d1e" style="--w:#2b1d1e" aria-label="Pena hitam"></button>
+            <button type="button" class="warna" data-warna="#7d2027" style="--w:#7d2027" aria-label="Pena merah"></button>
+            <button type="button" class="warna" data-warna="#2f6db5" style="--w:#2f6db5" aria-label="Pena biru"></button>
+            <button type="button" class="warna" data-warna="#4f7a43" style="--w:#4f7a43" aria-label="Pena hijau"></button>
+            <button type="button" class="alat" id="alat-penghapus">Penghapus</button>
+            <button type="button" class="alat" id="bersihkan-coretan">Bersihkan</button>
+            <button type="button" class="alat alat-tutup" id="tutup-coretan">Tutup ✕</button>
+        </div>
+    </div>
+    <canvas id="kanvas-coretan"></canvas>
+</div>
+
+<script src="static/materi.js"></script>
+
+<script>
+    const geserA = document.getElementById("geser-a");
+    const geserB = document.getElementById("geser-b");
+    const wadah = document.getElementById("gambar-tiga-persegi");
+    const hasil = document.getElementById("hasil-tiga-persegi");
+
+    function gambarTigaPersegi() {
+        const a = Number(geserA.value), b = Number(geserB.value);
+        const c = Math.sqrt(a * a + b * b);
+        const s = 28; // piksel per satuan
+        document.getElementById("nilai-a").textContent = a;
+        document.getElementById("nilai-b").textContent = b;
+
+        // Titik siku-siku di (0,0). A = ujung sisi a (atas), B = ujung sisi b (kanan)
+        // Sumbu y layar dibalik: titik matematika (x,y) -> layar (x*s, -y*s)
+        const L = (x, y) => `${x * s},${-y * s}`;
+        const petak = [];
+        for (let i = 1; i < a; i++) {
+            petak.push(`<line x1="${-a * s}" y1="${-i * s}" x2="0" y2="${-i * s}"/>`, `<line x1="${-i * s}" y1="0" x2="${-i * s}" y2="${-a * s}"/>`);
+        }
+        for (let i = 1; i < b; i++) {
+            petak.push(`<line x1="${i * s}" y1="0" x2="${i * s}" y2="${b * s}"/>`, `<line x1="0" y1="${i * s}" x2="${b * s}" y2="${i * s}"/>`);
+        }
+        // petak pada persegi sisi miring: A=(0,a), v=(b,-a), n=(a,b)
+        for (let i = 1; i < c; i++) {
+            const t = i / c;
+            petak.push(`<line x1="${b * t * s}" y1="${-(a - a * t) * s}" x2="${(b * t + a) * s}" y2="${-(a - a * t + b) * s}"/>`);
+            petak.push(`<line x1="${a * t * s}" y1="${-(a + b * t) * s}" x2="${(a * t + b) * s}" y2="${-(b * t) * s}"/>`);
+        }
+
+        const kiri = -a * s - 20, atas = -(a + b) * s - 20;
+        const lebar = (2 * a + b) * s + 40, tinggi = (a + 2 * b) * s + 40;
+
+        wadah.innerHTML = `
+            <svg viewBox="${kiri} ${atas} ${lebar} ${tinggi}" role="img" aria-label="Segitiga dengan persegi di tiap sisi">
+                <polygon points="${L(0, a)} ${L(b, 0)} ${L(a + b, b)} ${L(a, a + b)}" class="s-isi-2"/>
+                <rect x="${-a * s}" y="${-a * s}" width="${a * s}" height="${a * s}" class="s-isi"/>
+                <rect x="0" y="0" width="${b * s}" height="${b * s}" class="s-isi-3"/>
+                <g class="s-petak">${petak.join("")}</g>
+                <polygon points="${L(0, a)} ${L(b, 0)} ${L(a + b, b)} ${L(a, a + b)}" class="s-kosong s-garis" style="stroke:var(--emas)"/>
+                <rect x="${-a * s}" y="${-a * s}" width="${a * s}" height="${a * s}" class="s-kosong s-garis"/>
+                <rect x="0" y="0" width="${b * s}" height="${b * s}" class="s-kosong s-garis"/>
+                <polygon points="${L(0, a)} 0,0 ${L(b, 0)}" class="s-putih s-garis-g"/>
+                <text x="${-a * s / 2}" y="${-a * s / 2 + 6}" class="s-teks">${a * a}</text>
+                <text x="${b * s / 2}" y="${b * s / 2 + 6}" class="s-teks">${b * b}</text>
+                <text x="${(a + b) * s / 2}" y="${-(a + b) * s / 2 + 6}" class="s-teks">${a * a + b * b}</text>
+            </svg>`;
+
+        hasil.innerHTML = `
+            <div class="persamaan">
+                <div>Luas persegi kecil: ${a}² = ${a * a}</div>
+                <div>Luas persegi sedang: ${b}² = ${b * b}</div>
+                <div>Luas persegi di sisi miring: ${a * a} + ${b * b} = ${a * a + b * b}</div>
+            </div>
+            <p class="kesimpulan">Sisi miring c = √${a * a + b * b} = ${Phyn.akar(a * a + b * b)}</p>`;
+    }
+
+    geserA.addEventListener("input", gambarTigaPersegi);
+    geserB.addEventListener("input", gambarTigaPersegi);
+    gambarTigaPersegi();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+{% extends "materi_topik.html" %}
+
+{% block isi %}
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">1</span>Kebalikan teorema Pythagoras</h2>
+    <p>
+        Teorema Pythagoras berkata: <em>kalau segitiganya siku-siku, maka <var>c</var>² = <var>a</var>² + <var>b</var>²</em>.
+        Ternyata kebalikannya juga benar: <em>kalau <var>c</var>² = <var>a</var>² + <var>b</var>², maka segitiganya pasti siku-siku.</em>
+    </p>
+    <p>
+        Inilah cara tukang bangunan memastikan sudut fondasi rumah benar-benar siku-siku.
+        Mereka cukup memakai tali dengan ukuran <strong>30 cm, 40 cm, dan 50 cm</strong>.
+        Karena 30² + 40² = 900 + 1600 = 2500 = 50², sudut yang terbentuk pasti 90°.
+    </p>
+
+    <h3>Membandingkan <var>c</var>² dengan <var>a</var>² + <var>b</var>²</h3>
+    <p>Misalkan <var>c</var> adalah <strong>sisi terpanjang</strong>. Bandingkan <var>c</var>² dengan <var>a</var>² + <var>b</var>²:</p>
+
+    <div class="gambar-berjajar">
+        <figure>
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+                <path d="M20 100 L140 100 L95 22 Z" class="s-isi s-garis"/>
+            </svg>
+            <figcaption><strong><var>c</var>² &lt; <var>a</var>² + <var>b</var>²</strong><br>Segitiga <strong>lancip</strong></figcaption>
+        </figure>
+        <figure>
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+                <path d="M30 100 L130 100 L30 25 Z" class="s-isi-2 s-garis"/>
+                <path d="M30 88 h12 v12" class="s-siku"/>
+            </svg>
+            <figcaption><strong><var>c</var>² = <var>a</var>² + <var>b</var>²</strong><br>Segitiga <strong>siku-siku</strong></figcaption>
+        </figure>
+        <figure>
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+                <path d="M10 100 L150 100 L50 60 Z" class="s-isi s-garis"/>
+            </svg>
+            <figcaption><strong><var>c</var>² &gt; <var>a</var>² + <var>b</var>²</strong><br>Segitiga <strong>tumpul</strong></figcaption>
+        </figure>
+    </div>
+
+    <div class="catatan">
+        <strong>Kenapa begitu?</strong>
+        Bayangkan dua sisi pendek seperti engsel. Kalau engselnya dibuka lebar (sudut tumpul),
+        sisi ketiga jadi lebih panjang dari "seharusnya", sehingga <var>c</var>² lebih besar.
+        Kalau engselnya ditutup (sudut lancip), sisi ketiga lebih pendek, sehingga <var>c</var>² lebih kecil.
+    </div>
+
+    <div class="catatan penting">
+        <strong>Selalu pakai sisi terpanjang sebagai <var>c</var></strong>
+        Urutkan dulu ketiga sisi dari yang terkecil. Soal sering sengaja menulis sisi terpanjang di tengah atau di depan,
+        misalnya "17, 15, 8".
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">2</span>Contoh soal</h2>
+
+    <div class="contoh">
+        <span class="label-contoh">Contoh 1</span>
+        <p class="soal-contoh">Putri mengukur sebuah taman berbentuk segitiga. Panjang sisinya 4 m, 5 m, dan 6 m. Apakah taman itu berbentuk segitiga siku-siku?</p>
+        <ol class="langkah" data-langkah>
+            <li>Sisi terpanjang <var>c</var> = 6 m. Dua sisi lainnya 4 m dan 5 m.</li>
+            <li>Hitung kedua sisi persamaan:
+                <div class="persamaan"><div><var>c</var>² = 6² = 36</div><div><var>a</var>² + <var>b</var>² = 4² + 5² = 16 + 25 = 41</div></div></li>
+            <li>Bandingkan: 36 &lt; 41, jadi <var>c</var>² &lt; <var>a</var>² + <var>b</var>².
+                Taman itu <strong>bukan</strong> segitiga siku-siku, melainkan <strong>segitiga lancip</strong>.</li>
+        </ol>
+    </div>
+
+    <div class="contoh">
+        <span class="label-contoh">Contoh 2</span>
+        <p class="soal-contoh">Apakah sisi 12 cm, 5 cm, dan 14 cm membentuk segitiga siku-siku?</p>
+        <ol class="langkah" data-langkah>
+            <li>Urutkan: 5, 12, <strong>14</strong>. Sisi terpanjang <var>c</var> = 14.</li>
+            <li><div class="persamaan"><div><var>c</var>² = 14² = 196</div><div><var>a</var>² + <var>b</var>² = 5² + 12² = 25 + 144 = 169</div></div></li>
+            <li>196 &gt; 169, jadi segitiga ini <strong>tumpul</strong>.
+                Kalau tukang memakai ukuran ini, sudut fondasinya tidak akan siku-siku.
+                (Ukuran yang benar: 5, 12, <strong>13</strong>.)</li>
+        </ol>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">3</span>Pemeriksa jenis segitiga</h2>
+    <div class="interaktif">
+        <span class="label-coba">Coba sendiri</span>
+        <p>Masukkan panjang ketiga sisi dalam urutan apa saja.</p>
+        <div class="baris-isian">
+            <label class="isian">Sisi 1 <input type="number" id="sisi-1" value="17" min="0" step="any"></label>
+            <label class="isian">Sisi 2 <input type="number" id="sisi-2" value="15" min="0" step="any"></label>
+            <label class="isian">Sisi 3 <input type="number" id="sisi-3" value="8" min="0" step="any"></label>
+        </div>
+        <div class="hasil" id="hasil-jenis"></div>
+    </div>
+</section>
+
+<section class="cek-pemahaman">
+    <h2>Cek Pemahaman</h2>
+    <p>Pilih jawabanmu. Kalau salah, akan muncul catatan kenapa salah.</p>
+
+    <div class="kuis">
+        <p class="soal-kuis">1. Segitiga dengan sisi 7, 10, dan 12 termasuk segitiga …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" Cek: 12² = 144, sedangkan 7² + 10² = 49 + 100 = 149. Hasilnya tidak sama, jadi bukan siku-siku.">Siku-siku</button>
+            <button type="button" data-benar>Lancip</button>
+            <button type="button" data-catatan=" Tumpul kalau c² LEBIH BESAR dari a² + b². Di sini 144 &lt; 149, jadi kebalikannya.">Tumpul</button>
+        </div>
+        <div class="penjelasan" hidden>12² = 144 dan 7² + 10² = 149. Karena 144 &lt; 149, segitiganya lancip.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">2. Segitiga dengan sisi 17, 15, dan 8 termasuk segitiga …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-benar>Siku-siku</button>
+            <button type="button" data-catatan=" Mungkin kamu memakai 8 sebagai c karena ditulis terakhir. Sisi terpanjang adalah 17, jadi c = 17.">Lancip</button>
+            <button type="button" data-catatan=" Mungkin kamu memakai 15 sebagai c. Urutkan dulu: 8, 15, 17. Sisi terpanjangnya 17.">Tumpul</button>
+        </div>
+        <div class="penjelasan" hidden>Sisi terpanjang 17: 17² = 289 dan 8² + 15² = 64 + 225 = 289. Sama, jadi segitiga siku-siku.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">3. Segitiga dengan sisi 10, 22, dan 26 termasuk segitiga …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" Cek: 26² = 676, sedangkan 10² + 22² = 100 + 484 = 584. Tidak sama.">Siku-siku</button>
+            <button type="button" data-catatan=" Lancip kalau c² LEBIH KECIL. Di sini 676 &gt; 584.">Lancip</button>
+            <button type="button" data-benar>Tumpul</button>
+        </div>
+        <div class="penjelasan" hidden>26² = 676 &gt; 10² + 22² = 584, jadi segitiganya tumpul.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block skrip %}
+<script>
+    const isian = ["sisi-1", "sisi-2", "sisi-3"].map((id) => document.getElementById(id));
+    const hasilJenis = document.getElementById("hasil-jenis");
+
+    function periksa() {
+        const sisi = isian.map(Phyn.baca);
+        if (sisi.some((s) => !(s > 0))) {
+            hasilJenis.innerHTML = `<p class="galat">Isi ketiga sisi dengan bilangan lebih dari 0.</p>`;
+            return;
+        }
+        const [a, b, c] = [...sisi].sort((x, y) => x - y);
+        const A = (x) => Phyn.angka(x, 4);
+
+        if (a + b <= c) {
+            hasilJenis.innerHTML = `<p class="galat">Ketiga sisi ini tidak bisa membentuk segitiga, karena ${A(a)} + ${A(b)} = ${A(a + b)} tidak lebih panjang dari ${A(c)}.</p>`;
+            return;
+        }
+
+        const kiri = c * c, kanan = a * a + b * b;
+        const selisih = Math.abs(kiri - kanan);
+        let tanda, jenis;
+        if (selisih < 1e-9) { tanda = "="; jenis = "siku-siku"; }
+        else if (kiri < kanan) { tanda = "&lt;"; jenis = "lancip"; }
+        else { tanda = "&gt;"; jenis = "tumpul"; }
+
+        hasilJenis.innerHTML = `
+            <p style="margin:0 0 6px">Urutkan: ${A(a)}, ${A(b)}, <strong>${A(c)}</strong> → sisi terpanjang c = ${A(c)}</p>
+            <div class="persamaan">
+                <div>c² = ${A(c)}² = ${A(kiri)}</div>
+                <div>a² + b² = ${A(a)}² + ${A(b)}² = ${A(a * a)} + ${A(b * b)} = ${A(kanan)}</div>
+                <div>${A(kiri)} ${tanda} ${A(kanan)}</div>
+            </div>
+            <p class="kesimpulan">Segitiga ${jenis}</p>`;
+    }
+
+    isian.forEach((el) => el.addEventListener("input", periksa));
+    periksa();
+</script>
+{% endblock %}

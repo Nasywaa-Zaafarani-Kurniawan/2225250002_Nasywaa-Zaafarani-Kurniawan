@@ -1,0 +1,160 @@
+{% extends "materi_topik.html" %}
+
+{% block isi %}
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">1</span>Apa itu tripel Pythagoras?</h2>
+    <p>
+        <strong>Tripel Pythagoras</strong> adalah tiga bilangan asli <var>a</var>, <var>b</var>, <var>c</var>
+        (dengan <var>c</var> terbesar) yang memenuhi <var>c</var>² = <var>a</var>² + <var>b</var>².
+        Ketiga bilangan ini pasti bisa menjadi sisi-sisi segitiga siku-siku.
+    </p>
+
+    <div class="persamaan">
+        <div>3, 4, 5 → 3² + 4² = 9 + 16 = 25 = 5² ✓</div>
+        <div>5, 12, 13 → 5² + 12² = 25 + 144 = 169 = 13² ✓</div>
+    </div>
+
+    <h3>Tripel yang paling sering muncul di soal</h3>
+    <div class="tabel-wadah">
+        <table>
+            <tr><th>Tripel dasar</th><th>×2</th><th>×3</th><th>×4</th><th>×5</th></tr>
+            <tr><td><strong>3, 4, 5</strong></td><td>6, 8, 10</td><td>9, 12, 15</td><td>12, 16, 20</td><td>15, 20, 25</td></tr>
+            <tr><td><strong>5, 12, 13</strong></td><td>10, 24, 26</td><td>15, 36, 39</td><td>20, 48, 52</td><td>25, 60, 65</td></tr>
+            <tr><td><strong>8, 15, 17</strong></td><td>16, 30, 34</td><td>24, 45, 51</td><td>32, 60, 68</td><td>40, 75, 85</td></tr>
+            <tr><td><strong>7, 24, 25</strong></td><td>14, 48, 50</td><td>21, 72, 75</td><td>28, 96, 100</td><td>35, 120, 125</td></tr>
+            <tr><td><strong>20, 21, 29</strong></td><td>40, 42, 58</td><td>60, 63, 87</td><td>80, 84, 116</td><td>100, 105, 145</td></tr>
+        </table>
+    </div>
+
+    <div class="catatan">
+        <strong>Kenapa berguna?</strong>
+        Kalau kamu melihat sisi 9 dan 12, kamu bisa langsung tahu sisi miringnya 15 (karena 9, 12, 15 = 3 × (3, 4, 5)),
+        tanpa menghitung kuadrat. Hasilnya sama, tapi jauh lebih cepat.
+    </div>
+
+    <div class="catatan penting">
+        <strong>Kelipatan tripel juga tripel</strong>
+        Jika (<var>a</var>, <var>b</var>, <var>c</var>) tripel Pythagoras, maka (<var>ka</var>, <var>kb</var>, <var>kc</var>) juga tripel,
+        untuk bilangan asli <var>k</var> berapa pun.
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">2</span>Membuat tripel sendiri</h2>
+    <p>Ambil dua bilangan asli <var>p</var> dan <var>q</var> dengan <var>p</var> &gt; <var>q</var>. Maka tiga bilangan ini <strong>selalu</strong> tripel Pythagoras:</p>
+
+    <div class="kotak-rumus">
+        <div class="rumus"><var>p</var>² − <var>q</var>², &nbsp; 2<var>pq</var>, &nbsp; <var>p</var>² + <var>q</var>²</div>
+        <small>sisi miringnya adalah <var>p</var>² + <var>q</var>²</small>
+    </div>
+
+    <div class="interaktif">
+        <span class="label-coba">Pembuat tripel</span>
+        <p>Pilih <var>p</var> dan <var>q</var>, lalu lihat tripel yang terbentuk.</p>
+        <div class="baris-isian">
+            <label class="isian"><span>Nilai <var>p</var></span> <input type="number" id="isi-p" value="3" min="2" max="30" step="1"></label>
+            <label class="isian"><span>Nilai <var>q</var></span> <input type="number" id="isi-q" value="2" min="1" max="29" step="1"></label>
+        </div>
+        <div class="hasil" id="hasil-pembuat"></div>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">3</span>Cek: tripel atau bukan?</h2>
+    <div class="interaktif">
+        <span class="label-coba">Pemeriksa tripel</span>
+        <p>Masukkan tiga bilangan asli.</p>
+        <div class="baris-isian">
+            <label class="isian">Bilangan 1 <input type="number" id="cek-1" value="20" min="1" step="1"></label>
+            <label class="isian">Bilangan 2 <input type="number" id="cek-2" value="21" min="1" step="1"></label>
+            <label class="isian">Bilangan 3 <input type="number" id="cek-3" value="29" min="1" step="1"></label>
+        </div>
+        <div class="hasil" id="hasil-cek"></div>
+    </div>
+</section>
+
+<section class="cek-pemahaman">
+    <h2>Cek Pemahaman</h2>
+    <p>Pilih jawabanmu. Kalau salah, akan muncul catatan kenapa salah.</p>
+
+    <div class="kuis">
+        <p class="soal-kuis">1. Manakah yang merupakan tripel Pythagoras?</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" Cek: 5² + 13² = 25 + 169 = 194, sedangkan 14² = 196. Hampir, tapi tidak sama.">5, 13, 14</button>
+            <button type="button" data-catatan=" Cek: 4² + 6² = 16 + 36 = 52, sedangkan 8² = 64. Tidak sama. (Ini bukan kelipatan 3, 4, 5. Kelipatan 2-nya adalah 6, 8, 10.)">4, 6, 8</button>
+            <button type="button" data-benar>20, 21, 29</button>
+            <button type="button" data-catatan=" Cek: 7² + 24² = 49 + 576 = 625 = 25², bukan 26². Tripel yang benar adalah 7, 24, 25.">7, 24, 26</button>
+        </div>
+        <div class="penjelasan" hidden>20² + 21² = 400 + 441 = 841 = 29².</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">2. Lengkapi tripel berikut: 15, …, 25</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-benar>20</button>
+            <button type="button" data-catatan=" 10 adalah 25 − 15. Yang dikurangkan kuadratnya: 25² − 15² = 625 − 225 = 400.">10</button>
+            <button type="button" data-catatan=" Cek: 15² + 30² = 1125, padahal 25² = 625. Bilangan yang hilang harus lebih kecil dari 25, karena 25 sisi terpanjang.">30</button>
+        </div>
+        <div class="penjelasan" hidden>15, 20, 25 adalah 5 × (3, 4, 5). Atau hitung: √(625 − 225) = √400 = 20.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block skrip %}
+<script>
+    // Pembuat tripel dari p dan q
+    const isiP = document.getElementById("isi-p");
+    const isiQ = document.getElementById("isi-q");
+    const hasilPembuat = document.getElementById("hasil-pembuat");
+
+    function buatTripel() {
+        const p = parseInt(isiP.value), q = parseInt(isiQ.value);
+        if (!(p > 0) || !(q > 0) || p <= q) {
+            hasilPembuat.innerHTML = `<p class="galat">p dan q harus bilangan asli, dengan p lebih besar dari q.</p>`;
+            return;
+        }
+        const a = p * p - q * q, b = 2 * p * q, c = p * p + q * q;
+        const [x, y] = [a, b].sort((m, n) => m - n);
+        hasilPembuat.innerHTML = `
+            <div class="persamaan">
+                <div>p² − q² = ${p}² − ${q}² = ${a}</div>
+                <div>2pq = 2 × ${p} × ${q} = ${b}</div>
+                <div>p² + q² = ${p}² + ${q}² = ${c}</div>
+            </div>
+            <p style="margin:6px 0 0">Cek: ${x}² + ${y}² = ${x * x} + ${y * y} = ${x * x + y * y} = ${c}² ✓</p>
+            <p class="kesimpulan">Tripel Pythagoras: ${x}, ${y}, ${c}</p>`;
+    }
+    isiP.addEventListener("input", buatTripel);
+    isiQ.addEventListener("input", buatTripel);
+    buatTripel();
+
+    // Pemeriksa tripel
+    const cek = ["cek-1", "cek-2", "cek-3"].map((id) => document.getElementById(id));
+    const hasilCek = document.getElementById("hasil-cek");
+
+    function periksaTripel() {
+        const nilai = cek.map((el) => Number(el.value));
+        if (nilai.some((n) => !Number.isInteger(n) || n < 1)) {
+            hasilCek.innerHTML = `<p class="galat">Tripel Pythagoras hanya untuk bilangan asli (1, 2, 3, …).</p>`;
+            return;
+        }
+        const [a, b, c] = [...nilai].sort((m, n) => m - n);
+        const kiri = a * a + b * b, kanan = c * c;
+        const ya = kiri === kanan;
+        hasilCek.innerHTML = `
+            <div class="persamaan">
+                <div>${a}² + ${b}² = ${a * a} + ${b * b} = ${kiri}</div>
+                <div>${c}² = ${kanan}</div>
+            </div>
+            <p class="kesimpulan">${ya
+                ? `✓ ${a}, ${b}, ${c} adalah tripel Pythagoras.`
+                : `✗ Bukan tripel Pythagoras, karena ${kiri} ≠ ${kanan}.`}</p>`;
+    }
+    cek.forEach((el) => el.addEventListener("input", periksaTripel));
+    periksaTripel();
+</script>
+{% endblock %}

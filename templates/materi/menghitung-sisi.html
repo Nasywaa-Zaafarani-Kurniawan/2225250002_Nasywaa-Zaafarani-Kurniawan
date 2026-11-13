@@ -1,0 +1,234 @@
+{% extends "materi_topik.html" %}
+
+{% block isi %}
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">1</span>Satu aturan untuk semua soal</h2>
+    <p>Setiap kali mencari panjang sisi segitiga siku-siku, ikuti tiga langkah ini:</p>
+
+    <ol>
+        <li><strong>Temukan sisi miring</strong>: sisi di seberang tanda siku-siku.</li>
+        <li><strong>Tanya: yang dicari sisi miring atau bukan?</strong>
+            <ul>
+                <li>Yang dicari <strong>sisi miring</strong> → kuadratnya <strong>DITAMBAH</strong>.</li>
+                <li>Yang dicari <strong>sisi siku-siku</strong> → kuadratnya <strong>DIKURANG</strong> (besar − kecil).</li>
+            </ul>
+        </li>
+        <li><strong>Akarkan</strong> hasilnya. Jangan lupa langkah ini!</li>
+    </ol>
+
+    <div class="gambar-berjajar">
+        <figure>
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+                <path d="M30 100 V20 L140 100 Z" class="s-isi"/>
+                <path d="M30 100 V20" class="s-garis" fill="none"/><path d="M30 100 H140" class="s-garis" fill="none"/>
+                <path d="M30 20 L140 100" class="s-aksen"/>
+                <path d="M30 88 h12 v12" class="s-siku"/>
+                <text x="94" y="52" class="s-teks s-teks-e">?</text>
+            </svg>
+            <figcaption><strong>Cari sisi miring → TAMBAH</strong><br><var>c</var>² = <var>a</var>² + <var>b</var>²</figcaption>
+        </figure>
+        <figure>
+            <svg viewBox="0 0 160 120" aria-hidden="true">
+                <path d="M30 100 V20 L140 100 Z" class="s-isi"/>
+                <path d="M30 20 L140 100" class="s-garis" fill="none"/><path d="M30 100 H140" class="s-garis" fill="none"/>
+                <path d="M30 100 V20" class="s-aksen"/>
+                <path d="M30 88 h12 v12" class="s-siku"/>
+                <text x="16" y="66" class="s-teks s-teks-e">?</text>
+            </svg>
+            <figcaption><strong>Cari sisi siku-siku → KURANG</strong><br><var>a</var>² = <var>c</var>² − <var>b</var>²</figcaption>
+        </figure>
+    </div>
+
+    <div class="catatan">
+        <strong>Cara mengecek jawaban</strong>
+        Sisi miring harus <strong>paling panjang</strong>. Kalau sisi siku-siku hasil hitunganmu lebih panjang
+        dari sisi miring, pasti ada yang salah. Biasanya kamu menambah padahal seharusnya mengurang.
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">2</span>Contoh soal</h2>
+
+    <div class="contoh">
+        <span class="label-contoh">Contoh 1 · mencari sisi miring</span>
+        <p class="soal-contoh">Segitiga ABC siku-siku di B, dengan AB = 12 cm dan BC = 5 cm. Tentukan panjang AC.</p>
+        <figure class="gambar">
+            <svg viewBox="0 0 260 220" style="max-width:260px" aria-hidden="true">
+                <path d="M150 20 V190 H80 Z" class="s-isi s-garis"/>
+                <path d="M150 176 h-14 v14" class="s-siku"/>
+                <text x="150" y="14" class="s-teks">A</text>
+                <text x="164" y="206" class="s-teks">B</text>
+                <text x="68" y="206" class="s-teks">C</text>
+                <text x="186" y="110" class="s-teks s-kecil">12 cm</text>
+                <text x="115" y="210" class="s-teks s-kecil">5 cm</text>
+                <text x="100" y="100" class="s-teks s-teks-e">?</text>
+            </svg>
+        </figure>
+        <ol class="langkah" data-langkah>
+            <li>Siku-siku di B, jadi sisi miringnya <strong>AC</strong> (di seberang B). Yang dicari AC = sisi miring → <strong>tambah</strong>.</li>
+            <li>Tulis rumusnya:
+                <div class="persamaan"><div>AC² = AB² + BC²</div></div></li>
+            <li>Masukkan angkanya:
+                <div class="persamaan"><div>AC² = 12² + 5²</div><div>AC² = 144 + 25</div><div>AC² = 169</div></div></li>
+            <li>Akarkan:
+                <div class="persamaan"><div>AC = √169 = 13</div></div>
+                Jadi panjang AC = <strong>13 cm</strong>. Cek: 13 lebih panjang dari 12 dan 5 ✓</li>
+        </ol>
+    </div>
+
+    <div class="contoh">
+        <span class="label-contoh">Contoh 2 · mencari sisi siku-siku</span>
+        <p class="soal-contoh">Segitiga PQR siku-siku di Q. Panjang PR = 2,9 cm dan QR = 2,1 cm. Tentukan panjang PQ.</p>
+        <ol class="langkah" data-langkah>
+            <li>Siku-siku di Q, jadi sisi miringnya <strong>PR</strong> = 2,9 cm. Yang dicari PQ = sisi siku-siku → <strong>kurang</strong>.</li>
+            <li>Tulis rumusnya (besar − kecil):
+                <div class="persamaan"><div>PQ² = PR² − QR²</div></div></li>
+            <li>Masukkan angkanya:
+                <div class="persamaan"><div>PQ² = 2,9² − 2,1²</div><div>PQ² = 8,41 − 4,41</div><div>PQ² = 4</div></div></li>
+            <li>Akarkan:
+                <div class="persamaan"><div>PQ = √4 = 2</div></div>
+                Jadi panjang PQ = <strong>2 cm</strong>. Cek: 2 lebih pendek dari sisi miring 2,9 ✓</li>
+        </ol>
+    </div>
+
+    <div class="contoh">
+        <span class="label-contoh">Contoh 3 · hasil bukan bilangan bulat</span>
+        <p class="soal-contoh">Sisi siku-siku sebuah segitiga adalah 7 cm dan 6 cm. Berapa panjang sisi miringnya?</p>
+        <ol class="langkah" data-langkah>
+            <li>Yang dicari sisi miring → <strong>tambah</strong>:
+                <div class="persamaan"><div><var>c</var>² = 7² + 6² = 49 + 36 = 85</div></div></li>
+            <li>85 bukan bilangan kuadrat (9² = 81, 10² = 100), jadi hasilnya ada di antara 9 dan 10:
+                <div class="persamaan"><div><var>c</var> = √85 ≈ 9,2 cm</div></div>
+                Kamu boleh menuliskan jawabannya sebagai <strong>√85 cm</strong> atau <strong>≈ 9,2 cm</strong>.</li>
+        </ol>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">3</span>Kalkulator langkah demi langkah</h2>
+    <div class="interaktif">
+        <span class="label-coba">Coba sendiri</span>
+        <p>Pilih sisi yang dicari, isi dua sisi yang diketahui, lalu lihat langkah pengerjaannya.</p>
+        <div class="baris-isian">
+            <label class="isian">Yang dicari
+                <select id="pilih-dicari">
+                    <option value="miring">Sisi miring</option>
+                    <option value="siku">Sisi siku-siku</option>
+                </select>
+            </label>
+            <label class="isian"><span id="label-1">Sisi siku-siku 1</span>
+                <input type="number" id="isi-1" value="6" min="0" step="any">
+            </label>
+            <label class="isian"><span id="label-2">Sisi siku-siku 2</span>
+                <input type="number" id="isi-2" value="8" min="0" step="any">
+            </label>
+        </div>
+        <div class="hasil" id="hasil-hitung"></div>
+    </div>
+</section>
+
+<section class="cek-pemahaman">
+    <h2>Cek Pemahaman</h2>
+    <p>Pilih jawabanmu. Kalau salah, akan muncul catatan kenapa salah.</p>
+
+    <div class="kuis">
+        <p class="soal-kuis">1. Sisi miring sebuah segitiga siku-siku 10 cm, dan salah satu sisi siku-sikunya 6 cm. Panjang sisi siku-siku lainnya adalah …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" Kamu menjumlahkan 10² + 6² = 136. Padahal yang dicari sisi SIKU-SIKU, jadi seharusnya dikurang: 10² − 6². (Cek: √136 ≈ 11,7 lebih panjang dari sisi miring 10, tidak mungkin!)">√136 ≈ 11,7 cm</button>
+            <button type="button" data-catatan=" Kamu mengurangkan panjang sisinya langsung (10 − 6). Yang dikurangkan adalah KUADRATNYA: 10² − 6² = 100 − 36.">4 cm</button>
+            <button type="button" data-benar>8 cm</button>
+            <button type="button" data-catatan=" 64 adalah hasil 10² − 6². Kamu lupa langkah terakhir: hasilnya harus diakarkan.">64 cm</button>
+        </div>
+        <div class="penjelasan" hidden>Yang dicari sisi siku-siku → kurang: 10² − 6² = 100 − 36 = 64, lalu √64 = 8 cm.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">2. Sisi siku-siku sebuah segitiga 9 cm dan 12 cm. Panjang sisi miringnya adalah …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" Kamu menjumlahkan panjang sisinya langsung (9 + 12). Yang dijumlahkan adalah KUADRATNYA: 9² + 12².">21 cm</button>
+            <button type="button" data-catatan=" Kamu mengurangkan (12² − 9²). Yang dicari sisi MIRING, jadi kuadratnya ditambah.">√63 cm</button>
+            <button type="button" data-catatan=" 225 adalah 9² + 12². Langkahnya sudah benar, tinggal diakarkan: √225.">225 cm</button>
+            <button type="button" data-benar>15 cm</button>
+        </div>
+        <div class="penjelasan" hidden>9² + 12² = 81 + 144 = 225, lalu √225 = 15 cm. (9, 12, 15 adalah kelipatan 3 dari 3, 4, 5.)</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">3. Pada segitiga siku-siku, sisi miringnya 34 cm dan salah satu sisi siku-sikunya 16 cm. Sisi siku-siku lainnya …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-benar>30 cm</button>
+            <button type="button" data-catatan=" 18 adalah 34 − 16. Yang dikurangkan harus kuadratnya: 34² − 16² = 1156 − 256.">18 cm</button>
+            <button type="button" data-catatan=" Coba cek: 29² = 841, sedangkan 34² − 16² = 900. Hitung ulang kuadratnya.">29 cm</button>
+            <button type="button" data-catatan=" Kamu menjumlahkan kuadratnya. Yang dicari sisi siku-siku → dikurang.">√1412 cm</button>
+        </div>
+        <div class="penjelasan" hidden>34² − 16² = 1156 − 256 = 900, lalu √900 = 30 cm.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block skrip %}
+<script>
+    const pilihDicari = document.getElementById("pilih-dicari");
+    const isi1 = document.getElementById("isi-1");
+    const isi2 = document.getElementById("isi-2");
+    const label1 = document.getElementById("label-1");
+    const label2 = document.getElementById("label-2");
+    const hasilHitung = document.getElementById("hasil-hitung");
+
+    function hitung() {
+        const cariMiring = pilihDicari.value === "miring";
+        label1.textContent = cariMiring ? "Sisi siku-siku 1" : "Sisi miring";
+        label2.textContent = cariMiring ? "Sisi siku-siku 2" : "Sisi siku-siku yang diketahui";
+
+        const x = Phyn.baca(isi1), y = Phyn.baca(isi2);
+        if (!(x > 0) || !(y > 0)) {
+            hasilHitung.innerHTML = `<p class="galat">Isi kedua sisi dengan bilangan lebih dari 0.</p>`;
+            return;
+        }
+        const A = Phyn.angka;
+
+        if (cariMiring) {
+            const jumlah = x * x + y * y;
+            hasilHitung.innerHTML = `
+                <p style="margin:0 0 6px">Yang dicari sisi miring → <strong>tambah</strong></p>
+                <div class="persamaan">
+                    <div>c² = ${A(x)}² + ${A(y)}²</div>
+                    <div>c² = ${A(x * x, 4)} + ${A(y * y, 4)}</div>
+                    <div>c² = ${A(jumlah, 4)}</div>
+                    <div>c = √${A(jumlah, 4)} = ${Phyn.akar(jumlah)}</div>
+                </div>
+                <p class="kesimpulan">Sisi miring = ${Phyn.akar(jumlah)}</p>`;
+        } else {
+            if (y >= x) {
+                hasilHitung.innerHTML = `<p class="galat">Sisi miring (${A(x)}) harus lebih panjang dari sisi siku-siku (${A(y)}). Cek lagi mana yang sisi miring.</p>`;
+                return;
+            }
+            const selisih = x * x - y * y;
+            hasilHitung.innerHTML = `
+                <p style="margin:0 0 6px">Yang dicari sisi siku-siku → <strong>kurang</strong> (besar − kecil)</p>
+                <div class="persamaan">
+                    <div>a² = ${A(x)}² − ${A(y)}²</div>
+                    <div>a² = ${A(x * x, 4)} − ${A(y * y, 4)}</div>
+                    <div>a² = ${A(selisih, 4)}</div>
+                    <div>a = √${A(selisih, 4)} = ${Phyn.akar(selisih)}</div>
+                </div>
+                <p class="kesimpulan">Sisi siku-siku = ${Phyn.akar(selisih)}</p>`;
+        }
+    }
+
+    pilihDicari.addEventListener("change", () => {
+        // contoh angka yang pas untuk tiap pilihan
+        if (pilihDicari.value === "miring") { isi1.value = 6; isi2.value = 8; }
+        else { isi1.value = 13; isi2.value = 5; }
+        hitung();
+    });
+    isi1.addEventListener("input", hitung);
+    isi2.addEventListener("input", hitung);
+    hitung();
+</script>
+{% endblock %}

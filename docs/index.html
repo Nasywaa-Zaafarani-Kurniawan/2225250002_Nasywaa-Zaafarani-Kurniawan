@@ -287,25 +287,24 @@
         window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (!geraknyaDikurangi) {
-        const jenisButir = ["apel", "apel", "apel-gigit", "clover", "clover"];
-        const jumlah = window.innerWidth < 600 ? 7 : 12;
+        // apel lebih sering muncul daripada clover
+        const jenisButir = ["apel", "apel", "apel-gigit", "apel-gigit", "clover", "clover"];
+        const jumlah = window.innerWidth < 600 ? 14 : 28;
         const acak = (min, max) => min + Math.random() * (max - min);
 
         for (let i = 0; i < jumlah; i++) {
-            const jenis = jenisButir[Math.floor(Math.random() * jenisButir.length)];
-            const ukuran = jenis === "clover" ? acak(12, 17) : acak(15, 22);
-            const durasi = acak(11, 18);
+            const jenis = jenisButir[i % jenisButir.length];
+            const ukuran = jenis === "clover" ? acak(10, 14) : acak(13, 19);
+            const durasi = acak(4, 7);   // detik untuk jatuh dari atas ke bawah
 
             const butir = document.createElement("div");
             butir.className = "butir";
-            butir.style.left = acak(0, 100) + "vw";
+            butir.style.left = acak(-5, 100) + "vw";
             butir.style.setProperty("--ukuran", ukuran + "px");
             butir.style.setProperty("--durasi", durasi + "s");
-            // tunda negatif: butir sudah tersebar di layar sejak awal
+            // tunda negatif: hujan sudah turun sejak halaman dibuka
             butir.style.setProperty("--tunda", -acak(0, durasi) + "s");
-            butir.style.setProperty("--geser", acak(-40, 40) + "px");
-            butir.style.setProperty("--putar", acak(-200, 200) + "deg");
-            butir.style.setProperty("--ayun", acak(2.5, 4.5) + "s");
+            butir.style.setProperty("--putar", acak(-90, 90) + "deg");
 
             butir.innerHTML =
                 `<svg viewBox="0 0 32 32"><use href="#${jenis}"/></svg>`;

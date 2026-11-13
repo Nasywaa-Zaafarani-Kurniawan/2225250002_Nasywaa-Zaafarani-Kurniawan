@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soal dengan Banyak Segitiga — PHYNtagoras</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/materi.css">
+</head>
+
+<body data-topik="bangun-gabungan">
+
+<!-- Navigasi atas -->
+<header class="navbar">
+    <div class="navbar-isi">
+        <a href="./" class="logo">
+            <span class="logo-ikon">△</span>
+            <span><span class="logo-phyn">PHYN</span>tagoras</span>
+        </a>
+
+        <nav class="nav-link">
+            <a href="beranda.html">Beranda</a>
+            <a href="materi.html" class="aktif">Materi</a>
+            <a href="contoh.html">Contoh Soal</a>
+            <a href="latihan.html">Latihan</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    
+<div class="tata-topik">
+
+    <!-- Daftar semua topik (layar lebar) -->
+    <aside class="daftar-topik">
+        <a href="materi.html" class="kembali">← Semua materi</a>
+        <ol>
+            
+            <li>
+                <a href="materi-prasyarat.html"
+                   data-slug="prasyarat"
+                   >
+                    <span class="no">1</span>
+                    <span>Kuadrat &amp; Akar Kuadrat</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-segitiga-siku.html"
+                   data-slug="segitiga-siku"
+                   >
+                    <span class="no">2</span>
+                    <span>Mengenal Segitiga Siku-Siku</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-menemukan-teorema.html"
+                   data-slug="menemukan-teorema"
+                   >
+                    <span class="no">3</span>
+                    <span>Menemukan Teorema Pythagoras</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-menghitung-sisi.html"
+                   data-slug="menghitung-sisi"
+                   >
+                    <span class="no">4</span>
+                    <span>Menghitung Panjang Sisi</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-jenis-segitiga.html"
+                   data-slug="jenis-segitiga"
+                   >
+                    <span class="no">5</span>
+                    <span>Siku-Siku, Lancip, atau Tumpul?</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-tripel.html"
+                   data-slug="tripel"
+                   >
+                    <span class="no">6</span>
+                    <span>Tripel Pythagoras</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-segitiga-istimewa.html"
+                   data-slug="segitiga-istimewa"
+                   >
+                    <span class="no">7</span>
+                    <span>Segitiga Siku-Siku Istimewa</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-bangun-gabungan.html"
+                   data-slug="bangun-gabungan"
+                   class="aktif" aria-current="page">
+                    <span class="no">8</span>
+                    <span>Soal dengan Banyak Segitiga</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="materi-penerapan.html"
+                   data-slug="penerapan"
+                   >
+                    <span class="no">9</span>
+                    <span>Soal Cerita Sehari-hari</span>
+                </a>
+            </li>
+            
+        </ol>
+    </aside>
+
+    <article class="isi-topik">
+        <a href="materi.html" class="kembali kembali-hp">← Semua materi</a>
+
+        <header class="kepala-topik">
+            <span class="label-topik">Materi 8 · Penerapan</span>
+            <h1>Soal dengan Banyak Segitiga</h1>
+            <p>Memecah bangun rumit menjadi segitiga siku-siku.</p>
+
+            <div class="tujuan">
+                <strong>Setelah mempelajari ini, kamu bisa:</strong>
+                <ul>
+                    <li>Menemukan segitiga siku-siku di dalam bangun yang rumit</li><li>Menghitung sisi pada dua segitiga yang saling terhubung</li>
+                </ul>
+            </div>
+        </header>
+
+        
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">1</span>Strategi: pecah menjadi segitiga siku-siku</h2>
+    <p>
+        Soal dengan banyak sisi terlihat rumit, padahal biasanya isinya hanya
+        <strong>beberapa segitiga siku-siku yang saling menempel</strong>.
+        Kuncinya adalah memecah soal itu menjadi bagian-bagian kecil.
+    </p>
+
+    <ol>
+        <li><strong>Cari semua tanda siku-siku.</strong> Setiap tanda siku-siku menandai satu segitiga yang bisa dihitung.</li>
+        <li><strong>Kalau tidak ada segitiga siku-siku, buat sendiri.</strong> Tarik garis tegak lurus (garis tinggi) atau garis diagonal.</li>
+        <li><strong>Cari "sisi jembatan".</strong> Ini sisi yang dimiliki dua segitiga sekaligus. Hitung sisi ini dulu.</li>
+        <li><strong>Mulai dari segitiga yang dua sisinya sudah diketahui.</strong> Hasilnya dipakai untuk segitiga berikutnya.</li>
+    </ol>
+
+    <div class="catatan">
+        <strong>Pakai Coretan!</strong>
+        Gambar ulang soalnya, lalu warnai tiap segitiga dengan warna berbeda.
+        Klik tombol <em>Coretan</em> di pojok kanan bawah.
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">2</span>Dua segitiga yang saling terhubung</h2>
+    <p>Ikuti langkah demi langkah. Gambarnya akan menyorot segitiga yang sedang dihitung.</p>
+
+    <div class="langkah-visual" data-visual>
+        <span class="label-contoh">Contoh 1</span>
+        <p class="soal-contoh">Pada gambar, ∠B dan ∠ACD siku-siku. AB = 12 cm, AD = 17 cm, dan CD = 8 cm. Tentukan panjang BC.</p>
+
+        <div class="visual-tata">
+            <svg viewBox="20 30 380 300" role="img" aria-label="Dua segitiga siku-siku ABC dan ACD yang berbagi sisi AC">
+                <polygon points="80,64 80,280 242,280" class="area" data-sorot="3"/>
+                <polygon points="80,64 242,280 357.2,193.6" class="area" data-sorot="2"/>
+
+                <line x1="80" y1="64" x2="80" y2="280" class="s-garis-g"/>
+                <line x1="80" y1="280" x2="242" y2="280" class="s-garis-g"/>
+                <line x1="242" y1="280" x2="357.2" y2="193.6" class="s-garis-g"/>
+                <line x1="357.2" y1="193.6" x2="80" y2="64" class="s-garis-g"/>
+                <line x1="80" y1="64" x2="242" y2="280" class="s-garis-g garis-sorot" data-sorot="1"/>
+
+                <path d="M80 266 h14 v14" class="s-siku"/>
+                <path d="M233.6 268.8 L244.8 260.4 L253.2 271.6" class="s-siku"/>
+
+                <text x="68" y="58" class="s-teks">A</text>
+                <text x="66" y="300" class="s-teks">B</text>
+                <text x="248" y="302" class="s-teks">C</text>
+                <text x="374" y="194" class="s-teks">D</text>
+
+                <text x="50" y="176" class="s-teks s-kecil">12 cm</text>
+                <text x="226" y="112" class="s-teks s-kecil">17 cm</text>
+                <text x="320" y="258" class="s-teks s-kecil">8 cm</text>
+                <text x="161" y="304" class="s-teks s-teks-e" data-sampai="3">?</text>
+                <text x="161" y="306" class="s-teks s-kecil s-teks-m" data-dari="4">BC = 9 cm</text>
+                <text x="196" y="178" class="s-teks s-kecil s-teks-m" data-dari="2">15 cm</text>
+            </svg>
+
+            <ol class="teks-langkah">
+                <li>
+                    <h4>Kenali segitiganya</h4>
+                    Ada <strong>dua</strong> segitiga siku-siku: <strong>ABC</strong> (siku-siku di B) dan
+                    <strong>ACD</strong> (siku-siku di C).
+                    Sisi <strong>AC</strong> dimiliki keduanya, jadi AC adalah <em>sisi jembatan</em>.
+                    BC belum bisa langsung dihitung, karena di segitiga ABC baru diketahui satu sisi (AB).
+                </li>
+                <li>
+                    <h4>Hitung AC dari segitiga ACD</h4>
+                    Siku-siku di C, jadi sisi miringnya AD = 17. AC adalah sisi siku-siku → <strong>kurang</strong>.
+                    <div class="persamaan"><div>AC² = AD² − CD²</div><div>AC² = 17² − 8² = 289 − 64 = 225</div><div>AC = √225 = 15 cm</div></div>
+                </li>
+                <li>
+                    <h4>Pakai AC di segitiga ABC</h4>
+                    Siku-siku di B, jadi sisi miringnya AC = 15. BC adalah sisi siku-siku → <strong>kurang</strong>.
+                    <div class="persamaan"><div>BC² = AC² − AB²</div><div>BC² = 15² − 12² = 225 − 144 = 81</div><div>BC = √81 = 9 cm</div></div>
+                </li>
+                <li>
+                    <h4>Jawaban</h4>
+                    Panjang <strong>BC = 9 cm</strong>.
+                    Kuncinya: AC tidak diketahui di soal, tapi bisa dicari dari segitiga yang lain.
+                    Setelah AC ketemu, segitiga ABC bisa dihitung.
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="bagian">
+    <h2><span class="nomor-bagian">3</span>Membuat segitiga siku-siku sendiri</h2>
+
+    <div class="langkah-visual" data-visual>
+        <span class="label-contoh">Contoh 2 · trapesium</span>
+        <p class="soal-contoh">Trapesium ABCD siku-siku di A dan D. AD = 15 cm, DC = 25 cm, AB = 33 cm. Tentukan panjang BC.</p>
+
+        <div class="visual-tata">
+            <svg viewBox="10 70 400 230" role="img" aria-label="Trapesium ABCD dengan garis tinggi CE">
+                <polygon points="40,100 290,100 370,250 40,250" class="s-isi s-garis"/>
+                <polygon points="290,100 290,250 370,250" class="area" data-sorot="2 3 4"/>
+                <path d="M40 114 h14 v-14" class="s-siku"/>
+                <path d="M40 236 h14 v14" class="s-siku"/>
+
+                <line x1="290" y1="100" x2="290" y2="250" class="s-putus" data-dari="2"/>
+                <path d="M290 236 h-14 v14" class="s-siku" data-dari="2"/>
+                <text x="290" y="270" class="s-teks" data-dari="2">E</text>
+
+                <text x="30" y="94" class="s-teks">D</text>
+                <text x="296" y="92" class="s-teks">C</text>
+                <text x="30" y="270" class="s-teks">A</text>
+                <text x="380" y="270" class="s-teks">B</text>
+
+                <text x="72" y="180" class="s-teks s-kecil">15 cm</text>
+                <text x="165" y="92" class="s-teks s-kecil">25 cm</text>
+                <text x="205" y="292" class="s-teks s-kecil">33 cm</text>
+                <text x="350" y="166" class="s-teks s-teks-e" data-sampai="3">?</text>
+
+                <text x="268" y="180" class="s-teks s-kecil s-teks-m" data-dari="3">15</text>
+                <text x="330" y="244" class="s-teks s-kecil s-teks-m" data-dari="3">8</text>
+                <text x="368" y="166" class="s-teks s-kecil s-teks-m" data-dari="4">17 cm</text>
+            </svg>
+
+            <ol class="teks-langkah">
+                <li>
+                    <h4>Masalahnya</h4>
+                    Trapesium bukan segitiga, dan BC tidak menjadi sisi segitiga siku-siku mana pun.
+                    Jadi kita perlu <strong>membuat</strong> segitiga siku-siku sendiri.
+                </li>
+                <li>
+                    <h4>Tarik garis tinggi dari C</h4>
+                    Tarik garis dari C yang tegak lurus ke AB, dan beri nama titik potongnya E.
+                    Sekarang muncul segitiga siku-siku <strong>BEC</strong> (siku-siku di E), dengan BC sebagai sisi miringnya.
+                </li>
+                <li>
+                    <h4>Cari dua sisi siku-sikunya</h4>
+                    AECD berbentuk persegi panjang, jadi:
+                    <div class="persamaan"><div>CE = AD = 15 cm</div><div>AE = DC = 25 cm</div><div>BE = AB − AE = 33 − 25 = 8 cm</div></div>
+                </li>
+                <li>
+                    <h4>Hitung BC</h4>
+                    BC adalah sisi miring → <strong>tambah</strong>.
+                    <div class="persamaan"><div>BC² = CE² + BE² = 15² + 8²</div><div>BC² = 225 + 64 = 289</div><div>BC = √289 = 17 cm</div></div>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="langkah-visual" data-visual>
+        <span class="label-contoh">Contoh 3 · layang-layang</span>
+        <p class="soal-contoh">Layang-layang KLMN memiliki titik K(−5, 0), L(0, 12), M(16, 0), dan N(0, −12). Tentukan kelilingnya.</p>
+
+        <div class="visual-tata">
+            <svg viewBox="0 5 270 285" role="img" aria-label="Layang-layang KLMN dengan diagonal berpotongan di O">
+                <polygon points="20,145 70,25 230,145 70,265" class="s-isi"/>
+                <polygon points="20,145 70,145 70,25" class="area" data-sorot="2"/>
+                <polygon points="70,25 70,145 230,145" class="area" data-sorot="3"/>
+                <polygon points="20,145 70,25 230,145 70,265" class="s-kosong s-garis"/>
+                <line x1="20" y1="145" x2="230" y2="145" class="s-putus"/>
+                <line x1="70" y1="25" x2="70" y2="265" class="s-putus"/>
+                <path d="M70 131 h14 v14" class="s-siku" data-dari="2"/>
+
+                <text x="10" y="140" class="s-teks">K</text>
+                <text x="70" y="18" class="s-teks">L</text>
+                <text x="246" y="150" class="s-teks">M</text>
+                <text x="70" y="286" class="s-teks">N</text>
+                <text x="80" y="162" class="s-teks s-kecil">O</text>
+
+                <text x="45" y="162" class="s-teks s-kecil s-teks-m" data-dari="2">5</text>
+                <text x="56" y="90" class="s-teks s-kecil s-teks-m" data-dari="2">12</text>
+                <text x="150" y="162" class="s-teks s-kecil s-teks-m" data-dari="3">16</text>
+                <text x="26" y="80" class="s-teks s-kecil s-teks-e" data-dari="2">13</text>
+                <text x="164" y="76" class="s-teks s-kecil s-teks-e" data-dari="3">20</text>
+                <text x="26" y="214" class="s-teks s-kecil s-teks-e" data-dari="4">13</text>
+                <text x="164" y="222" class="s-teks s-kecil s-teks-e" data-dari="4">20</text>
+            </svg>
+
+            <ol class="teks-langkah">
+                <li>
+                    <h4>Lihat diagonalnya</h4>
+                    Keliling = KL + LM + MN + NK. Sisi-sisi ini miring, jadi panjangnya tidak bisa dibaca langsung dari koordinat.
+                    Tapi kedua diagonal (KM dan LN) saling tegak lurus di O(0, 0).
+                    Keduanya membagi layang-layang menjadi <strong>4 segitiga siku-siku</strong>.
+                </li>
+                <li>
+                    <h4>Hitung KL dari segitiga KOL</h4>
+                    OK = 5 dan OL = 12. KL adalah sisi miring → <strong>tambah</strong>.
+                    <div class="persamaan"><div>KL² = 5² + 12² = 25 + 144 = 169</div><div>KL = 13 satuan</div></div>
+                </li>
+                <li>
+                    <h4>Hitung LM dari segitiga LOM</h4>
+                    OL = 12 dan OM = 16.
+                    <div class="persamaan"><div>LM² = 12² + 16² = 144 + 256 = 400</div><div>LM = 20 satuan</div></div>
+                </li>
+                <li>
+                    <h4>Jumlahkan</h4>
+                    Pada layang-layang, NK = KL = 13 dan MN = LM = 20.
+                    <div class="persamaan"><div>Keliling = 13 + 20 + 20 + 13 = 66 satuan</div></div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="cek-pemahaman">
+    <h2>Cek Pemahaman</h2>
+    <p>Pilih jawabanmu. Kalau salah, akan muncul catatan kenapa salah.</p>
+
+    <div class="kuis">
+        <p class="soal-kuis">1. Segitiga ABC siku-siku di C. CD adalah garis tinggi dari C ke AB (siku-siku di D). Jika AC = 15 cm dan CD = 12 cm, panjang AD adalah …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-benar>9 cm</button>
+            <button type="button" data-catatan=" Kamu menjumlahkan 15² + 12². Di segitiga ADC, siku-sikunya di D, jadi sisi miringnya AC = 15. AD sisi siku-siku → dikurang.">√369 cm</button>
+            <button type="button" data-catatan=" Kamu mengurangkan panjangnya langsung (15 − 12). Kurangkan kuadratnya: 15² − 12².">3 cm</button>
+            <button type="button" data-catatan=" 81 adalah AD². Tinggal diakarkan.">81 cm</button>
+        </div>
+        <div class="penjelasan" hidden>Pakai segitiga ADC (siku-siku di D, sisi miring AC): AD² = 15² − 12² = 225 − 144 = 81, jadi AD = 9 cm.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+
+    <div class="kuis">
+        <p class="soal-kuis">2. Balok ABCD.EFGH berukuran panjang 4 cm, lebar 3 cm, dan tinggi 12 cm. Panjang diagonal ruang HB adalah …</p>
+        <div class="pilihan-kuis">
+            <button type="button" data-catatan=" 5 cm baru panjang diagonal alas BD (dari 3² + 4²). BD adalah sisi jembatan. Masih harus dipakai di segitiga BDH bersama tinggi 12.">5 cm</button>
+            <button type="button" data-catatan=" Panjang, lebar, dan tinggi tidak dijumlahkan langsung. Gunakan dua segitiga siku-siku: alas dulu, lalu segitiga tegak.">19 cm</button>
+            <button type="button" data-benar>13 cm</button>
+            <button type="button" data-catatan=" Kamu memakai 4 dan 12 saja. Diagonal ruang melibatkan ketiga ukuran: cari diagonal alas dulu dari 4 dan 3.">√160 cm</button>
+        </div>
+        <div class="penjelasan" hidden>Segitiga alas ABD: BD² = 4² + 3² = 25, jadi BD = 5. Segitiga BDH (siku-siku di D): HB² = 5² + 12² = 169, jadi HB = 13 cm.</div>
+        <div class="umpan-balik" aria-live="polite"></div>
+    </div>
+</section>
+
+
+
+        <nav class="navigasi-topik">
+            
+            <a href="materi-segitiga-istimewa.html" class="nav-sebelum">
+                <small>← Sebelumnya</small>Segitiga Siku-Siku Istimewa
+            </a>
+            
+
+            
+            <a href="materi-penerapan.html" class="nav-sesudah">
+                <small>Berikutnya →</small>Soal Cerita Sehari-hari
+            </a>
+            
+        </nav>
+    </article>
+
+</div>
+
+</main>
+
+<footer class="kaki">
+    <span class="logo-phyn">PHYN</span>tagoras · Media Pembelajaran Teorema Pythagoras SMP
+</footer>
+
+<!-- Kertas coretan: tempat menggambar / menghitung -->
+<button type="button" class="tombol-coretan" id="buka-coretan">
+    ✎ <span>Coretan</span>
+</button>
+
+<div class="coretan" id="coretan" hidden>
+    <div class="coretan-alat">
+        <strong class="coretan-judul">✎ Kertas Coretan</strong>
+
+        <div class="alat-grup">
+            <button type="button" class="warna aktif" data-warna="#2b1d1e" style="--w:#2b1d1e" aria-label="Pena hitam"></button>
+            <button type="button" class="warna" data-warna="#7d2027" style="--w:#7d2027" aria-label="Pena merah"></button>
+            <button type="button" class="warna" data-warna="#2f6db5" style="--w:#2f6db5" aria-label="Pena biru"></button>
+            <button type="button" class="warna" data-warna="#4f7a43" style="--w:#4f7a43" aria-label="Pena hijau"></button>
+            <button type="button" class="alat" id="alat-penghapus">Penghapus</button>
+            <button type="button" class="alat" id="bersihkan-coretan">Bersihkan</button>
+            <button type="button" class="alat alat-tutup" id="tutup-coretan">Tutup ✕</button>
+        </div>
+    </div>
+    <canvas id="kanvas-coretan"></canvas>
+</div>
+
+<script src="static/materi.js"></script>
+
+
+</body>
+</html>

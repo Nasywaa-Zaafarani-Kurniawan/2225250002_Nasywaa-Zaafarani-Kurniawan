@@ -1,34 +1,119 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materi Pythagoras</title>
-    <link rel="stylesheet"
-          href="static/style.css">
-</head>
-<body>
+{% extends "kerangka.html" %}
 
-    <header>
-        <h1>Belajar Teorema Pythagoras</h1>
-        <p>Mari Memahami Konsep Pythagoras!</p>
-    </header>
+{% block judul %}Materi Teorema Pythagoras{% endblock %}
 
-    <nav>
-        <a href="beranda.html">Beranda</a>
-        <a href="materi.html">Materi</a>
-        <a href="contoh.html">Contoh Soal</a>
-        <a href="latihan.html">Latihan</a>
-    </nav>
+{# Ikon kecil untuk setiap kartu topik #}
+{% macro ikon(slug) %}
+<svg viewBox="0 0 48 48" aria-hidden="true">
+{% if slug == "prasyarat" %}
+    <rect x="8" y="8" width="32" height="32" rx="3" class="ik-isi"/>
+    <path d="M18.7 8v32M29.3 8v32M8 18.7h32M8 29.3h32" class="ik-garis-tipis"/>
+    <rect x="8" y="8" width="32" height="32" rx="3" class="ik-garis"/>
+{% elif slug == "segitiga-siku" %}
+    <path d="M10 8v32h30z" class="ik-isi ik-garis"/>
+    <path d="M10 33h7v7" class="ik-garis"/>
+    <path d="M10 8l30 32" class="ik-aksen"/>
+{% elif slug == "menemukan-teorema" %}
+    <rect x="4" y="22" width="12" height="12" class="ik-isi ik-garis"/>
+    <rect x="16" y="34" width="16" height="10" class="ik-isi ik-garis"/>
+    <path d="M16 22l16 12 12-16-16-12z" class="ik-emas ik-garis"/>
+    <path d="M16 22v12h16z" class="ik-putih ik-garis"/>
+{% elif slug == "menghitung-sisi" %}
+    <path d="M10 8v32h30z" class="ik-isi ik-garis"/>
+    <path d="M10 33h7v7" class="ik-garis"/>
+    <text x="30" y="22" class="ik-teks">?</text>
+{% elif slug == "jenis-segitiga" %}
+    <path d="M4 40l8-22 8 22z" class="ik-isi ik-garis"/>
+    <path d="M18 40V20l12 20z" class="ik-emas ik-garis"/>
+    <path d="M28 40l18 0-24-12z" class="ik-isi ik-garis"/>
+{% elif slug == "tripel" %}
+    <text x="24" y="31" class="ik-teks ik-teks-kecil">3·4·5</text>
+    <rect x="4" y="12" width="40" height="26" rx="8" class="ik-garis"/>
+{% elif slug == "segitiga-istimewa" %}
+    <path d="M8 40V10l30 30z" class="ik-isi ik-garis"/>
+    <path d="M30 40a8 8 0 0 0-2.4-5.6" class="ik-aksen"/>
+    <text x="34" y="30" class="ik-teks ik-teks-mini">45°</text>
+{% elif slug == "bangun-gabungan" %}
+    <path d="M8 8v30h16z" class="ik-isi ik-garis"/>
+    <path d="M8 8l16 30 18-14z" class="ik-emas ik-garis"/>
+{% elif slug == "penerapan" %}
+    <path d="M8 6v36h34" class="ik-garis"/>
+    <path d="M10 10l26 32" class="ik-aksen ik-tebal"/>
+    <path d="M14 18l5-3M19 24l5-3M24 30l5-3" class="ik-garis-tipis"/>
+{% endif %}
+</svg>
+{% endmacro %}
 
-    <main>
-        <h2>Materi Teorema Pythagoras</h2>
-        <p>Di halaman ini kita akan mempelajari konsep Pythagoras.</p>
-    </main>
+{% block isi_halaman %}
+<div class="wadah">
 
-    <footer>
-        <p>Website Pembelajaran Pythagoras</p>
-    </footer>
+    <section class="kepala-hub">
+        <span class="badge">▤ Materi</span>
+        <h1>Mau belajar materi yang mana?</h1>
+        <p>
+            Baru mulai? Ikuti urutan <strong>1 → 9</strong>.
+            Sudah paham dasarnya? Langsung pilih materi yang kamu butuhkan.
+        </p>
+    </section>
 
-</body>
-</html>
+    <!-- Pilihan cepat berdasarkan kesulitan yang sering dialami siswa -->
+    <section class="kesulitan">
+        <h2>Aku sering kesulitan di…</h2>
+        <div class="chip-kesulitan">
+            <a href="materi-menemukan-teorema.html">
+                <strong>Menghafal rumus</strong>
+                <span>Pahami asal rumusnya, jadi tidak perlu hafalan</span>
+            </a>
+            <a href="materi-menghitung-sisi.html">
+                <strong>Bingung ditambah atau dikurang</strong>
+                <span>Satu aturan sederhana untuk semua soal</span>
+            </a>
+            <a href="materi-bangun-gabungan.html">
+                <strong>Soal yang punya banyak segitiga</strong>
+                <span>Dipecah jadi segitiga kecil, langkah demi langkah</span>
+            </a>
+            <a href="materi-penerapan.html">
+                <strong>Soal cerita tanpa gambar</strong>
+                <span>Cara mengubah cerita menjadi sketsa</span>
+            </a>
+        </div>
+    </section>
+
+    {% for kelompok, keterangan in [
+        ("Dasar", "Kenali bentuknya dan pahami asal rumusnya."),
+        ("Menghitung", "Pakai rumusnya untuk mencari panjang sisi."),
+        ("Penerapan", "Selesaikan soal yang lebih rumit dan soal cerita.")
+    ] %}
+    <section class="kelompok-topik">
+        <div class="kepala-kelompok">
+            <h2>{{ kelompok }}</h2>
+            <p>{{ keterangan }}</p>
+        </div>
+
+        <div class="grid-topik">
+            {% for t in semua_topik %}{% if t.kelompok == kelompok %}
+            <a href="materi-{{ t.slug }}.html" class="kartu-topik" data-slug="{{ t.slug }}">
+                <div class="kartu-atas">
+                    <span class="ikon-topik">{{ ikon(t.slug) }}</span>
+                    <span class="nomor-topik">{{ loop.index }}</span>
+                </div>
+                <h3>{{ t.judul }}</h3>
+                <p>{{ t.ringkasan }}</p>
+                <span class="kartu-bawah">
+                    <span class="status-dibaca">✓ Sudah dibuka</span>
+                    <span class="mulai">Pelajari →</span>
+                </span>
+            </a>
+            {% endif %}{% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+
+    <aside class="tips-coretan">
+        <strong>✎ Butuh tempat mencoret?</strong>
+        Di setiap halaman materi ada tombol <em>Coretan</em> di pojok kanan bawah.
+        Pakai untuk menggambar sketsa soal atau menghitung, seperti di kertas buram.
+    </aside>
+
+</div>
+{% endblock %}
