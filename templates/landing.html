@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHYNtagoras — Belajar Teorema Pythagoras</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='landing.css') }}">
+</head>
+
+<body>
+
+<div class="latar" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="grid"></div>
+</div>
+
+<!-- Navigasi atas -->
+<header class="navbar">
+    <a href="{{ url_for('landing') }}" class="logo">
+        <span class="logo-ikon">△</span>
+        <span><span class="logo-phyn">PHYN</span>tagoras</span>
+    </a>
+
+    <nav class="nav-link">
+        <a href="{{ url_for('materi') }}">Materi</a>
+        <a href="{{ url_for('contoh') }}">Contoh Soal</a>
+        <a href="{{ url_for('latihan') }}">Latihan</a>
+    </nav>
+
+    <a href="{{ url_for('beranda') }}" class="tombol tombol-kecil">Masuk</a>
+</header>
+
+<!-- Hero -->
+<main class="hero">
+
+    <section class="hero-teks">
+        <span class="badge">✦ Media Pembelajaran Matematika SMP</span>
+
+        <h1>
+            Pahami <span class="sorot">Teorema Pythagoras</span>
+            dengan cara yang seru.
+        </h1>
+
+        <p class="deskripsi">
+            Belajar lewat visualisasi interaktif, contoh soal yang dekat
+            dengan kehidupan sehari-hari, dan latihan untuk mengasah
+            pemahamanmu.
+        </p>
+
+        <div class="aksi">
+            <a href="{{ url_for('beranda') }}" class="tombol tombol-utama">
+                Mulai Belajar <span class="panah">→</span>
+            </a>
+            <a href="{{ url_for('materi') }}" class="tombol tombol-garis">
+                Lihat Materi
+            </a>
+        </div>
+
+        <ul class="fitur">
+            <li>
+                <strong>▤ Materi</strong>
+                <span>Konsep dasar</span>
+            </li>
+            <li>
+                <strong>▧ Contoh</strong>
+                <span>Soal & pembahasan</span>
+            </li>
+            <li>
+                <strong>✎ Latihan</strong>
+                <span>Uji kemampuan</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Ilustrasi interaktif: klik untuk mengganti bentuk -->
+    <section class="hero-gambar">
+
+        <button type="button" class="kartu-gambar" id="kartu-gambar"
+                aria-label="Klik untuk mengganti bentuk">
+
+            <svg viewBox="40 0 480 480" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- 1. Segitiga siku-siku dengan persegi di tiap sisi -->
+                <g class="bentuk aktif">
+                    <polygon class="isi-3 garis-aksen"
+                             points="200,180 360,300 480,140 320,20"/>
+                    <rect class="isi-1 garis-utama"
+                          x="80" y="180" width="120" height="120"/>
+                    <rect class="isi-2 garis-utama"
+                          x="200" y="300" width="160" height="160"/>
+                    <polygon class="putih garis-gelap"
+                             points="200,180 200,300 360,300"/>
+                    <path class="siku" d="M200 280 L220 280 L220 300"/>
+                    <text x="140" y="250" class="label">a²</text>
+                    <text x="280" y="392" class="label">b²</text>
+                    <text x="340" y="172" class="label">c²</text>
+                </g>
+
+                <!-- 2. Persegi panjang dengan diagonal -->
+                <g class="bentuk">
+                    <rect class="isi-1 garis-utama"
+                          x="80" y="110" width="400" height="260"/>
+                    <polygon class="isi-3"
+                             points="80,370 480,370 480,110"/>
+                    <line class="garis-aksen tebal"
+                          x1="80" y1="370" x2="480" y2="110"/>
+                    <path class="siku" d="M460 370 L460 350 L480 350"/>
+                    <text x="280" y="412" class="label">p</text>
+                    <text x="505" y="250" class="label">l</text>
+                    <text x="255" y="225" class="label">d</text>
+                </g>
+
+                <!-- 3. Layang-layang dengan diagonal -->
+                <g class="bentuk">
+                    <polygon class="isi-1 garis-utama"
+                             points="280,40 420,180 280,440 140,180"/>
+                    <polygon class="isi-3"
+                             points="280,180 420,180 280,440"/>
+                    <line class="garis-putus" x1="280" y1="40" x2="280" y2="440"/>
+                    <line class="garis-putus" x1="140" y1="180" x2="420" y2="180"/>
+                    <polygon class="tanpa-isi garis-aksen"
+                             points="280,180 420,180 280,440"/>
+                    <path class="siku" d="M280 200 L300 200 L300 180"/>
+                    <text x="350" y="168" class="label">x</text>
+                    <text x="262" y="330" class="label">y</text>
+                    <text x="380" y="330" class="label">s</text>
+                </g>
+
+                <!-- 4. Belah ketupat dengan diagonal -->
+                <g class="bentuk">
+                    <polygon class="isi-2 garis-utama"
+                             points="280,60 460,240 280,420 100,240"/>
+                    <polygon class="isi-3"
+                             points="280,240 460,240 280,60"/>
+                    <line class="garis-putus" x1="280" y1="60" x2="280" y2="420"/>
+                    <line class="garis-putus" x1="100" y1="240" x2="460" y2="240"/>
+                    <polygon class="tanpa-isi garis-aksen"
+                             points="280,240 460,240 280,60"/>
+                    <path class="siku" d="M280 220 L300 220 L300 240"/>
+                    <text x="370" y="272" class="label label-kecil">½d₂</text>
+                    <text x="240" y="160" class="label label-kecil">½d₁</text>
+                    <text x="395" y="140" class="label">s</text>
+                </g>
+
+                <!-- 5. Tangga bersandar pada dinding -->
+                <g class="bentuk">
+                    <rect class="isi-2" x="90" y="40" width="30" height="400"/>
+                    <path class="garis-gelap tanpa-isi"
+                          d="M120 40 L120 440 L480 440"/>
+                    <line class="garis-aksen sangat-tebal"
+                          x1="120" y1="90" x2="400" y2="440"/>
+                    <path class="siku" d="M120 420 L140 420 L140 440"/>
+                    <text x="72" y="270" class="label">t</text>
+                    <text x="260" y="474" class="label">j</text>
+                    <text x="290" y="260" class="label">L</text>
+                </g>
+            </svg>
+
+            <span class="petunjuk">↻ Klik gambar untuk ganti bentuk</span>
+        </button>
+
+        <div class="keterangan">
+            <h3 id="nama-bentuk">Segitiga Siku-Siku</h3>
+            <div class="titik-navigasi" id="titik-navigasi"></div>
+        </div>
+
+        <div class="chip chip-rumus" id="chip-rumus">a² + b² = c²</div>
+        <div class="chip chip-contoh">
+            <span class="titik"></span>
+            <span id="chip-contoh">3² + 4² = 5²</span>
+        </div>
+    </section>
+
+</main>
+
+<script>
+    const dataBentuk = [
+        { nama: "Segitiga Siku-Siku",         rumus: "a² + b² = c²",          contoh: "3² + 4² = 5²" },
+        { nama: "Persegi Panjang & Diagonal", rumus: "d² = p² + l²",          contoh: "8² + 6² = 10²" },
+        { nama: "Layang-Layang",              rumus: "s² = x² + y²",          contoh: "5² + 12² = 13²" },
+        { nama: "Belah Ketupat",              rumus: "s² = (½d₁)² + (½d₂)²",  contoh: "3² + 4² = 5²" },
+        { nama: "Tangga pada Dinding",        rumus: "L² = t² + j²",          contoh: "4² + 3² = 5²" }
+    ];
+
+    const semuaBentuk = document.querySelectorAll(".bentuk");
+    const kartu       = document.getElementById("kartu-gambar");
+    const namaBentuk  = document.getElementById("nama-bentuk");
+    const chipRumus   = document.getElementById("chip-rumus");
+    const chipContoh  = document.getElementById("chip-contoh");
+    const wadahTitik  = document.getElementById("titik-navigasi");
+
+    let indeks = 0;
+
+    // Buat titik navigasi sesuai jumlah bentuk
+    dataBentuk.forEach((data, i) => {
+        const titik = document.createElement("button");
+        titik.type = "button";
+        titik.setAttribute("aria-label", data.nama);
+        titik.addEventListener("click", () => tampilkan(i));
+        wadahTitik.appendChild(titik);
+    });
+
+    function tampilkan(i) {
+        indeks = i;
+        semuaBentuk.forEach((g, n) => g.classList.toggle("aktif", n === i));
+        wadahTitik.querySelectorAll("button")
+                  .forEach((t, n) => t.classList.toggle("aktif", n === i));
+
+        namaBentuk.textContent = dataBentuk[i].nama;
+        chipRumus.textContent  = dataBentuk[i].rumus;
+        chipContoh.textContent = dataBentuk[i].contoh;
+    }
+
+    kartu.addEventListener("click", () => {
+        tampilkan((indeks + 1) % dataBentuk.length);
+    });
+
+    tampilkan(0);
+</script>
+
+</body>
+</html>

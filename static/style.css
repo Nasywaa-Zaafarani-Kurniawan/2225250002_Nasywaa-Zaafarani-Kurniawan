@@ -1,0 +1,144 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f2e8;
+    color: #2b1d1e;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #fcf9f3;
+    padding: 30px 20px;
+    box-shadow: 2px 0 10px #00000010;
+}
+
+.sidebar h2 {
+    color: #7d2027;
+    font-size: 21px;
+}
+
+.sidebar p {
+    color: #7a6a66;
+    font-size: 13px;
+}
+
+nav {
+    margin-top: 35px;
+}
+
+nav a {
+    display: block;
+    padding: 15px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #2b1d1e;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: #f2e1dc;
+    color: #7d2027;
+}
+
+/* Konten utama */
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.welcome {
+    background: #f2e1dc;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    color: #5e171d;
+}
+
+.welcome p {
+    color: #7a6a66;
+}
+
+.label {
+    background: #7d2027;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* Visualisasi */
+.visualisasi {
+    background: #fcf9f3;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.visualisasi h2 {
+    color: #7d2027;
+}
+
+.pilihan {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+.pilihan button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #7d2027;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pilihan button:hover {
+    background: #5e171d;
+}
+
+.gambar {
+    background: #f7f2e8;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.gambar img {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+}
+
+.gambar h3 {
+    color: #7d2027;
+}
+
+@media (max-width: 700px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .content {
+        padding: 20px;
+    }
+}

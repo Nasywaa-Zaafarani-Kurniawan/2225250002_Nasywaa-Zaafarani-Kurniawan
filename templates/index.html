@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHYNtagoras — Media Pembelajaran SMP</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <h2><a href="/" style="color:inherit;text-decoration:none">△ PHYNtagoras</a></h2>
+        <p>Media Pembelajaran SMP</p>
+
+        <hr>
+
+        <nav>
+            <a href="/beranda">⌂ Beranda</a>
+            <a href="/materi">▤ Materi</a>
+            <a href="/contoh">▧ Contoh Soal</a>
+            <a href="/latihan">✎ Latihan</a>
+        </nav>
+
+    </aside>
+
+
+    <!-- Konten Utama -->
+    <main class="content">
+
+        <section class="welcome">
+
+            <span class="label">MEDIA PEMBELAJARAN MATEMATIKA</span>
+
+            <h1>Selamat Datang di PHYNtagoras!</h1>
+
+            <p>
+                Yuk, belajar Teorema Pythagoras dengan
+                cara yang lebih menarik dan menyenangkan.
+            </p>
+
+        </section>
+
+
+        <!-- Visualisasi -->
+        <section class="visualisasi">
+
+            <h2>Jelajahi Bentuk Geometri</h2>
+
+            <p>
+                Klik salah satu bentuk berikut untuk
+                melihat visualisasi Pythagoras.
+            </p>
+
+            <div class="pilihan">
+
+                <form action="/beranda" method="get">
+                    <button name="bentuk" value="segitiga">
+                        Segitiga
+                    </button>
+                </form>
+
+                <form action="/beranda" method="get">
+                    <button name="bentuk" value="persegi">
+                        Persegi Panjang
+                    </button>
+                </form>
+
+                <form action="/beranda" method="get">
+                    <button name="bentuk" value="tangga">
+                        Tangga
+                    </button>
+                </form>
+
+            </div>
+
+
+            <div class="gambar">
+
+                <img
+                    src="{{ url_for('gambar', bentuk=bentuk) }}"
+                    alt="Visualisasi Pythagoras">
+
+                <h3>
+                    {% if bentuk == "segitiga" %}
+                        Segitiga Siku-Siku
+                    {% elif bentuk == "persegi" %}
+                        Persegi Panjang dengan Diagonal
+                    {% elif bentuk == "tangga" %}
+                        Tangga Bersandar pada Dinding
+                    {% endif %}
+                </h3>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
