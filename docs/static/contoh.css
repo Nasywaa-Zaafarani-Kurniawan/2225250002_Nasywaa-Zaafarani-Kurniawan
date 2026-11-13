@@ -1,6 +1,26 @@
 /* ============ Contoh Soal — mengikuti gaya halaman Materi ============ */
 
-/* nama kategori di daftar samping, dengan jumlah soal di bawahnya */
+/* ---------- Halaman pilih sub-bab ---------- */
+.grid-contoh {
+    margin-top: 32px;
+}
+
+.ikon-contoh {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--merah);
+}
+
+.jumlah-contoh {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: var(--emas-muda);
+    color: var(--emas);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* ---------- Halaman sub-bab ---------- */
 .halaman-contoh .daftar-topik small {
     display: block;
     font-size: 12px;
@@ -8,41 +28,133 @@
     opacity: 0.75;
 }
 
-.halaman-contoh .daftar-topik a {
-    transition: background 0.2s, color 0.2s;
+/* daftar isi soal di kepala halaman */
+.daftar-isi-contoh ol {
+    margin: 8px 0 0;
+    padding-left: 22px;
 }
 
-/* pindah bagian dengan jarak dari navbar */
-.halaman-contoh .bagian {
-    scroll-margin-top: 84px;
+.daftar-isi-contoh li {
+    margin-bottom: 2px;
 }
 
-.ket-bagian {
+.daftar-isi-contoh a {
+    color: var(--teks);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.daftar-isi-contoh a:hover {
+    color: var(--merah);
+    text-decoration: underline;
+}
+
+.cara-pakai {
+    margin: 10px 0 0;
+    font-size: 14px;
     color: var(--teks-pudar);
 }
 
-/* Kotak satu contoh soal (memakai .contoh dari materi.css) */
+.daftar-contoh {
+    padding-top: 8px;
+}
+
+/* ---------- Satu contoh soal ---------- */
 .kartu-contoh {
     scroll-margin-top: 84px;
 }
 
 .kartu-contoh + .kartu-contoh {
-    margin-top: 26px;
+    margin-top: 28px;
 }
 
 .judul-contoh {
     margin: 10px 0 0 !important;
-    font-size: 18px;
+    font-size: 19px;
 }
 
+/* kotak soal: lebih ringan supaya nyaman dibaca */
 .kartu-contoh .soal-contoh {
     margin: 12px 0 6px;
-    padding: 14px 16px;
+    padding: 16px 18px;
     border-radius: 12px;
     background: var(--krem-terang);
     border-left: 4px solid var(--merah);
-    font-weight: 600;
-    line-height: 1.7;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.kartu-contoh div.soal-contoh p {
+    margin: 0 0 10px;
+}
+
+.kartu-contoh div.soal-contoh p:last-child {
+    margin-bottom: 0;
+}
+
+/* pilihan (i), (ii), ... ditulis bersusun */
+.daftar-pilihan {
+    list-style: none;
+    margin: 0 0 12px;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+}
+
+.daftar-pilihan li {
+    display: flex;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: var(--krem);
+    font-variant-numeric: tabular-nums;
+}
+
+.daftar-pilihan li span {
+    flex: none;
+    min-width: 34px;
+    font-weight: 800;
+    color: var(--merah);
+}
+
+/* rumus yang diberikan di soal */
+.daftar-rumus {
+    margin: 0 0 12px;
+    padding: 10px 14px 10px 32px;
+    border-radius: 10px;
+    background: var(--emas-muda);
+}
+
+/* soal pendek a, b, c, ... ditampilkan sebagai chip */
+.daftar-chip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.daftar-chip span {
+    padding: 6px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--krem-garis);
+    background: var(--krem);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+/* sub-pertanyaan a. b. */
+.daftar-sub {
+    margin: 0;
+    padding-left: 24px;
+}
+
+.daftar-sub li {
+    margin-bottom: 4px;
+}
+
+.daftar-sub li::marker {
+    font-weight: 800;
+    color: var(--merah);
 }
 
 .gambar-contoh {
@@ -105,68 +217,4 @@
 
 .kaki-contoh a:hover {
     text-decoration: underline;
-}
-
-/* Daftar kategori untuk HP (daftar samping disembunyikan di layar kecil) */
-.chip-kategori {
-    display: none;
-    gap: 8px;
-    margin-top: 20px;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-
-.chip-kategori::-webkit-scrollbar {
-    display: none;
-}
-
-.chip-kategori a {
-    flex: none;
-    padding: 7px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--krem-garis);
-    background: var(--krem-terang);
-    color: var(--teks);
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.chip-kategori a:hover {
-    border-color: var(--merah);
-    color: var(--merah);
-}
-
-/* Ajakan ke latihan */
-.ajak-latihan {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 28px;
-    padding: 22px 24px;
-    border-radius: var(--radius);
-    background: var(--hijau-muda);
-    border: 1px solid #c9dfc2;
-}
-
-.ajak-latihan strong {
-    display: block;
-    font-size: 18px;
-}
-
-.ajak-latihan span {
-    font-size: 15px;
-    color: var(--teks-pudar);
-}
-
-.ajak-latihan .tombol {
-    text-decoration: none;
-}
-
-@media (max-width: 960px) {
-    .chip-kategori {
-        display: flex;
-    }
 }

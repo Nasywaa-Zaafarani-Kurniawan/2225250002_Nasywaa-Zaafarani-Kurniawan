@@ -1,0 +1,83 @@
+{% extends "kerangka.html" %}
+
+{% block judul %}Contoh Soal: {{ kategori.judul }}{% endblock %}
+
+{% block kepala %}
+<link rel="stylesheet" href="static/contoh.css">
+{% endblock %}
+
+{% block isi_halaman %}
+<div class="tata-topik halaman-contoh">
+
+    <!-- Daftar sub-bab (layar lebar) -->
+    <aside class="daftar-topik">
+        <a href="contoh.html" class="kembali">← Semua contoh soal</a>
+        <ol>
+            {% for k in semua_kategori %}
+            <li>
+                <a href="contoh-{{ k.slug }}.html" {% if k.slug == kategori.slug %}class="aktif" aria-current="page"{% endif %}>
+                    <span class="no">{{ loop.index }}</span>
+                    <span>{{ k.judul }}<small>{{ k.jumlah }} soal</small></span>
+                </a>
+            </li>
+            {% endfor %}
+        </ol>
+    </aside>
+
+    <article class="isi-topik">
+        <a href="contoh.html" class="kembali kembali-hp">← Semua contoh soal</a>
+
+        <header class="kepala-topik">
+            <span class="label-topik">Contoh Soal · Bagian {{ nomor }}</span>
+            <h1>{{ kategori.judul }}</h1>
+            <p>{{ kategori.ringkasan }}</p>
+
+            <div class="tujuan daftar-isi-contoh">
+                <strong>Ada {{ kategori.jumlah }} contoh soal di bagian ini:</strong>
+                <ol id="daftar-isi"></ol>
+                <p class="cara-pakai">Coba kerjakan sendiri dulu, lalu buka penyelesaiannya langkah demi langkah: <em>Diketahui → Ditanya → Jawab → Jadi</em>.</p>
+            </div>
+        </header>
+
+        <section class="bagian daftar-contoh">
+            {% block isi %}{% endblock %}
+        </section>
+
+        <nav class="navigasi-topik">
+            {% if sebelum %}
+            <a href="contoh-{{ sebelum.slug }}.html" class="nav-sebelum">
+                <small>← Sebelumnya</small>{{ sebelum.judul }}
+            </a>
+            {% else %}
+            <a href="contoh.html" class="nav-sebelum"><small>← Kembali</small>Semua contoh soal</a>
+            {% endif %}
+
+            {% if sesudah %}
+            <a href="contoh-{{ sesudah.slug }}.html" class="nav-sesudah">
+                <small>Berikutnya →</small>{{ sesudah.judul }}
+            </a>
+            {% else %}
+            <a href="latihan.html" class="nav-sesudah">
+                <small>Contoh soal selesai! Lanjut →</small>Latihan Soal 🎯
+            </a>
+            {% endif %}
+        </nav>
+    </article>
+</div>
+{% endblock %}
+
+{% block skrip %}
+<script>
+    // Daftar isi otomatis dari judul setiap contoh soal
+    const daftarIsi = document.getElementById("daftar-isi");
+    document.querySelectorAll(".kartu-contoh").forEach((k) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="#${k.id}">${k.querySelector(".judul-contoh").textContent}</a>`;
+        daftarIsi.appendChild(li);
+    });
+
+    // Tombol "Coretan" kecil di setiap soal
+    document.querySelectorAll(".buka-coretan-kecil").forEach((t) =>
+        t.addEventListener("click", () => document.getElementById("buka-coretan").click()));
+</script>
+{% endblock %}

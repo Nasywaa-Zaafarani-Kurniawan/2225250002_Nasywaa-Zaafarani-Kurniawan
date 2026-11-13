@@ -1,0 +1,89 @@
+{% extends "contoh_kategori.html" %}
+{% import "contoh/_makro.html" as m %}
+
+{% block isi %}
+
+    {% call m.kartu(1, "Menentukan panjang hipotenusa", "menghitung-sisi", "Buku Murid Kelas VIII, Contoh 2.2 no. 1") %}
+        <p class="soal-contoh">Tentukan panjang hipotenusa segitiga ABC di bawah ini.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 240 230" aria-hidden="true">
+                <path d="M170 20 V200 H95 Z" class="s-isi s-garis"/>
+                <path d="M170 186 h-14 v14" class="s-siku"/>
+                <text x="170" y="14" class="s-teks">A</text><text x="184" y="216" class="s-teks">B</text><text x="84" y="216" class="s-teks">C</text>
+                <text x="205" y="114" class="s-teks s-kecil">12 cm</text><text x="132" y="220" class="s-teks s-kecil">5 cm</text>
+            </svg>
+        </figure>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> AB = 12 cm, BC = 5 cm, siku-siku di B.<br><strong>Ditanya:</strong> panjang hipotenusa AC.</li>
+            <li><strong>Jawab:</strong> AC adalah sisi miring (di seberang sudut B), jadi kuadratnya ditambah.
+                <div class="persamaan"><div>AC² = AB² + BC²</div><div>AC² = 12² + 5² = 144 + 25 = 169</div><div>AC = √169 = 13</div></div></li>
+            <li><strong>Jadi,</strong> panjang hipotenusa AC = <strong>13 cm</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(2, "Menentukan panjang sisi siku-siku (bilangan desimal)", "menghitung-sisi", "Buku Murid Kelas VIII, Contoh 2.2 no. 2") %}
+        <p class="soal-contoh">Pada segitiga PQR siku-siku di Q, PR = 2,9 cm dan QR = 2,1 cm. Tentukan panjang <var>a</var> = PQ.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 300 200" aria-hidden="true">
+                <path d="M30 170 L270 170 L130 50 Z" class="s-isi s-garis"/>
+                <path d="M118.4 63.9 L132.3 75.6 L144.1 61.7" class="s-siku"/>
+                <text x="18" y="182" class="s-teks">P</text><text x="282" y="182" class="s-teks">R</text><text x="130" y="38" class="s-teks">Q</text>
+                <text x="150" y="194" class="s-teks s-kecil">2,9 cm</text><text x="226" y="104" class="s-teks s-kecil">2,1 cm</text><text x="66" y="102" class="s-teks s-miring">a</text>
+            </svg>
+        </figure>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> PR = 2,9 cm (sisi miring, di seberang Q), QR = 2,1 cm.<br><strong>Ditanya:</strong> panjang <var>a</var> = PQ.</li>
+            <li><strong>Jawab:</strong> PQ adalah sisi siku-siku, jadi kuadratnya dikurang.
+                <div class="persamaan"><div>PR² = PQ² + QR²</div><div>PQ² = PR² − QR²</div><div>PQ² = 2,9² − 2,1² = 8,41 − 4,41 = 4</div><div>PQ = √4 = 2</div></div></li>
+            <li><strong>Jadi,</strong> panjang <var>a</var> = PQ = <strong>2 cm</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(3, "Sisi miring 10 cm dan sisi tegak 8 cm", "menghitung-sisi", "Modul 5, Kegiatan Belajar 1") %}
+        <p class="soal-contoh">Sebuah segitiga siku-siku memiliki sisi tegak 8 cm dan sisi miring 10 cm. Tentukan panjang sisi yang belum diketahui, lalu berikan alasannya.</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> sisi siku-siku 8 cm, sisi miring 10 cm.<br><strong>Ditanya:</strong> panjang sisi siku-siku lainnya, misalnya <var>a</var>.</li>
+            <li><strong>Alasan:</strong> pada segitiga siku-siku, kuadrat sisi miring sama dengan jumlah kuadrat kedua sisi siku-siku. Maka berlaku <var>a</var>² + 8² = 10².</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div><var>a</var>² + 64 = 100</div><div><var>a</var>² = 100 − 64 = 36</div><div><var>a</var> = 6</div></div></li>
+            <li><strong>Jadi,</strong> panjang sisi yang belum diketahui adalah <strong>6 cm</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(4, "Sisi miring dari 9 cm dan 12 cm", "menghitung-sisi", "Modul 5, Kegiatan Belajar 1") %}
+<p class="soal-contoh">Panjang kedua sisi siku-siku sebuah segitiga adalah 9 cm dan 12 cm. Tentukan panjang sisi miringnya.</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> sisi siku-siku 9 cm dan 12 cm.<br><strong>Ditanya:</strong> panjang sisi miring <var>c</var>.</li>
+            <li><strong>Jawab:</strong> yang dicari sisi miring, jadi kuadratnya ditambah.
+                <div class="persamaan"><div><var>c</var>² = 9² + 12² = 81 + 144 = 225</div><div><var>c</var> = √225 = 15</div></div></li>
+            <li><strong>Jadi,</strong> panjang sisi miringnya <strong>15 cm</strong>. (9, 12, 15 adalah 3 × tripel 3, 4, 5.)</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(5, "Melengkapi ukuran 18 cm, … cm, 30 cm", "menghitung-sisi", "Modul 5, Kegiatan Belajar 1") %}
+<p class="soal-contoh">Ukuran sisi-sisi sebuah segitiga siku-siku adalah 18 cm, … cm, dan 30 cm. Tentukan ukuran sisi yang belum diketahui.</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> sisi 18 cm dan 30 cm. Sisi terpanjang (30 cm) pasti sisi miring.<br><strong>Ditanya:</strong> sisi siku-siku yang lain, <var>x</var>.</li>
+            <li><strong>Jawab:</strong> yang dicari sisi siku-siku, jadi kuadratnya dikurang.
+                <div class="persamaan"><div><var>x</var>² = 30² − 18² = 900 − 324 = 576</div><div><var>x</var> = √576 = 24</div></div></li>
+            <li><strong>Jadi,</strong> sisi yang belum diketahui adalah <strong>24 cm</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(6, "Hipotenusa 34 cm dan sisi siku-siku 16 cm", "menghitung-sisi", "Buku Murid Kelas VIII, Uji Kompetensi A no. 1") %}
+<p class="soal-contoh">Suatu segitiga siku-siku memiliki panjang hipotenusa 34 cm dan salah satu sisi siku-siku 16 cm. Berapa panjang sisi siku-siku lainnya?</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> hipotenusa 34 cm, sisi siku-siku 16 cm.<br><strong>Ditanya:</strong> sisi siku-siku lainnya, <var>x</var>.</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div><var>x</var>² = 34² − 16² = 1.156 − 256 = 900</div><div><var>x</var> = √900 = 30</div></div></li>
+            <li><strong>Jadi,</strong> panjang sisi siku-siku lainnya <strong>30 cm</strong>. Cek: 30 &lt; 34 ✓ (sisi miring tetap yang terpanjang).</li>
+        </ol>
+    {% endcall %}
+
+{% endblock %}

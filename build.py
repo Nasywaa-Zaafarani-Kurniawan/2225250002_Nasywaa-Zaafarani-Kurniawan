@@ -9,7 +9,7 @@ Lalu commit & push folder docs/ ke GitHub.
 import shutil
 from pathlib import Path
 
-from app import app, TOPIK
+from app import app, TOPIK, KATEGORI_CONTOH
 
 FOLDER_HASIL = Path("docs")
 
@@ -28,6 +28,10 @@ HALAMAN = {
 # File aplikasi (PWA)
 HALAMAN["/manifest.webmanifest"] = "manifest.webmanifest"
 HALAMAN["/sw.js"] = "sw.js"
+
+# Satu halaman untuk setiap sub-bab contoh soal
+for _k in KATEGORI_CONTOH:
+    HALAMAN[f"/contoh-{_k['slug']}.html"] = f"contoh-{_k['slug']}.html"
 
 # Satu halaman untuk setiap topik materi
 for _t in TOPIK:

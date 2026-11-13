@@ -1,0 +1,98 @@
+{% extends "contoh_kategori.html" %}
+{% import "contoh/_makro.html" as m %}
+
+{% block isi %}
+
+    {% call m.kartu(1, "Segitiga siku-siku sama kaki", "segitiga-istimewa", "Buku Murid Kelas VIII, Contoh 2.4") %}
+        <p class="soal-contoh">Diketahui segitiga siku-siku sama kaki ABC dengan ∠C = 90° dan AB = 15√2 cm. Hitunglah panjang AC.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 240 210" aria-hidden="true">
+                <path d="M30 180 L190 180 L190 20 Z" class="s-isi s-garis"/>
+                <path d="M176 180 v-14 h14" class="s-siku"/>
+                <text x="18" y="194" class="s-teks">A</text><text x="204" y="194" class="s-teks">C</text><text x="204" y="20" class="s-teks">B</text>
+                <text x="80" y="92" class="s-teks s-kecil">15√2</text><text x="110" y="200" class="s-teks s-miring">a</text><text x="208" y="104" class="s-teks s-miring">a</text>
+                <text x="62" y="172" class="s-teks s-kecil s-teks-e">45°</text><text x="176" y="58" class="s-teks s-kecil s-teks-e">45°</text>
+            </svg>
+        </figure>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> ΔABC siku-siku sama kaki, ∠C = 90°, AB = 15√2 cm.<br><strong>Ditanya:</strong> panjang AC.</li>
+            <li><strong>Jawab:</strong> perbandingan sisi segitiga 45°–45°–90° adalah AC : CB : AB = 1 : 1 : √2.
+                <div class="persamaan"><div>AC : AB = 1 : √2</div><div>AC : 15√2 = 1 : √2</div><div>AC × √2 = 15√2</div><div>AC = 15</div></div></li>
+            <li><strong>Jadi,</strong> panjang AC = <strong>15 cm</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(2, "Menghitung AC dan AB", "segitiga-istimewa", "Buku Murid Kelas VIII, Contoh 2.5") %}
+        <div class="soal-contoh">
+            <p>Pada ΔABC, ∠A = 30°, ∠B = 60°, dan ∠C = 90°. Panjang BC = 12 cm. Hitunglah panjang:</p>
+            <ol class="daftar-sub" type="a"><li>AC</li><li>AB</li></ol>
+        </div>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 300 190" aria-hidden="true">
+                <path d="M30 160 L250 160 L250 33 Z" class="s-isi s-garis"/>
+                <path d="M236 160 v-14 h14" class="s-siku"/>
+                <text x="18" y="174" class="s-teks">A</text><text x="264" y="174" class="s-teks">C</text><text x="264" y="32" class="s-teks">B</text>
+                <text x="276" y="102" class="s-teks s-kecil">12 cm</text>
+                <text x="80" y="152" class="s-teks s-kecil s-teks-e">30°</text><text x="232" y="66" class="s-teks s-kecil s-teks-e">60°</text>
+            </svg>
+        </figure>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> ∠A = 30°, ∠B = 60°, ∠C = 90°, BC = 12 cm.<br><strong>Ditanya:</strong> AC dan AB.</li>
+            <li><strong>Jawab:</strong> BC berhadapan dengan sudut 30°, jadi BC adalah sisi terpendek. Perbandingannya BC : AC : AB = 1 : √3 : 2.</li>
+            <li><strong>a.</strong>
+                <div class="persamaan"><div>AC = √3 × BC = 12√3 cm</div></div></li>
+            <li><strong>b.</strong>
+                <div class="persamaan"><div>AB = 2 × BC = 2 × 12 = 24 cm</div></div>
+                <strong>Jadi,</strong> AC = <strong>12√3 cm</strong> (≈ 20,78 cm) dan AB = <strong>24 cm</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(3, "Diagonal persegi", "segitiga-istimewa", "Diolah dari Buku Murid Kelas VIII, Segitiga Istimewa") %}
+<p class="soal-contoh">Sebuah ubin berbentuk persegi dengan panjang sisi 7 cm. Berapa panjang diagonalnya?</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> sisi persegi 7 cm.<br><strong>Ditanya:</strong> panjang diagonal.</li>
+            <li><strong>Jawab:</strong> diagonal membagi persegi menjadi dua segitiga siku-siku sama kaki (45°–45°–90°). Perbandingan sisinya 1 : 1 : √2.
+                <div class="persamaan"><div>diagonal = 7 × √2 = 7√2 cm ≈ 9,90 cm</div></div></li>
+            <li><strong>Jadi,</strong> panjang diagonal ubin <strong>7√2 cm</strong>. Cek dengan Pythagoras: √(7² + 7²) = √98 = 7√2 ✓</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(4, "Tinggi segitiga sama sisi", "segitiga-istimewa", "Modul 5, Tes Akhir Modul no. 8") %}
+<p class="soal-contoh">Pada segitiga sama sisi ABC, panjang sisinya 8 cm. Berapa tinggi segitiga tersebut?</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> segitiga sama sisi dengan sisi 8 cm.<br><strong>Ditanya:</strong> tinggi <var>t</var>.</li>
+            <li><strong>Jawab:</strong> garis tinggi membagi alas menjadi dua bagian sama panjang, masing-masing 4 cm. Terbentuk segitiga 30°–60°–90° dengan sisi miring 8 cm dan sisi terpendek 4 cm.
+                <div class="persamaan"><div><var>t</var>² = 8² − 4² = 64 − 16 = 48</div><div><var>t</var> = √48 = 4√3</div></div></li>
+            <li><strong>Jadi,</strong> tinggi segitiga <strong>4√3 cm</strong> (≈ 6,93 cm). Cocok dengan perbandingan 1 : √3 : 2 → 4 : 4√3 : 8.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(5, "Hiasan dinding bersudut 30°", "segitiga-istimewa", "Buku Murid Kelas VIII, Uji Kompetensi A no. 3") %}
+<p class="soal-contoh">Pengrajin kayu membuat hiasan dinding berbentuk segitiga siku-siku dengan salah satu sudut 30°. Panjang sisi di depan sudut 30° adalah 60 cm. Berapa panjang hipotenusanya?</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> segitiga 30°–60°–90°, sisi di depan sudut 30° = 60 cm.<br><strong>Ditanya:</strong> panjang hipotenusa.</li>
+            <li><strong>Jawab:</strong> sisi di depan 30° adalah sisi terpendek. Perbandingannya 1 : √3 : 2, jadi:
+                <div class="persamaan"><div>hipotenusa = 2 × 60 = 120 cm</div></div></li>
+            <li><strong>Jadi,</strong> panjang hipotenusanya <strong>120 cm</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(6, "Luas persegi panjang dari diagonalnya", "segitiga-istimewa", "Buku Murid Kelas VIII, Uji Kompetensi B no. 2") %}
+<p class="soal-contoh">Sudut yang dibentuk oleh diagonal sebuah persegi panjang dan sisi terpendeknya adalah 60°. Jika panjang diagonalnya 12 cm, tentukan luas persegi panjang tersebut.</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> diagonal 12 cm, sudut antara diagonal dan sisi terpendek 60°.<br><strong>Ditanya:</strong> luas persegi panjang.</li>
+            <li><strong>Jawab:</strong> diagonal membentuk segitiga siku-siku bersudut 30°, 60°, dan 90°, dengan diagonal sebagai sisi miring. Sisi terpendek berada di depan sudut 30°.
+                <div class="persamaan"><div>sisi pendek = 12 ÷ 2 = 6 cm</div><div>sisi panjang = 6√3 cm</div></div></li>
+            <li>Hitung luasnya:
+                <div class="persamaan"><div>Luas = 6 × 6√3 = 36√3 cm² ≈ 62,35 cm²</div></div></li>
+            <li><strong>Jadi,</strong> luas persegi panjang <strong>36√3 cm²</strong>.</li>
+        </ol>
+    {% endcall %}
+
+{% endblock %}

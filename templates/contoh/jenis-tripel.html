@@ -1,0 +1,145 @@
+{% extends "contoh_kategori.html" %}
+{% import "contoh/_makro.html" as m %}
+
+{% block isi %}
+
+    {% call m.kartu(1, "Taman Putri: siku-siku atau bukan?", "jenis-segitiga", "Buku Murid Kelas VIII, Contoh 2.3 no. 1") %}
+        <p class="soal-contoh">Putri ingin membuat taman berbentuk segitiga siku-siku. Ia mengukur sebuah taman yang panjang sisinya 4 m, 5 m, dan 6 m. Apakah taman itu berbentuk segitiga siku-siku?</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> sisi 4 m, 5 m, dan 6 m.<br><strong>Ditanya:</strong> apakah segitiganya siku-siku?</li>
+            <li><strong>Jawab:</strong> misalkan sisi terpanjang <var>c</var> = 6 m, <var>a</var> = 5 m, <var>b</var> = 4 m.
+                <div class="persamaan"><div><var>c</var>² = 6² = 36</div><div><var>a</var>² + <var>b</var>² = 5² + 4² = 25 + 16 = 41</div></div></li>
+            <li>Karena <var>c</var>² ≠ <var>a</var>² + <var>b</var>², segitiga itu <strong>bukan</strong> segitiga siku-siku. Karena <var>c</var>² &lt; <var>a</var>² + <var>b</var>², segitiga itu adalah <strong>segitiga lancip</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(2, "Segitiga DEF dengan garis tinggi FG", "jenis-segitiga", "Buku Murid Kelas VIII, Contoh 2.3 no. 2") %}
+        <div class="soal-contoh">
+            <p>Pada gambar, DG = 10 cm, GE = 24 cm, dan FG = 15 cm.</p>
+            <ol class="daftar-sub" type="a">
+                <li>Hitunglah panjang DF dan EF.</li>
+                <li>Tentukan jenis ΔDEF.</li>
+            </ol>
+        </div>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 -16 380 206" aria-hidden="true">
+                <!-- 10 px per cm: D(20,160) G(120,160) E(360,160) F(120,10) -->
+                <path d="M20 160 L360 160 L120 10 Z" class="s-isi s-garis"/>
+                <line x1="120" y1="10" x2="120" y2="160" class="s-garis-g" stroke-width="2"/>
+                <path d="M120 146 h14 v14" class="s-siku"/>
+                <text x="10" y="176" class="s-teks">D</text><text x="120" y="182" class="s-teks">G</text><text x="370" y="176" class="s-teks">E</text><text x="120" y="8" class="s-teks" dy="-2">F</text>
+                <text x="70" y="178" class="s-teks s-kecil">10 cm</text><text x="240" y="178" class="s-teks s-kecil">24 cm</text><text x="102" y="96" class="s-teks s-kecil" transform="rotate(-90 102 96)">15 cm</text>
+            </svg>
+        </figure>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> DG = 10 cm, GE = 24 cm, FG = 15 cm, FG ⊥ DE.<br><strong>Ditanya:</strong> DF, EF, dan jenis ΔDEF.</li>
+            <li><strong>Jawab a:</strong> ΔDGF dan ΔEGF sama-sama siku-siku di G.
+                <div class="persamaan"><div>DF² = DG² + GF² = 10² + 15² = 100 + 225 = 325 → DF = √325</div><div>EF² = FG² + GE² = 15² + 24² = 225 + 576 = 801 → EF = √801</div></div></li>
+            <li><strong>Jawab b:</strong> sisi terpanjang ΔDEF adalah DE = 10 + 24 = 34 cm.
+                <div class="persamaan"><div>DE² = 34² = 1.156</div><div>DF² + EF² = 325 + 801 = 1.126</div></div></li>
+            <li><strong>Jadi,</strong> karena DE² &gt; DF² + EF², ΔDEF adalah <strong>segitiga tumpul</strong> (tumpul di F).</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(3, "Ukuran tali tukang bangunan", "jenis-segitiga", "Buku Murid Kelas VIII, Ayo Bereksplorasi") %}
+        <div class="soal-contoh">
+            <p>Tukang bangunan menyiapkan tali untuk membuat sudut siku-siku fondasi rumah. Ukuran tali yang disiapkan:</p>
+            <ol class="daftar-pilihan">
+                <li><span>(i)</span> 30 cm, 40 cm, 50 cm</li>
+                <li><span>(ii)</span> 12 cm, 5 cm, 14 cm</li>
+                <li><span>(iii)</span> 60 cm, 80 cm, 100 cm</li>
+                <li><span>(iv)</span> 90 cm, 120 cm, 140 cm</li>
+                <li><span>(v)</span> 12 cm, 16 cm, 20 cm</li>
+            </ol>
+            <p>Ukuran mana yang <strong>benar-benar</strong> membentuk sudut siku-siku?</p>
+        </div>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> lima kelompok ukuran tali.<br><strong>Ditanya:</strong> kelompok mana yang membentuk segitiga siku-siku?<br><strong>Cara:</strong> bandingkan kuadrat sisi terpanjang dengan jumlah kuadrat dua sisi lainnya.</li>
+            <li><strong>Jawab:</strong>
+                <div class="tabel-wadah"><table>
+                    <tr><th>Ukuran</th><th><var>c</var>²</th><th><var>a</var>² + <var>b</var>²</th><th>Hasil</th></tr>
+                    <tr><td>30, 40, 50</td><td>2.500</td><td>900 + 1.600 = 2.500</td><td>✓ siku-siku</td></tr>
+                    <tr><td>5, 12, 14</td><td>196</td><td>25 + 144 = 169</td><td>✗ tumpul</td></tr>
+                    <tr><td>60, 80, 100</td><td>10.000</td><td>3.600 + 6.400 = 10.000</td><td>✓ siku-siku</td></tr>
+                    <tr><td>90, 120, 140</td><td>19.600</td><td>8.100 + 14.400 = 22.500</td><td>✗ lancip</td></tr>
+                    <tr><td>12, 16, 20</td><td>400</td><td>144 + 256 = 400</td><td>✓ siku-siku</td></tr>
+                </table></div></li>
+            <li><strong>Jadi,</strong> ukuran yang membentuk sudut siku-siku adalah <strong>(i), (iii), dan (v)</strong>. Ketiganya kelipatan tripel 3, 4, 5.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(4, "Membuat tripel dengan p dan q", "tripel", "Buku Murid Kelas VIII, Ayo Menggunakan Teknologi") %}
+        <div class="soal-contoh">
+            <p>Humam membuat tangram berbentuk segitiga siku-siku. Panjang sisinya dihitung dengan rumus berikut (dengan <var>p</var> &gt; <var>q</var>):</p>
+            <ul class="daftar-rumus">
+                <li>sisi miring = <var>p</var>² + <var>q</var>²</li>
+                <li>sisi siku-siku pertama = <var>p</var>² − <var>q</var>²</li>
+                <li>sisi siku-siku kedua = 2<var>pq</var></li>
+            </ul>
+            <p>Tentukan tripel Pythagoras untuk setiap pasangan (<var>p</var>, <var>q</var>) berikut:</p>
+            <div class="daftar-chip"><span>(2, 1)</span><span>(3, 1)</span><span>(3, 2)</span><span>(4, 1)</span><span>(4, 3)</span></div>
+        </div>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> pasangan (<var>p</var>, <var>q</var>).<br><strong>Ditanya:</strong> tripel Pythagoras yang terbentuk.</li>
+            <li><strong>Jawab:</strong>
+                <div class="tabel-wadah"><table>
+                    <tr><th><var>p</var>, <var>q</var></th><th><var>p</var>² + <var>q</var>²</th><th><var>p</var>² − <var>q</var>²</th><th>2<var>pq</var></th><th>Cek</th></tr>
+                    <tr><td>2, 1</td><td>5</td><td>3</td><td>4</td><td>5² = 3² + 4²</td></tr>
+                    <tr><td>3, 1</td><td>10</td><td>8</td><td>6</td><td>10² = 8² + 6²</td></tr>
+                    <tr><td>3, 2</td><td>13</td><td>5</td><td>12</td><td>13² = 5² + 12²</td></tr>
+                    <tr><td>4, 1</td><td>17</td><td>15</td><td>8</td><td>17² = 15² + 8²</td></tr>
+                    <tr><td>4, 3</td><td>25</td><td>7</td><td>24</td><td>25² = 7² + 24²</td></tr>
+                </table></div></li>
+            <li><strong>Jadi,</strong> tripel yang terbentuk: (3, 4, 5), (6, 8, 10), (5, 12, 13), (8, 15, 17), dan (7, 24, 25).</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(5, "Mencari tripel Pythagoras", "tripel", "Modul 5, Tes Formatif 1 no. 4") %}
+<div class="soal-contoh">
+            <p>Diketahui kelompok tiga bilangan berikut.</p>
+            <ol class="daftar-pilihan">
+                <li><span>(i)</span> 3, 4, 5</li>
+                <li><span>(ii)</span> 5, 13, 14</li>
+                <li><span>(iii)</span> 7, 24, 25</li>
+                <li><span>(iv)</span> 20, 21, 29</li>
+            </ol>
+            <p>Kelompok bilangan manakah yang merupakan tripel Pythagoras?</p>
+        </div>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Cara:</strong> jumlahkan kuadrat dua bilangan terkecil, lalu bandingkan dengan kuadrat bilangan terbesar.</li>
+            <li><strong>Jawab:</strong>
+                <div class="tabel-wadah"><table>
+                    <tr><th>Kelompok</th><th><var>a</var>² + <var>b</var>²</th><th><var>c</var>²</th><th>Tripel?</th></tr>
+                    <tr><td>(i) 3, 4, 5</td><td>9 + 16 = 25</td><td>25</td><td>✓</td></tr>
+                    <tr><td>(ii) 5, 13, 14</td><td>25 + 169 = 194</td><td>196</td><td>✗</td></tr>
+                    <tr><td>(iii) 7, 24, 25</td><td>49 + 576 = 625</td><td>625</td><td>✓</td></tr>
+                    <tr><td>(iv) 20, 21, 29</td><td>400 + 441 = 841</td><td>841</td><td>✓</td></tr>
+                </table></div></li>
+            <li><strong>Jadi,</strong> tripel Pythagoras adalah <strong>(i), (iii), dan (iv)</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(6, "Lancip, siku-siku, atau tumpul?", "jenis-segitiga", "Modul 5, Tugas Kegiatan Belajar 1 no. 2") %}
+<div class="soal-contoh">
+            <p>Tentukan jenis segitiga (lancip, siku-siku, atau tumpul) yang dibentuk oleh setiap kelompok sisi berikut.</p>
+            <ol class="daftar-pilihan">
+                <li><span>a.</span> 13 cm, 9 cm, 11 cm</li>
+                <li><span>b.</span> 8 cm, 17 cm, 15 cm</li>
+                <li><span>c.</span> 130 cm, 120 cm, 50 cm</li>
+            </ol>
+        </div>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Cara:</strong> urutkan sisinya, lalu bandingkan (sisi terpanjang)² dengan jumlah kuadrat dua sisi lainnya: sama → siku-siku, lebih kecil → lancip, lebih besar → tumpul.</li>
+            <li><strong>a.</strong> Sisi terpanjang 13: 13² = 169, sedangkan 9² + 11² = 81 + 121 = 202. Karena 169 &lt; 202, segitiganya <strong>lancip</strong>.</li>
+            <li><strong>b.</strong> Sisi terpanjang 17: 17² = 289, sedangkan 8² + 15² = 64 + 225 = 289. Karena sama, segitiganya <strong>siku-siku</strong>.</li>
+            <li><strong>c.</strong> Sisi terpanjang 130: 130² = 16.900, sedangkan 50² + 120² = 2.500 + 14.400 = 16.900. Karena sama, segitiganya <strong>siku-siku</strong>.</li>
+        </ol>
+    {% endcall %}
+
+{% endblock %}

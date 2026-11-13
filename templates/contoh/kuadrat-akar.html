@@ -1,0 +1,76 @@
+{% extends "contoh_kategori.html" %}
+{% import "contoh/_makro.html" as m %}
+
+{% block isi %}
+
+    {% call m.kartu(1, "Menghitung kuadrat bilangan", "prasyarat", "Buku Murid Kelas VIII, Contoh 2.1 no. 1") %}
+<div class="soal-contoh">
+            <p>Hitunglah nilai kuadrat bilangan-bilangan berikut.</p>
+            <div class="daftar-chip"><span>a. 13²</span><span>b. 24²</span><span>c. 35²</span><span>d. (82,5)²</span><span>e. 119²</span></div>
+        </div>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> lima bilangan yang akan dikuadratkan.<br><strong>Ditanya:</strong> nilai kuadratnya.<br><strong>Ingat:</strong> <var>a</var>² = <var>a</var> × <var>a</var>.</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div>a. 13² = 13 × 13 = 169</div><div>b. 24² = 24 × 24 = 576</div><div>c. 35² = 35 × 35 = 1.225</div><div>d. (82,5)² = 82,5 × 82,5 = 6.806,25</div><div>e. 119² = 119 × 119 = 14.161</div></div></li>
+            <li><strong>Tips:</strong> bilangan yang berakhiran 5 selalu menghasilkan kuadrat berakhiran 25, contohnya 35² = 1.225.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(2, "Menghitung akar kuadrat", "prasyarat", "Buku Murid Kelas VIII, Contoh 2.1 no. 2") %}
+<div class="soal-contoh">
+            <p>Hitunglah nilai akar kuadrat bilangan-bilangan berikut.</p>
+            <div class="daftar-chip"><span>a. √49</span><span>b. √169</span><span>c. √256</span><span>d. √484</span><span>e. √625</span></div>
+        </div>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> lima bilangan di dalam tanda akar.<br><strong>Ditanya:</strong> nilai akarnya.<br><strong>Ingat:</strong> √<var>k</var> adalah bilangan positif yang jika dikuadratkan hasilnya <var>k</var>.</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div>a. √49 = 7, karena 7² = 49</div><div>b. √169 = 13, karena 13² = 169</div><div>c. √256 = 16, karena 16² = 256</div><div>d. √484 = 22, karena 22² = 484</div><div>e. √625 = 25, karena 25² = 625</div></div></li>
+            <li><strong>Jadi,</strong> mencari akar sama dengan mencari bilangan yang jika dikalikan dirinya sendiri menghasilkan bilangan tersebut.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(3, "Kuadrat bilangan desimal", "prasyarat", "Diolah dari Buku Murid Contoh 2.2 dan Modul 5") %}
+<div class="soal-contoh">
+            <p>Hitunglah kuadrat bilangan desimal berikut.</p>
+            <div class="daftar-chip"><span>a. 2,1²</span><span>b. 2,9²</span><span>c. 3,6²</span><span>d. 4,8²</span></div>
+        </div>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Cara:</strong> kalikan seperti bilangan bulat, lalu beri koma. Banyak angka di belakang koma pada hasil = 2 × banyak angka di belakang koma pada bilangan awal.</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div>a. 21 × 21 = 441 → 2,1² = 4,41</div><div>b. 29 × 29 = 841 → 2,9² = 8,41</div><div>c. 36 × 36 = 1.296 → 3,6² = 12,96</div><div>d. 48 × 48 = 2.304 → 4,8² = 23,04</div></div></li>
+            <li><strong>Jadi,</strong> hasilnya 4,41 ; 8,41 ; 12,96 ; dan 23,04. Bilangan-bilangan ini sering muncul di soal tangga dan segitiga berukuran desimal.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(4, "Menyederhanakan bentuk akar", "prasyarat", "Buku Murid Kelas VIII, Sifat Akar Kuadrat") %}
+<div class="soal-contoh">
+            <p>Sederhanakan bentuk akar berikut.</p>
+            <div class="daftar-chip"><span>a. √50</span><span>b. √72</span><span>c. √48</span><span>d. √200</span></div>
+        </div>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Cara:</strong> pecah bilangan di dalam akar menjadi <em>bilangan kuadrat terbesar</em> × bilangan lain, lalu pakai sifat √(<var>A</var> × <var>B</var>) = √<var>A</var> × √<var>B</var>.</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div>a. √50 = √(25 × 2) = 5√2</div><div>b. √72 = √(36 × 2) = 6√2</div><div>c. √48 = √(16 × 3) = 4√3</div><div>d. √200 = √(100 × 2) = 10√2</div></div></li>
+            <li><strong>Hati-hati:</strong> √72 = √(4 × 18) = 2√18 belum paling sederhana, karena 18 masih bisa dipecah menjadi 9 × 2. Pilih bilangan kuadrat yang <strong>terbesar</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(5, "Menaksir nilai akar", "prasyarat", "Diolah dari Buku Murid Kelas VIII Bab 2") %}
+<div class="soal-contoh">
+            <p>Tanpa kalkulator, tentukan di antara dua bilangan bulat mana nilai akar berikut berada, lalu taksir nilainya.</p>
+            <div class="daftar-chip"><span>a. √85</span><span>b. √113</span></div>
+        </div>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Cara:</strong> cari dua bilangan kuadrat yang mengapit bilangan di dalam akar.</li>
+            <li><strong>a.</strong> 81 &lt; 85 &lt; 100, artinya 9² &lt; 85 &lt; 10². Jadi √85 ada di antara 9 dan 10. Karena 85 lebih dekat ke 81, nilainya sedikit di atas 9: √85 ≈ 9,2.</li>
+            <li><strong>b.</strong> 100 &lt; 113 &lt; 121, artinya 10² &lt; 113 &lt; 11². Jadi √113 ada di antara 10 dan 11, dan nilainya ≈ 10,6.</li>
+            <li><strong>Jadi,</strong> √85 ≈ 9,2 dan √113 ≈ 10,6. Menaksir seperti ini berguna untuk mengecek apakah jawaban soal Pythagoras masuk akal.</li>
+        </ol>
+    {% endcall %}
+
+{% endblock %}

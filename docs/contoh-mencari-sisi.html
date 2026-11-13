@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Soal: Mencari Panjang Sisi — PHYNthagoras</title>
+
+    <!-- Aplikasi (PWA) -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#7d2027">
+    <link rel="icon" type="image/png" href="static/ikon/ikon-192.png">
+    <link rel="apple-touch-icon" href="static/ikon/ikon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="PHYNthagoras">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/materi.css">
+    
+<link rel="stylesheet" href="static/contoh.css">
+
+</head>
+
+<body >
+
+<!-- Navigasi atas -->
+<header class="navbar">
+    <div class="navbar-isi">
+        <a href="./" class="logo">
+            <span class="logo-ikon">△</span>
+            <span><span class="logo-phyn">PHYN</span>thagoras</span>
+        </a>
+
+        <nav class="nav-link">
+            <a href="beranda.html" >Beranda</a>
+            <a href="materi.html" >Materi</a>
+            <a href="contoh.html" class="aktif">Contoh Soal</a>
+            <a href="latihan.html" >Latihan</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    
+<div class="tata-topik halaman-contoh">
+
+    <!-- Daftar sub-bab (layar lebar) -->
+    <aside class="daftar-topik">
+        <a href="contoh.html" class="kembali">← Semua contoh soal</a>
+        <ol>
+            
+            <li>
+                <a href="contoh-kuadrat-akar.html" >
+                    <span class="no">1</span>
+                    <span>Kuadrat &amp; Akar Kuadrat<small>5 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-mencari-sisi.html" class="aktif" aria-current="page">
+                    <span class="no">2</span>
+                    <span>Mencari Panjang Sisi<small>6 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-jenis-tripel.html" >
+                    <span class="no">3</span>
+                    <span>Jenis Segitiga &amp; Tripel<small>6 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-istimewa.html" >
+                    <span class="no">4</span>
+                    <span>Segitiga Istimewa<small>6 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-bangun.html" >
+                    <span class="no">5</span>
+                    <span>Bangun Datar &amp; Bangun Ruang<small>6 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-cerita.html" >
+                    <span class="no">6</span>
+                    <span>Soal Cerita<small>6 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-koordinat.html" >
+                    <span class="no">7</span>
+                    <span>Jarak Dua Titik<small>6 soal</small></span>
+                </a>
+            </li>
+            
+        </ol>
+    </aside>
+
+    <article class="isi-topik">
+        <a href="contoh.html" class="kembali kembali-hp">← Semua contoh soal</a>
+
+        <header class="kepala-topik">
+            <span class="label-topik">Contoh Soal · Bagian 2</span>
+            <h1>Mencari Panjang Sisi</h1>
+            <p>Mencari sisi miring (ditambah) dan sisi siku-siku (dikurang).</p>
+
+            <div class="tujuan daftar-isi-contoh">
+                <strong>Ada 6 contoh soal di bagian ini:</strong>
+                <ol id="daftar-isi"></ol>
+                <p class="cara-pakai">Coba kerjakan sendiri dulu, lalu buka penyelesaiannya langkah demi langkah: <em>Diketahui → Ditanya → Jawab → Jadi</em>.</p>
+            </div>
+        </header>
+
+        <section class="bagian daftar-contoh">
+            
+
+    
+<div class="contoh kartu-contoh" id="contoh-1">
+    <span class="label-contoh">Contoh 1</span>
+    <h3 class="judul-contoh">Menentukan panjang hipotenusa</h3>
+    
+        <p class="soal-contoh">Tentukan panjang hipotenusa segitiga ABC di bawah ini.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 240 230" aria-hidden="true">
+                <path d="M170 20 V200 H95 Z" class="s-isi s-garis"/>
+                <path d="M170 186 h-14 v14" class="s-siku"/>
+                <text x="170" y="14" class="s-teks">A</text><text x="184" y="216" class="s-teks">B</text><text x="84" y="216" class="s-teks">C</text>
+                <text x="205" y="114" class="s-teks s-kecil">12 cm</text><text x="132" y="220" class="s-teks s-kecil">5 cm</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> AB = 12 cm, BC = 5 cm, siku-siku di B.<br><strong>Ditanya:</strong> panjang hipotenusa AC.</li>
+            <li><strong>Jawab:</strong> AC adalah sisi miring (di seberang sudut B), jadi kuadratnya ditambah.
+                <div class="persamaan"><div>AC² = AB² + BC²</div><div>AC² = 12² + 5² = 144 + 25 = 169</div><div>AC = √169 = 13</div></div></li>
+            <li><strong>Jadi,</strong> panjang hipotenusa AC = <strong>13 cm</strong>.</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.2 no. 1</span>
+        <a href="materi-menghitung-sisi.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+    
+<div class="contoh kartu-contoh" id="contoh-2">
+    <span class="label-contoh">Contoh 2</span>
+    <h3 class="judul-contoh">Menentukan panjang sisi siku-siku (bilangan desimal)</h3>
+    
+        <p class="soal-contoh">Pada segitiga PQR siku-siku di Q, PR = 2,9 cm dan QR = 2,1 cm. Tentukan panjang <var>a</var> = PQ.</p>
+        <figure class="gambar-contoh">
+            <svg viewBox="0 0 300 200" aria-hidden="true">
+                <path d="M30 170 L270 170 L130 50 Z" class="s-isi s-garis"/>
+                <path d="M118.4 63.9 L132.3 75.6 L144.1 61.7" class="s-siku"/>
+                <text x="18" y="182" class="s-teks">P</text><text x="282" y="182" class="s-teks">R</text><text x="130" y="38" class="s-teks">Q</text>
+                <text x="150" y="194" class="s-teks s-kecil">2,9 cm</text><text x="226" y="104" class="s-teks s-kecil">2,1 cm</text><text x="66" y="102" class="s-teks s-miring">a</text>
+            </svg>
+        </figure>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> PR = 2,9 cm (sisi miring, di seberang Q), QR = 2,1 cm.<br><strong>Ditanya:</strong> panjang <var>a</var> = PQ.</li>
+            <li><strong>Jawab:</strong> PQ adalah sisi siku-siku, jadi kuadratnya dikurang.
+                <div class="persamaan"><div>PR² = PQ² + QR²</div><div>PQ² = PR² − QR²</div><div>PQ² = 2,9² − 2,1² = 8,41 − 4,41 = 4</div><div>PQ = √4 = 2</div></div></li>
+            <li><strong>Jadi,</strong> panjang <var>a</var> = PQ = <strong>2 cm</strong>.</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Contoh 2.2 no. 2</span>
+        <a href="materi-menghitung-sisi.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+    
+<div class="contoh kartu-contoh" id="contoh-3">
+    <span class="label-contoh">Contoh 3</span>
+    <h3 class="judul-contoh">Sisi miring 10 cm dan sisi tegak 8 cm</h3>
+    
+        <p class="soal-contoh">Sebuah segitiga siku-siku memiliki sisi tegak 8 cm dan sisi miring 10 cm. Tentukan panjang sisi yang belum diketahui, lalu berikan alasannya.</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> sisi siku-siku 8 cm, sisi miring 10 cm.<br><strong>Ditanya:</strong> panjang sisi siku-siku lainnya, misalnya <var>a</var>.</li>
+            <li><strong>Alasan:</strong> pada segitiga siku-siku, kuadrat sisi miring sama dengan jumlah kuadrat kedua sisi siku-siku. Maka berlaku <var>a</var>² + 8² = 10².</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div><var>a</var>² + 64 = 100</div><div><var>a</var>² = 100 − 64 = 36</div><div><var>a</var> = 6</div></div></li>
+            <li><strong>Jadi,</strong> panjang sisi yang belum diketahui adalah <strong>6 cm</strong>.</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Modul 5, Kegiatan Belajar 1</span>
+        <a href="materi-menghitung-sisi.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+    
+<div class="contoh kartu-contoh" id="contoh-4">
+    <span class="label-contoh">Contoh 4</span>
+    <h3 class="judul-contoh">Sisi miring dari 9 cm dan 12 cm</h3>
+    
+<p class="soal-contoh">Panjang kedua sisi siku-siku sebuah segitiga adalah 9 cm dan 12 cm. Tentukan panjang sisi miringnya.</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> sisi siku-siku 9 cm dan 12 cm.<br><strong>Ditanya:</strong> panjang sisi miring <var>c</var>.</li>
+            <li><strong>Jawab:</strong> yang dicari sisi miring, jadi kuadratnya ditambah.
+                <div class="persamaan"><div><var>c</var>² = 9² + 12² = 81 + 144 = 225</div><div><var>c</var> = √225 = 15</div></div></li>
+            <li><strong>Jadi,</strong> panjang sisi miringnya <strong>15 cm</strong>. (9, 12, 15 adalah 3 × tripel 3, 4, 5.)</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Modul 5, Kegiatan Belajar 1</span>
+        <a href="materi-menghitung-sisi.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+    
+<div class="contoh kartu-contoh" id="contoh-5">
+    <span class="label-contoh">Contoh 5</span>
+    <h3 class="judul-contoh">Melengkapi ukuran 18 cm, … cm, 30 cm</h3>
+    
+<p class="soal-contoh">Ukuran sisi-sisi sebuah segitiga siku-siku adalah 18 cm, … cm, dan 30 cm. Tentukan ukuran sisi yang belum diketahui.</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> sisi 18 cm dan 30 cm. Sisi terpanjang (30 cm) pasti sisi miring.<br><strong>Ditanya:</strong> sisi siku-siku yang lain, <var>x</var>.</li>
+            <li><strong>Jawab:</strong> yang dicari sisi siku-siku, jadi kuadratnya dikurang.
+                <div class="persamaan"><div><var>x</var>² = 30² − 18² = 900 − 324 = 576</div><div><var>x</var> = √576 = 24</div></div></li>
+            <li><strong>Jadi,</strong> sisi yang belum diketahui adalah <strong>24 cm</strong>.</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Modul 5, Kegiatan Belajar 1</span>
+        <a href="materi-menghitung-sisi.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+    
+<div class="contoh kartu-contoh" id="contoh-6">
+    <span class="label-contoh">Contoh 6</span>
+    <h3 class="judul-contoh">Hipotenusa 34 cm dan sisi siku-siku 16 cm</h3>
+    
+<p class="soal-contoh">Suatu segitiga siku-siku memiliki panjang hipotenusa 34 cm dan salah satu sisi siku-siku 16 cm. Berapa panjang sisi siku-siku lainnya?</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> hipotenusa 34 cm, sisi siku-siku 16 cm.<br><strong>Ditanya:</strong> sisi siku-siku lainnya, <var>x</var>.</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div><var>x</var>² = 34² − 16² = 1.156 − 256 = 900</div><div><var>x</var> = √900 = 30</div></div></li>
+            <li><strong>Jadi,</strong> panjang sisi siku-siku lainnya <strong>30 cm</strong>. Cek: 30 &lt; 34 ✓ (sisi miring tetap yang terpanjang).</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Uji Kompetensi A no. 1</span>
+        <a href="materi-menghitung-sisi.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+
+        </section>
+
+        <nav class="navigasi-topik">
+            
+            <a href="contoh-kuadrat-akar.html" class="nav-sebelum">
+                <small>← Sebelumnya</small>Kuadrat &amp; Akar Kuadrat
+            </a>
+            
+
+            
+            <a href="contoh-jenis-tripel.html" class="nav-sesudah">
+                <small>Berikutnya →</small>Jenis Segitiga &amp; Tripel
+            </a>
+            
+        </nav>
+    </article>
+</div>
+
+</main>
+
+<footer class="kaki">
+    <span class="logo-phyn">PHYN</span>thagoras · Media Pembelajaran Teorema Pythagoras SMP
+    <br><button type="button" class="tautan-pasang" data-pasang>⬇ Pasang aplikasi PHYNthagoras</button>
+</footer>
+
+<!-- Kertas coretan: tempat menggambar / menghitung -->
+<button type="button" class="tombol-coretan" id="buka-coretan">
+    ✎ <span>Coretan</span>
+</button>
+
+<div class="coretan" id="coretan" hidden>
+    <div class="coretan-alat">
+        <strong class="coretan-judul">✎ Kertas Coretan</strong>
+
+        <div class="alat-grup">
+            <button type="button" class="warna aktif" data-warna="#2b1d1e" style="--w:#2b1d1e" aria-label="Pena hitam"></button>
+            <button type="button" class="warna" data-warna="#7d2027" style="--w:#7d2027" aria-label="Pena merah"></button>
+            <button type="button" class="warna" data-warna="#2f6db5" style="--w:#2f6db5" aria-label="Pena biru"></button>
+            <button type="button" class="warna" data-warna="#4f7a43" style="--w:#4f7a43" aria-label="Pena hijau"></button>
+            <button type="button" class="alat" id="alat-penghapus">Penghapus</button>
+            <button type="button" class="alat" id="bersihkan-coretan">Bersihkan</button>
+            <button type="button" class="alat alat-tutup" id="tutup-coretan">Tutup ✕</button>
+        </div>
+    </div>
+    <canvas id="kanvas-coretan"></canvas>
+</div>
+
+<script src="static/materi.js"></script>
+<script src="static/jejak.js"></script>
+<script src="static/pasang.js"></script>
+
+<script>
+    // Daftar isi otomatis dari judul setiap contoh soal
+    const daftarIsi = document.getElementById("daftar-isi");
+    document.querySelectorAll(".kartu-contoh").forEach((k) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="#${k.id}">${k.querySelector(".judul-contoh").textContent}</a>`;
+        daftarIsi.appendChild(li);
+    });
+
+    // Tombol "Coretan" kecil di setiap soal
+    document.querySelectorAll(".buka-coretan-kecil").forEach((t) =>
+        t.addEventListener("click", () => document.getElementById("buka-coretan").click()));
+</script>
+
+
+</body>
+</html>

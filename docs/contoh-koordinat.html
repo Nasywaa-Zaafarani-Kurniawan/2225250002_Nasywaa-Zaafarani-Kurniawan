@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Soal: Jarak Dua Titik — PHYNthagoras</title>
+
+    <!-- Aplikasi (PWA) -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#7d2027">
+    <link rel="icon" type="image/png" href="static/ikon/ikon-192.png">
+    <link rel="apple-touch-icon" href="static/ikon/ikon-180.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="PHYNthagoras">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="static/materi.css">
+    
+<link rel="stylesheet" href="static/contoh.css">
+
+</head>
+
+<body >
+
+<!-- Navigasi atas -->
+<header class="navbar">
+    <div class="navbar-isi">
+        <a href="./" class="logo">
+            <span class="logo-ikon">△</span>
+            <span><span class="logo-phyn">PHYN</span>thagoras</span>
+        </a>
+
+        <nav class="nav-link">
+            <a href="beranda.html" >Beranda</a>
+            <a href="materi.html" >Materi</a>
+            <a href="contoh.html" class="aktif">Contoh Soal</a>
+            <a href="latihan.html" >Latihan</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    
+<div class="tata-topik halaman-contoh">
+
+    <!-- Daftar sub-bab (layar lebar) -->
+    <aside class="daftar-topik">
+        <a href="contoh.html" class="kembali">← Semua contoh soal</a>
+        <ol>
+            
+            <li>
+                <a href="contoh-kuadrat-akar.html" >
+                    <span class="no">1</span>
+                    <span>Kuadrat &amp; Akar Kuadrat<small>5 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-mencari-sisi.html" >
+                    <span class="no">2</span>
+                    <span>Mencari Panjang Sisi<small>6 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-jenis-tripel.html" >
+                    <span class="no">3</span>
+                    <span>Jenis Segitiga &amp; Tripel<small>6 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-istimewa.html" >
+                    <span class="no">4</span>
+                    <span>Segitiga Istimewa<small>6 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-bangun.html" >
+                    <span class="no">5</span>
+                    <span>Bangun Datar &amp; Bangun Ruang<small>6 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-cerita.html" >
+                    <span class="no">6</span>
+                    <span>Soal Cerita<small>6 soal</small></span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="contoh-koordinat.html" class="aktif" aria-current="page">
+                    <span class="no">7</span>
+                    <span>Jarak Dua Titik<small>6 soal</small></span>
+                </a>
+            </li>
+            
+        </ol>
+    </aside>
+
+    <article class="isi-topik">
+        <a href="contoh.html" class="kembali kembali-hp">← Semua contoh soal</a>
+
+        <header class="kepala-topik">
+            <span class="label-topik">Contoh Soal · Bagian 7</span>
+            <h1>Jarak Dua Titik</h1>
+            <p>Teorema Pythagoras pada bidang koordinat Kartesius.</p>
+
+            <div class="tujuan daftar-isi-contoh">
+                <strong>Ada 6 contoh soal di bagian ini:</strong>
+                <ol id="daftar-isi"></ol>
+                <p class="cara-pakai">Coba kerjakan sendiri dulu, lalu buka penyelesaiannya langkah demi langkah: <em>Diketahui → Ditanya → Jawab → Jadi</em>.</p>
+            </div>
+        </header>
+
+        <section class="bagian daftar-contoh">
+            
+
+    
+<div class="contoh kartu-contoh" id="contoh-1">
+    <span class="label-contoh">Contoh 1</span>
+    <h3 class="judul-contoh">Jarak titik A(−5, 3) dan B(3, −4)</h3>
+    
+        <p class="soal-contoh">Tentukan jarak antara titik A(−5, 3) dan B(3, −4) pada bidang koordinat Kartesius.</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> A(−5, 3) dan B(3, −4).<br><strong>Ditanya:</strong> panjang AB.</li>
+            <li><strong>Jawab:</strong> tarik garis sejajar sumbu-<var>x</var> dan sumbu-<var>y</var>, sehingga terbentuk segitiga siku-siku dengan sisi tegak:
+                <div class="persamaan"><div>selisih <var>x</var> = 3 − (−5) = 8 satuan</div><div>selisih <var>y</var> = 3 − (−4) = 7 satuan</div></div></li>
+            <li>AB adalah sisi miringnya:
+                <div class="persamaan"><div>AB = √(8² + 7²) = √(64 + 49) = √113 ≈ 10,63</div></div>
+                <strong>Jadi,</strong> jarak A dan B adalah <strong>√113 satuan</strong>.</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Jarak antara Dua Titik</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+    
+<div class="contoh kartu-contoh" id="contoh-2">
+    <span class="label-contoh">Contoh 2</span>
+    <h3 class="judul-contoh">Permainan bentengan</h3>
+    
+        <p class="soal-contoh">Saat bermain bentengan, kamu berada 4 m di utara dan 3 m di timur benteng timmu. Benteng lawan berada 6 m di utara dan 8 m di timur benteng timmu. Berapa jarakmu ke benteng lawan?</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> jadikan benteng timmu titik (0, 0). Posisimu (3, 4) dan benteng lawan (8, 6).<br><strong>Ditanya:</strong> jarakmu ke benteng lawan.</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div>selisih timur = 8 − 3 = 5 m</div><div>selisih utara = 6 − 4 = 2 m</div><div>d = √(5² + 2²) = √(25 + 4) = √29 ≈ 5,39</div></div></li>
+            <li><strong>Jadi,</strong> jarakmu ke benteng lawan sekitar <strong>5,39 m</strong> (tepatnya √29 m).</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Penerapan Teorema Pythagoras</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+    
+<div class="contoh kartu-contoh" id="contoh-3">
+    <span class="label-contoh">Contoh 3</span>
+    <h3 class="judul-contoh">Jarak titik A(2, 1) dan B(7, 13)</h3>
+    
+<p class="soal-contoh">Diketahui titik A(2, 1) dan B(7, 13). Berapa panjang ruas garis AB?</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> A(2, 1) dan B(7, 13).<br><strong>Ditanya:</strong> panjang AB.</li>
+            <li><strong>Jawab:</strong> buat segitiga siku-siku dengan sisi datar dan sisi tegak:
+                <div class="persamaan"><div>selisih <var>x</var> = 7 − 2 = 5</div><div>selisih <var>y</var> = 13 − 1 = 12</div></div></li>
+            <li>AB adalah sisi miringnya:
+                <div class="persamaan"><div>AB = √(5² + 12²) = √(25 + 144) = √169 = 13</div></div>
+                <strong>Jadi,</strong> panjang AB = <strong>13 satuan</strong>.</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Modul 5, Tes Formatif 2 no. 2</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+    
+<div class="contoh kartu-contoh" id="contoh-4">
+    <span class="label-contoh">Contoh 4</span>
+    <h3 class="judul-contoh">Memakai rumus jarak</h3>
+    
+<p class="soal-contoh">Gunakan rumus jarak AB = √[(<var>x</var>₂ − <var>x</var>₁)² + (<var>y</var>₂ − <var>y</var>₁)²] untuk menentukan panjang AB, jika A(−2, −1) dan B(3, 11).</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> (<var>x</var>₁, <var>y</var>₁) = (−2, −1) dan (<var>x</var>₂, <var>y</var>₂) = (3, 11).<br><strong>Ditanya:</strong> AB.</li>
+            <li><strong>Jawab:</strong> hati-hati dengan tanda negatif.
+                <div class="persamaan"><div><var>x</var>₂ − <var>x</var>₁ = 3 − (−2) = 5</div><div><var>y</var>₂ − <var>y</var>₁ = 11 − (−1) = 12</div></div></li>
+            <li>Masukkan ke rumus:
+                <div class="persamaan"><div>AB = √(5² + 12²) = √169 = 13</div></div>
+                <strong>Jadi,</strong> AB = <strong>13 satuan</strong>. Rumus jarak sebenarnya adalah teorema Pythagoras.</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Pengayaan Rumus Jarak</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+    
+<div class="contoh kartu-contoh" id="contoh-5">
+    <span class="label-contoh">Contoh 5</span>
+    <h3 class="judul-contoh">Apakah segitiga ABC siku-siku?</h3>
+    
+<p class="soal-contoh">Diketahui ΔABC dengan titik A(−1, 3), B(4, −2), dan C(1, −5). Apakah segitiga ABC merupakan segitiga siku-siku? Jelaskan.</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> A(−1, 3), B(4, −2), C(1, −5).<br><strong>Ditanya:</strong> apakah ΔABC siku-siku?<br><strong>Cara:</strong> hitung kuadrat panjang ketiga sisi, lalu pakai kebalikan teorema Pythagoras.</li>
+            <li><strong>Hitung kuadrat sisi-sisinya:</strong>
+                <div class="persamaan"><div>AB² = (4 − (−1))² + (−2 − 3)² = 25 + 25 = 50</div><div>BC² = (1 − 4)² + (−5 − (−2))² = 9 + 9 = 18</div><div>AC² = (1 − (−1))² + (−5 − 3)² = 4 + 64 = 68</div></div></li>
+            <li><strong>Bandingkan:</strong> sisi terpanjang AC. AB² + BC² = 50 + 18 = 68 = AC².</li>
+            <li><strong>Jadi,</strong> ΔABC <strong>siku-siku di B</strong> (sudut di seberang sisi terpanjang AC).</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Latihan 2.4 no. 1</span>
+        <a href="materi-jenis-segitiga.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+    
+<div class="contoh kartu-contoh" id="contoh-6">
+    <span class="label-contoh">Contoh 6</span>
+    <h3 class="judul-contoh">Main tembak-tembakan pistol bambu</h3>
+    
+<p class="soal-contoh">Aldo dan Arjuna berdiri saling membelakangi. Aldo berjalan 20 langkah ke depan lalu 15 langkah ke kanan. Pada saat yang sama, Arjuna berjalan 16 langkah ke depan lalu 12 langkah ke kanan. Berapa langkah jarak mereka berdua sekarang?</p>
+        <p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> titik awal mereka (0, 0). Aldo menghadap utara, jadi Arjuna menghadap selatan. "Kanan" bagi Arjuna adalah arah barat.<br><strong>Ditanya:</strong> jarak Aldo dan Arjuna.</li>
+            <li><strong>Posisi akhir:</strong>
+                <div class="persamaan"><div>Aldo: 15 ke timur, 20 ke utara → (15, 20)</div><div>Arjuna: 12 ke barat, 16 ke selatan → (−12, −16)</div></div></li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div>selisih <var>x</var> = 15 − (−12) = 27</div><div>selisih <var>y</var> = 20 − (−16) = 36</div><div>jarak = √(27² + 36²) = √(729 + 1.296) = √2.025 = 45</div></div></li>
+            <li><strong>Jadi,</strong> jarak mereka <strong>45 langkah</strong>. (27, 36, 45 adalah 9 × tripel 3, 4, 5.)</li>
+        </ol>
+    
+    <div class="kaki-contoh">
+        <span>📖 Buku Murid Kelas VIII, Latihan 2.4 no. 3</span>
+        <a href="materi-penerapan.html">Pelajari materinya →</a>
+    </div>
+</div>
+
+
+
+        </section>
+
+        <nav class="navigasi-topik">
+            
+            <a href="contoh-cerita.html" class="nav-sebelum">
+                <small>← Sebelumnya</small>Soal Cerita
+            </a>
+            
+
+            
+            <a href="latihan.html" class="nav-sesudah">
+                <small>Contoh soal selesai! Lanjut →</small>Latihan Soal 🎯
+            </a>
+            
+        </nav>
+    </article>
+</div>
+
+</main>
+
+<footer class="kaki">
+    <span class="logo-phyn">PHYN</span>thagoras · Media Pembelajaran Teorema Pythagoras SMP
+    <br><button type="button" class="tautan-pasang" data-pasang>⬇ Pasang aplikasi PHYNthagoras</button>
+</footer>
+
+<!-- Kertas coretan: tempat menggambar / menghitung -->
+<button type="button" class="tombol-coretan" id="buka-coretan">
+    ✎ <span>Coretan</span>
+</button>
+
+<div class="coretan" id="coretan" hidden>
+    <div class="coretan-alat">
+        <strong class="coretan-judul">✎ Kertas Coretan</strong>
+
+        <div class="alat-grup">
+            <button type="button" class="warna aktif" data-warna="#2b1d1e" style="--w:#2b1d1e" aria-label="Pena hitam"></button>
+            <button type="button" class="warna" data-warna="#7d2027" style="--w:#7d2027" aria-label="Pena merah"></button>
+            <button type="button" class="warna" data-warna="#2f6db5" style="--w:#2f6db5" aria-label="Pena biru"></button>
+            <button type="button" class="warna" data-warna="#4f7a43" style="--w:#4f7a43" aria-label="Pena hijau"></button>
+            <button type="button" class="alat" id="alat-penghapus">Penghapus</button>
+            <button type="button" class="alat" id="bersihkan-coretan">Bersihkan</button>
+            <button type="button" class="alat alat-tutup" id="tutup-coretan">Tutup ✕</button>
+        </div>
+    </div>
+    <canvas id="kanvas-coretan"></canvas>
+</div>
+
+<script src="static/materi.js"></script>
+<script src="static/jejak.js"></script>
+<script src="static/pasang.js"></script>
+
+<script>
+    // Daftar isi otomatis dari judul setiap contoh soal
+    const daftarIsi = document.getElementById("daftar-isi");
+    document.querySelectorAll(".kartu-contoh").forEach((k) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="#${k.id}">${k.querySelector(".judul-contoh").textContent}</a>`;
+        daftarIsi.appendChild(li);
+    });
+
+    // Tombol "Coretan" kecil di setiap soal
+    document.querySelectorAll(".buka-coretan-kecil").forEach((t) =>
+        t.addEventListener("click", () => document.getElementById("buka-coretan").click()));
+</script>
+
+
+</body>
+</html>

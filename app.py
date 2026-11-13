@@ -188,9 +188,47 @@ def materi_topik(slug):
         aktif="materi",
     )
 
+# ---------------------------------------------------------------
+# Sub-bab Contoh Soal. Isi tiap sub-bab ada di templates/contoh/<slug>.html
+# ---------------------------------------------------------------
+KATEGORI_CONTOH = [
+    {"slug": "kuadrat-akar", "judul": "Kuadrat & Akar Kuadrat", "jumlah": 5, "materi": "prasyarat",
+     "ringkasan": "Menghitung kuadrat, akar, dan menyederhanakan bentuk akar."},
+    {"slug": "mencari-sisi", "judul": "Mencari Panjang Sisi", "jumlah": 6, "materi": "menghitung-sisi",
+     "ringkasan": "Mencari sisi miring (ditambah) dan sisi siku-siku (dikurang)."},
+    {"slug": "jenis-tripel", "judul": "Jenis Segitiga & Tripel", "jumlah": 6, "materi": "jenis-segitiga",
+     "ringkasan": "Kebalikan teorema Pythagoras dan tripel Pythagoras."},
+    {"slug": "istimewa", "judul": "Segitiga Istimewa", "jumlah": 6, "materi": "segitiga-istimewa",
+     "ringkasan": "Perbandingan sisi segitiga 45°–45°–90° dan 30°–60°–90°."},
+    {"slug": "bangun", "judul": "Bangun Datar & Bangun Ruang", "jumlah": 6, "materi": "bangun-gabungan",
+     "ringkasan": "Memecah trapesium, balok, limas, dan kerucut menjadi segitiga siku-siku."},
+    {"slug": "cerita", "judul": "Soal Cerita", "jumlah": 6, "materi": "penerapan",
+     "ringkasan": "Tangga, layang-layang, tower, perahu, dan pesawat."},
+    {"slug": "koordinat", "judul": "Jarak Dua Titik", "jumlah": 6, "materi": "penerapan",
+     "ringkasan": "Teorema Pythagoras pada bidang koordinat Kartesius."},
+]
+
+
 @app.route("/contoh.html")
 def contoh():
-    return render_template("contoh.html", semua_topik=TOPIK, aktif="contoh")
+    return render_template("contoh.html", semua_kategori=KATEGORI_CONTOH, aktif="contoh")
+
+
+@app.route("/contoh-<slug>.html")
+def contoh_kategori(slug):
+    nomor = next((i for i, k in enumerate(KATEGORI_CONTOH) if k["slug"] == slug), None)
+    if nomor is None:
+        return Response("Contoh soal tidak ditemukan", status=404)
+
+    return render_template(
+        f"contoh/{slug}.html",
+        kategori=KATEGORI_CONTOH[nomor],
+        nomor=nomor + 1,
+        sebelum=KATEGORI_CONTOH[nomor - 1] if nomor > 0 else None,
+        sesudah=KATEGORI_CONTOH[nomor + 1] if nomor + 1 < len(KATEGORI_CONTOH) else None,
+        semua_kategori=KATEGORI_CONTOH,
+        aktif="contoh",
+    )
 
 @app.route("/latihan.html")
 def latihan():
@@ -216,6 +254,7 @@ def service_worker():
     berkas = ["./", "beranda.html", "materi.html", "contoh.html", "latihan.html",
               "manifest.webmanifest"]
     berkas += [f"materi-{t['slug']}.html" for t in TOPIK]
+    berkas += [f"contoh-{k['slug']}.html" for k in KATEGORI_CONTOH]
     berkas += [f"gambar/{b}.svg" for b in ["segitiga", "persegi", "tangga"]]
     berkas += sorted(f"static/{p.relative_to(FOLDER / 'static').as_posix()}"
                      for p in (FOLDER / "static").rglob("*") if p.is_file())

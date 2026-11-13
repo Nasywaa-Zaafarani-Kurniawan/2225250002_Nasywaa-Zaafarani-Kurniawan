@@ -1,0 +1,15 @@
+{# Satu contoh soal, bergaya kotak contoh di halaman Materi #}
+{% macro kartu(no, judul, materi, sumber) %}
+<div class="contoh kartu-contoh" id="contoh-{{ no }}">
+    <span class="label-contoh">Contoh {{ no }}</span>
+    <h3 class="judul-contoh">{{ judul }}</h3>
+    {{ caller() }}
+    <div class="kaki-contoh">
+        <span>📖 {{ sumber }}</span>
+        <a href="materi-{{ materi }}.html">Pelajari materinya →</a>
+    </div>
+</div>
+{% endmacro %}
+
+{# Ajakan mencoba sendiri sebelum membuka penyelesaian #}
+{% macro coba() %}<p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>{% endmacro %}

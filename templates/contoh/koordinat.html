@@ -1,0 +1,81 @@
+{% extends "contoh_kategori.html" %}
+{% import "contoh/_makro.html" as m %}
+
+{% block isi %}
+
+    {% call m.kartu(1, "Jarak titik A(−5, 3) dan B(3, −4)", "penerapan", "Buku Murid Kelas VIII, Jarak antara Dua Titik") %}
+        <p class="soal-contoh">Tentukan jarak antara titik A(−5, 3) dan B(3, −4) pada bidang koordinat Kartesius.</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> A(−5, 3) dan B(3, −4).<br><strong>Ditanya:</strong> panjang AB.</li>
+            <li><strong>Jawab:</strong> tarik garis sejajar sumbu-<var>x</var> dan sumbu-<var>y</var>, sehingga terbentuk segitiga siku-siku dengan sisi tegak:
+                <div class="persamaan"><div>selisih <var>x</var> = 3 − (−5) = 8 satuan</div><div>selisih <var>y</var> = 3 − (−4) = 7 satuan</div></div></li>
+            <li>AB adalah sisi miringnya:
+                <div class="persamaan"><div>AB = √(8² + 7²) = √(64 + 49) = √113 ≈ 10,63</div></div>
+                <strong>Jadi,</strong> jarak A dan B adalah <strong>√113 satuan</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(2, "Permainan bentengan", "penerapan", "Buku Murid Kelas VIII, Penerapan Teorema Pythagoras") %}
+        <p class="soal-contoh">Saat bermain bentengan, kamu berada 4 m di utara dan 3 m di timur benteng timmu. Benteng lawan berada 6 m di utara dan 8 m di timur benteng timmu. Berapa jarakmu ke benteng lawan?</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> jadikan benteng timmu titik (0, 0). Posisimu (3, 4) dan benteng lawan (8, 6).<br><strong>Ditanya:</strong> jarakmu ke benteng lawan.</li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div>selisih timur = 8 − 3 = 5 m</div><div>selisih utara = 6 − 4 = 2 m</div><div>d = √(5² + 2²) = √(25 + 4) = √29 ≈ 5,39</div></div></li>
+            <li><strong>Jadi,</strong> jarakmu ke benteng lawan sekitar <strong>5,39 m</strong> (tepatnya √29 m).</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(3, "Jarak titik A(2, 1) dan B(7, 13)", "penerapan", "Modul 5, Tes Formatif 2 no. 2") %}
+<p class="soal-contoh">Diketahui titik A(2, 1) dan B(7, 13). Berapa panjang ruas garis AB?</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> A(2, 1) dan B(7, 13).<br><strong>Ditanya:</strong> panjang AB.</li>
+            <li><strong>Jawab:</strong> buat segitiga siku-siku dengan sisi datar dan sisi tegak:
+                <div class="persamaan"><div>selisih <var>x</var> = 7 − 2 = 5</div><div>selisih <var>y</var> = 13 − 1 = 12</div></div></li>
+            <li>AB adalah sisi miringnya:
+                <div class="persamaan"><div>AB = √(5² + 12²) = √(25 + 144) = √169 = 13</div></div>
+                <strong>Jadi,</strong> panjang AB = <strong>13 satuan</strong>.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(4, "Memakai rumus jarak", "penerapan", "Buku Murid Kelas VIII, Pengayaan Rumus Jarak") %}
+<p class="soal-contoh">Gunakan rumus jarak AB = √[(<var>x</var>₂ − <var>x</var>₁)² + (<var>y</var>₂ − <var>y</var>₁)²] untuk menentukan panjang AB, jika A(−2, −1) dan B(3, 11).</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> (<var>x</var>₁, <var>y</var>₁) = (−2, −1) dan (<var>x</var>₂, <var>y</var>₂) = (3, 11).<br><strong>Ditanya:</strong> AB.</li>
+            <li><strong>Jawab:</strong> hati-hati dengan tanda negatif.
+                <div class="persamaan"><div><var>x</var>₂ − <var>x</var>₁ = 3 − (−2) = 5</div><div><var>y</var>₂ − <var>y</var>₁ = 11 − (−1) = 12</div></div></li>
+            <li>Masukkan ke rumus:
+                <div class="persamaan"><div>AB = √(5² + 12²) = √169 = 13</div></div>
+                <strong>Jadi,</strong> AB = <strong>13 satuan</strong>. Rumus jarak sebenarnya adalah teorema Pythagoras.</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(5, "Apakah segitiga ABC siku-siku?", "jenis-segitiga", "Buku Murid Kelas VIII, Latihan 2.4 no. 1") %}
+<p class="soal-contoh">Diketahui ΔABC dengan titik A(−1, 3), B(4, −2), dan C(1, −5). Apakah segitiga ABC merupakan segitiga siku-siku? Jelaskan.</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> A(−1, 3), B(4, −2), C(1, −5).<br><strong>Ditanya:</strong> apakah ΔABC siku-siku?<br><strong>Cara:</strong> hitung kuadrat panjang ketiga sisi, lalu pakai kebalikan teorema Pythagoras.</li>
+            <li><strong>Hitung kuadrat sisi-sisinya:</strong>
+                <div class="persamaan"><div>AB² = (4 − (−1))² + (−2 − 3)² = 25 + 25 = 50</div><div>BC² = (1 − 4)² + (−5 − (−2))² = 9 + 9 = 18</div><div>AC² = (1 − (−1))² + (−5 − 3)² = 4 + 64 = 68</div></div></li>
+            <li><strong>Bandingkan:</strong> sisi terpanjang AC. AB² + BC² = 50 + 18 = 68 = AC².</li>
+            <li><strong>Jadi,</strong> ΔABC <strong>siku-siku di B</strong> (sudut di seberang sisi terpanjang AC).</li>
+        </ol>
+    {% endcall %}
+
+    {% call m.kartu(6, "Main tembak-tembakan pistol bambu", "penerapan", "Buku Murid Kelas VIII, Latihan 2.4 no. 3") %}
+<p class="soal-contoh">Aldo dan Arjuna berdiri saling membelakangi. Aldo berjalan 20 langkah ke depan lalu 15 langkah ke kanan. Pada saat yang sama, Arjuna berjalan 16 langkah ke depan lalu 12 langkah ke kanan. Berapa langkah jarak mereka berdua sekarang?</p>
+        {{ m.coba() }}
+        <ol class="langkah" data-langkah>
+            <li><strong>Diketahui:</strong> titik awal mereka (0, 0). Aldo menghadap utara, jadi Arjuna menghadap selatan. "Kanan" bagi Arjuna adalah arah barat.<br><strong>Ditanya:</strong> jarak Aldo dan Arjuna.</li>
+            <li><strong>Posisi akhir:</strong>
+                <div class="persamaan"><div>Aldo: 15 ke timur, 20 ke utara → (15, 20)</div><div>Arjuna: 12 ke barat, 16 ke selatan → (−12, −16)</div></div></li>
+            <li><strong>Jawab:</strong>
+                <div class="persamaan"><div>selisih <var>x</var> = 15 − (−12) = 27</div><div>selisih <var>y</var> = 20 − (−16) = 36</div><div>jarak = √(27² + 36²) = √(729 + 1.296) = √2.025 = 45</div></div></li>
+            <li><strong>Jadi,</strong> jarak mereka <strong>45 langkah</strong>. (27, 36, 45 adalah 9 × tripel 3, 4, 5.)</li>
+        </ol>
+    {% endcall %}
+
+{% endblock %}
