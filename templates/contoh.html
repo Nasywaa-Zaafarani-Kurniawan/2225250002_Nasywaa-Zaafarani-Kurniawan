@@ -3,58 +3,72 @@
 {% block judul %}Contoh Soal{% endblock %}
 
 {% block kepala %}
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="static/contoh.css">
 {% endblock %}
 
-{# Kerangka satu kartu contoh soal #}
+{# Satu contoh soal, bergaya kotak contoh di halaman Materi #}
 {% macro kartu(no, kategori, label, judul, materi, sumber) %}
-<article class="kartu-contoh" data-kategori="{{ kategori }}" id="contoh-{{ no }}">
-    <header class="kepala-contoh">
-        <span class="no-contoh">{{ no }}</span>
-        <div>
-            <span class="kategori-contoh">{{ label }}</span>
-            <h2>{{ judul }}</h2>
-        </div>
-    </header>
+<div class="contoh kartu-contoh" id="contoh-{{ no }}">
+    <span class="label-contoh">Contoh {{ no }}</span>
+    <h3 class="judul-contoh">{{ judul }}</h3>
     {{ caller() }}
-    <footer class="kaki-contoh">
+    <div class="kaki-contoh">
         <span>📖 {{ sumber }}</span>
         <a href="materi-{{ materi }}.html">Pelajari materinya →</a>
-    </footer>
-</article>
+    </div>
+</div>
 {% endmacro %}
 
 {% macro coba() %}<p class="coba-dulu">✋ Coba kerjakan dulu di <button type="button" class="buka-coretan-kecil">Coretan</button>, baru buka penyelesaiannya.</p>{% endmacro %}
 
 {% block isi_halaman %}
-<div class="halaman-contoh">
+<div class="tata-topik halaman-contoh">
 
-    <header class="kepala-halaman">
-        <span class="badge">🧩 Contoh Soal</span>
-        <h1>Contoh soal + pembahasan lengkap</h1>
-        <p>
-            Soal-soal di sini diambil dari <strong>Modul 5 Teorema Pythagoras</strong> dan
-            <strong>Buku Matematika Kelas VIII Bab 2</strong>. Setiap soal dibahas dengan pola
-            <em>Diketahui → Ditanya → Jawab → Jadi</em>, dan penyelesaiannya bisa dibuka langkah demi langkah.
-        </p>
-    </header>
+    <!-- Daftar kategori (layar lebar) -->
+    <aside class="daftar-topik">
+        <a href="materi.html" class="kembali">← Ke Materi</a>
+        <ol>
+            <li><a href="#kat-dasar" data-kat="dasar"><span class="no">1</span><span>Kuadrat & Akar<small>1 soal</small></span></a></li>
+            <li><a href="#kat-sisi" data-kat="sisi"><span class="no">2</span><span>Mencari Panjang Sisi<small>3 soal</small></span></a></li>
+            <li><a href="#kat-jenis" data-kat="jenis"><span class="no">3</span><span>Jenis Segitiga & Tripel<small>4 soal</small></span></a></li>
+            <li><a href="#kat-istimewa" data-kat="istimewa"><span class="no">4</span><span>Segitiga Istimewa<small>2 soal</small></span></a></li>
+            <li><a href="#kat-bangun" data-kat="bangun"><span class="no">5</span><span>Bangun Datar & Bangun Ruang<small>6 soal</small></span></a></li>
+            <li><a href="#kat-cerita" data-kat="cerita"><span class="no">6</span><span>Soal Cerita<small>6 soal</small></span></a></li>
+            <li><a href="#kat-koordinat" data-kat="koordinat"><span class="no">7</span><span>Jarak Dua Titik<small>2 soal</small></span></a></li>
+        </ol>
+    </aside>
 
-    <nav class="filter" aria-label="Saring kategori soal">
-        <button type="button" class="aktif" data-filter="semua">Semua</button>
-        <button type="button" data-filter="dasar">Kuadrat &amp; akar</button>
-        <button type="button" data-filter="sisi">Mencari sisi</button>
-        <button type="button" data-filter="jenis">Jenis &amp; tripel</button>
-        <button type="button" data-filter="istimewa">Segitiga istimewa</button>
-        <button type="button" data-filter="bangun">Bangun datar &amp; ruang</button>
-        <button type="button" data-filter="cerita">Soal cerita</button>
-        <button type="button" data-filter="koordinat">Koordinat</button>
-    </nav>
-    <p class="jumlah-soal" id="jumlah-soal"></p>
+    <article class="isi-topik">
+        <header class="kepala-topik">
+            <span class="label-topik">Contoh Soal · 24 soal</span>
+            <h1>Contoh Soal &amp; Pembahasan</h1>
+            <p>Soal-soal dari Modul 5 Teorema Pythagoras dan Buku Matematika Kelas VIII Bab 2.</p>
+            <div class="tujuan">
+                <strong>Cara memakai halaman ini:</strong>
+                <ul>
+                    <li>Baca soalnya, lalu coba kerjakan sendiri dulu di <em>Coretan</em>.</li>
+                    <li>Buka penyelesaian <strong>satu langkah demi satu langkah</strong>: Diketahui → Ditanya → Jawab → Jadi.</li>
+                    <li>Masih bingung? Klik <em>Pelajari materinya</em> di bawah setiap soal.</li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- Daftar kategori (HP) -->
+        <nav class="chip-kategori" aria-label="Kategori soal">
+        <a href="#kat-dasar">Kuadrat & Akar</a>
+        <a href="#kat-sisi">Mencari Panjang Sisi</a>
+        <a href="#kat-jenis">Jenis Segitiga & Tripel</a>
+        <a href="#kat-istimewa">Segitiga Istimewa</a>
+        <a href="#kat-bangun">Bangun Datar & Bangun Ruang</a>
+        <a href="#kat-cerita">Soal Cerita</a>
+        <a href="#kat-koordinat">Jarak Dua Titik</a>
+        </nav>
 
     <div class="daftar-contoh">
 
-    {# ================= DASAR ================= #}
+    <section class="bagian" id="kat-dasar">
+        <h2><span class="nomor-bagian">1</span>Kuadrat & Akar</h2>
+        <p class="ket-bagian">Bekal hitungan sebelum memakai rumus Pythagoras.</p>
     {% call kartu(1, "dasar", "Kuadrat & akar", "Menghitung kuadrat dan akar kuadrat", "prasyarat", "Buku Murid Kelas VIII, Contoh 2.1") %}
         <p class="soal-contoh">
             1. Hitunglah: a. 13² &nbsp; b. 24² &nbsp; c. 35² &nbsp; d. (82,5)² &nbsp; e. 119²<br>
@@ -70,7 +84,11 @@
         </ol>
     {% endcall %}
 
-    {# ================= MENCARI SISI ================= #}
+    </section>
+
+    <section class="bagian" id="kat-sisi">
+        <h2><span class="nomor-bagian">2</span>Mencari Panjang Sisi</h2>
+        <p class="ket-bagian">Mencari sisi miring (tambah) dan sisi siku-siku (kurang).</p>
     {% call kartu(2, "sisi", "Mencari sisi miring", "Menentukan panjang hipotenusa", "menghitung-sisi", "Buku Murid Kelas VIII, Contoh 2.2 no. 1") %}
         <p class="soal-contoh">Tentukan panjang hipotenusa segitiga ABC di bawah ini.</p>
         <figure class="gambar-contoh">
@@ -121,7 +139,11 @@
         </ol>
     {% endcall %}
 
-    {# ================= JENIS & TRIPEL ================= #}
+    </section>
+
+    <section class="bagian" id="kat-jenis">
+        <h2><span class="nomor-bagian">3</span>Jenis Segitiga & Tripel</h2>
+        <p class="ket-bagian">Kebalikan teorema Pythagoras dan tripel Pythagoras.</p>
     {% call kartu(5, "jenis", "Jenis segitiga", "Taman Putri: siku-siku atau bukan?", "jenis-segitiga", "Buku Murid Kelas VIII, Contoh 2.3 no. 1") %}
         <p class="soal-contoh">Putri ingin membuat taman berbentuk segitiga siku-siku. Ia mengukur sebuah taman yang panjang sisinya 4 m, 5 m, dan 6 m. Apakah taman itu berbentuk segitiga siku-siku?</p>
         {{ coba() }}
@@ -192,7 +214,11 @@
         </ol>
     {% endcall %}
 
-    {# ================= ISTIMEWA ================= #}
+    </section>
+
+    <section class="bagian" id="kat-istimewa">
+        <h2><span class="nomor-bagian">4</span>Segitiga Istimewa</h2>
+        <p class="ket-bagian">Perbandingan sisi segitiga 45°–45°–90° dan 30°–60°–90°.</p>
     {% call kartu(9, "istimewa", "Segitiga 45°–45°–90°", "Segitiga siku-siku sama kaki", "segitiga-istimewa", "Buku Murid Kelas VIII, Contoh 2.4") %}
         <p class="soal-contoh">Diketahui segitiga siku-siku sama kaki ABC dengan ∠C = 90° dan AB = 15√2 cm. Hitunglah panjang AC.</p>
         <figure class="gambar-contoh">
@@ -236,7 +262,11 @@
         </ol>
     {% endcall %}
 
-    {# ================= BANGUN DATAR & RUANG ================= #}
+    </section>
+
+    <section class="bagian" id="kat-bangun">
+        <h2><span class="nomor-bagian">5</span>Bangun Datar & Bangun Ruang</h2>
+        <p class="ket-bagian">Memecah bangun menjadi segitiga siku-siku.</p>
     {% call kartu(11, "bangun", "Bangun datar", "Panjang kaki trapesium siku-siku", "bangun-gabungan", "Buku Murid Kelas VIII, Contoh 2.2 no. 3") %}
         <p class="soal-contoh">Trapesium ABCD siku-siku di A dan D. Diketahui AD = 15 cm, CD = 25 cm, dan AB = 33 cm. Tentukan panjang BC.</p>
         <figure class="gambar-contoh">
@@ -359,7 +389,11 @@
         </ol>
     {% endcall %}
 
-    {# ================= SOAL CERITA ================= #}
+    </section>
+
+    <section class="bagian" id="kat-cerita">
+        <h2><span class="nomor-bagian">6</span>Soal Cerita</h2>
+        <p class="ket-bagian">Mengubah cerita menjadi sketsa segitiga.</p>
     {% call kartu(17, "cerita", "Soal cerita", "Tinggi layang-layang Rina", "penerapan", "Soal pemicu wawancara (S01, soal cerita)") %}
         <p class="soal-contoh">Rina sedang bermain layang-layang. Panjang benang saat layang-layang terbang adalah 13 meter. Jarak Rina ke bayangan layang-layang adalah 5 meter. Menurutmu, berapa meter tinggi layang-layang Rina dari tanah?</p>
         {{ coba() }}
@@ -455,7 +489,11 @@
         </ol>
     {% endcall %}
 
-    {# ================= KOORDINAT ================= #}
+    </section>
+
+    <section class="bagian" id="kat-koordinat">
+        <h2><span class="nomor-bagian">7</span>Jarak Dua Titik</h2>
+        <p class="ket-bagian">Teorema Pythagoras pada bidang koordinat.</p>
     {% call kartu(23, "koordinat", "Jarak dua titik", "Jarak titik A(−5, 3) dan B(3, −4)", "penerapan", "Buku Murid Kelas VIII, Jarak antara Dua Titik") %}
         <p class="soal-contoh">Tentukan jarak antara titik A(−5, 3) dan B(3, −4) pada bidang koordinat Kartesius.</p>
         {{ coba() }}
@@ -480,38 +518,32 @@
         </ol>
     {% endcall %}
 
+    </section>
     </div>
 
-    <aside class="ajak-latihan">
-        <div>
-            <strong>Sudah paham contohnya?</strong>
-            <span>Saatnya coba sendiri di Latihan. Ada 18 level dan ujian akhir!</span>
-        </div>
-        <a href="latihan.html">Gas ke Latihan 🎯</a>
-    </aside>
-
+        <aside class="ajak-latihan">
+            <div>
+                <strong>Sudah paham contohnya?</strong>
+                <span>Saatnya coba sendiri di Latihan: 18 level dan ujian akhir.</span>
+            </div>
+            <a href="latihan.html" class="tombol tombol-utama">Ke Latihan 🎯</a>
+        </aside>
+    </article>
 </div>
 {% endblock %}
 
 {% block skrip %}
 <script>
-    // Saring kartu berdasarkan kategori
-    const tombolFilter = document.querySelectorAll(".filter button");
-    const kartu = document.querySelectorAll(".kartu-contoh");
-    const infoJumlah = document.getElementById("jumlah-soal");
-
-    function saring(kategori) {
-        let tampil = 0;
-        kartu.forEach((k) => {
-            const cocok = kategori === "semua" || k.dataset.kategori === kategori;
-            k.hidden = !cocok;
-            if (cocok) tampil++;
+    // Tandai kategori yang sedang dibaca di daftar samping
+    const tautanKat = document.querySelectorAll(".daftar-topik a[data-kat]");
+    const pengamat = new IntersectionObserver((entri) => {
+        entri.forEach((e) => {
+            if (!e.isIntersecting) return;
+            const id = e.target.id.replace("kat-", "");
+            tautanKat.forEach((a) => a.classList.toggle("aktif", a.dataset.kat === id));
         });
-        tombolFilter.forEach((t) => t.classList.toggle("aktif", t.dataset.filter === kategori));
-        infoJumlah.textContent = `Menampilkan ${tampil} soal`;
-    }
-    tombolFilter.forEach((t) => t.addEventListener("click", () => saring(t.dataset.filter)));
-    saring("semua");
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    document.querySelectorAll(".bagian[id^='kat-']").forEach((b) => pengamat.observe(b));
 
     // Tombol "Coretan" kecil di setiap soal
     document.querySelectorAll(".buka-coretan-kecil").forEach((t) =>

@@ -1,143 +1,45 @@
-/* ============ Contoh Soal ============ */
+/* ============ Contoh Soal — mengikuti gaya halaman Materi ============ */
 
-:root {
-    --garis-tebal: 2.5px solid var(--teks);
-    --font-judul: "Bricolage Grotesque", "Plus Jakarta Sans", Arial, sans-serif;
-    --kuning: #f4d58d;
-    --pink: #f6c9c3;
-    --hijau-pop: #b9dcae;
-}
-
-.halaman-contoh {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 36px 24px 40px;
-}
-
-.kepala-halaman h1 {
-    margin: 14px 0 10px;
-    font-family: var(--font-judul);
-    font-size: clamp(32px, 5vw, 50px);
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -1.2px;
-}
-
-.kepala-halaman p {
-    margin: 0;
-    font-size: 16px;
-    color: var(--teks-pudar);
-}
-
-/* Filter kategori */
-.filter {
-    position: sticky;
-    top: 64px;
-    z-index: 5;
-    display: flex;
-    gap: 8px;
-    margin: 28px -24px 0;
-    padding: 12px 24px;
-    overflow-x: auto;
-    background: #f7f2e8ee;
-    backdrop-filter: blur(8px);
-    scrollbar-width: none;
-}
-
-.filter::-webkit-scrollbar {
-    display: none;
-}
-
-.filter button {
-    flex: none;
-    padding: 8px 16px;
-    border: 2px solid var(--teks);
-    border-radius: 999px;
-    background: var(--krem-terang);
-    color: var(--teks);
-    font: 700 14px "Plus Jakarta Sans", Arial, sans-serif;
-    cursor: pointer;
-    transition: transform 0.15s;
-}
-
-.filter button:hover {
-    transform: translateY(-2px);
-}
-
-.filter button.aktif {
-    background: var(--teks);
-    color: var(--kuning);
-}
-
-.jumlah-soal {
-    margin: 8px 0 0;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--teks-pudar);
-}
-
-/* Kartu contoh */
-.daftar-contoh {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    margin-top: 16px;
-}
-
-.kartu-contoh {
-    padding: 24px;
-    border: var(--garis-tebal);
-    border-radius: 24px;
-    background: var(--krem-terang);
-    box-shadow: 5px 5px 0 var(--teks);
-    scroll-margin-top: 130px;
-}
-
-.kartu-contoh[hidden] {
-    display: none;
-}
-
-.kepala-contoh {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-}
-
-.no-contoh {
-    flex: none;
-    display: grid;
-    place-items: center;
-    width: 46px;
-    height: 46px;
-    border: 2px solid var(--teks);
-    border-radius: 14px;
-    background: var(--kuning);
-    font-family: var(--font-judul);
-    font-size: 20px;
-    font-weight: 800;
-}
-
-.kategori-contoh {
+/* nama kategori di daftar samping, dengan jumlah soal di bawahnya */
+.halaman-contoh .daftar-topik small {
+    display: block;
     font-size: 12px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    color: var(--merah);
+    font-weight: 500;
+    opacity: 0.75;
 }
 
-.kepala-contoh h2 {
-    margin: 2px 0 0;
-    font-family: var(--font-judul);
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: -0.3px;
+.halaman-contoh .daftar-topik a {
+    transition: background 0.2s, color 0.2s;
+}
+
+/* pindah bagian dengan jarak dari navbar */
+.halaman-contoh .bagian {
+    scroll-margin-top: 84px;
+}
+
+.ket-bagian {
+    color: var(--teks-pudar);
+}
+
+/* Kotak satu contoh soal (memakai .contoh dari materi.css) */
+.kartu-contoh {
+    scroll-margin-top: 84px;
+}
+
+.kartu-contoh + .kartu-contoh {
+    margin-top: 26px;
+}
+
+.judul-contoh {
+    margin: 10px 0 0 !important;
+    font-size: 18px;
 }
 
 .kartu-contoh .soal-contoh {
-    margin: 16px 0 6px;
+    margin: 12px 0 6px;
     padding: 14px 16px;
-    border-radius: 14px;
-    background: var(--krem);
+    border-radius: 12px;
+    background: var(--krem-terang);
     border-left: 4px solid var(--merah);
     font-weight: 600;
     line-height: 1.7;
@@ -150,8 +52,12 @@
 
 .gambar-contoh svg {
     width: 100%;
-    max-width: 340px;
+    max-width: 320px;
     height: auto;
+    padding: 8px;
+    border-radius: 14px;
+    background: var(--krem-terang);
+    border: 1px solid var(--krem-garis);
 }
 
 .coba-dulu {
@@ -162,24 +68,21 @@
 
 .buka-coretan-kecil {
     padding: 2px 10px;
-    border: 1.5px solid var(--teks);
+    border: 1px solid var(--krem-garis);
     border-radius: 999px;
     background: var(--krem-terang);
+    color: var(--merah);
     font: 700 13px "Plus Jakarta Sans", Arial, sans-serif;
     cursor: pointer;
 }
 
 .buka-coretan-kecil:hover {
-    background: var(--teks);
-    color: var(--krem-terang);
-}
-
-.kartu-contoh ol.langkah > li {
-    background: #fff;
+    border-color: var(--merah);
 }
 
 .kartu-contoh .tabel-wadah table {
     font-size: 14px;
+    background: var(--krem-terang);
 }
 
 .kaki-contoh {
@@ -188,26 +91,50 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: 18px;
-    padding-top: 14px;
-    border-top: 1.5px dashed var(--krem-garis);
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--krem-garis);
     font-size: 13px;
     color: var(--teks-pudar);
 }
 
 .kaki-contoh a {
-    padding: 6px 14px;
-    border: 2px solid var(--teks);
-    border-radius: 999px;
-    background: var(--pink);
-    color: var(--teks);
-    font-weight: 800;
+    font-weight: 700;
     text-decoration: none;
 }
 
 .kaki-contoh a:hover {
-    background: var(--teks);
-    color: var(--krem-terang);
+    text-decoration: underline;
+}
+
+/* Daftar kategori untuk HP (daftar samping disembunyikan di layar kecil) */
+.chip-kategori {
+    display: none;
+    gap: 8px;
+    margin-top: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.chip-kategori::-webkit-scrollbar {
+    display: none;
+}
+
+.chip-kategori a {
+    flex: none;
+    padding: 7px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--krem-garis);
+    background: var(--krem-terang);
+    color: var(--teks);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.chip-kategori a:hover {
+    border-color: var(--merah);
+    color: var(--merah);
 }
 
 /* Ajakan ke latihan */
@@ -217,47 +144,29 @@
     justify-content: space-between;
     gap: 16px;
     flex-wrap: wrap;
-    margin-top: 36px;
+    margin-top: 28px;
     padding: 22px 24px;
-    border: var(--garis-tebal);
-    border-radius: 24px;
-    background: var(--hijau-pop);
-    box-shadow: 5px 5px 0 var(--teks);
+    border-radius: var(--radius);
+    background: var(--hijau-muda);
+    border: 1px solid #c9dfc2;
 }
 
 .ajak-latihan strong {
     display: block;
-    font-family: var(--font-judul);
-    font-size: 22px;
+    font-size: 18px;
 }
 
-.ajak-latihan a {
-    padding: 12px 20px;
-    border: var(--garis-tebal);
-    border-radius: 14px;
-    background: var(--merah);
-    color: var(--krem-terang);
-    font-weight: 800;
+.ajak-latihan span {
+    font-size: 15px;
+    color: var(--teks-pudar);
+}
+
+.ajak-latihan .tombol {
     text-decoration: none;
-    box-shadow: 3px 3px 0 var(--teks);
 }
 
-@media (max-width: 600px) {
-    .halaman-contoh {
-        padding: 24px 16px;
-    }
-
-    .filter {
-        top: 96px;
-        margin: 20px -16px 0;
-        padding: 10px 16px;
-    }
-
-    .kartu-contoh {
-        padding: 18px 16px;
-    }
-
-    .kepala-contoh h2 {
-        font-size: 19px;
+@media (max-width: 960px) {
+    .chip-kategori {
+        display: flex;
     }
 }
